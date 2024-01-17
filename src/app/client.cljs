@@ -2,10 +2,37 @@
   (:require
     [com.fulcrologic.fulcro.application :as app]
     [com.fulcrologic.fulcro.components :as comp :refer [defsc]]
-    [com.fulcrologic.fulcro.dom :as dom :refer [div ul li h1 h2 h3 h4 button]]
+    [com.fulcrologic.fulcro.dom :as dom :refer [div ul li h1 h2 h3 h4 button input label i]]
     [com.fulcrologic.fulcro.algorithms.merge :as merge]
     [com.fulcrologic.fulcro.mutations :refer [defmutation]]
     [com.fulcrologic.fulcro.algorithms.data-targeting :as targeting]))
+
+(defsc Todo [this {:todo/keys [id done text] :as props}]
+  {:query [:todo/id :todo/done :todo/text]
+   :ident :todo/id
+   :initial-state {:todo/id :param/id
+                   :todo/done false
+                   :todo/text "Write Something"}}
+  (div :.ui.grid
+    (div :.column
+      (if done
+        (input {:type "checkbox" :name id :checked ""})
+        (input {:type "checkbox" :name id })
+      )
+      (label "")
+    )
+    (div :.ten.wide.column
+      (input :.w-full {:type "text" :placeholder text})
+    )
+    (div :.two.wide.column.fluid
+      (button :.ui.icon.button.fluid {} ""
+        (i :.x.icon)
+      )
+    )
+
+  ))
+
+(def ui-todo (comp/factory Todo {:keyfn :todo/id}))
 
 (defsc Car [this {:car/keys [id model] :as props}]
   {:query [:car/id :car/model]
@@ -20,23 +47,23 @@
   (action [{:keys [state]}]
     (swap! state update-in [:person/id id :person/age] inc)))
 
-(defsc Person [this {:person/keys [id name age cars] :as props}]
-  {:query [:person/id :person/name :person/age {:person/cars (comp/get-query Car)}]
+(defsc Person [this {:person/keys [id name age todos] :as props}]
+  {:query [:person/id :person/name :person/age {:person/todos (comp/get-query Todo)}]
    :ident :person/id
    :initial-state {:person/id :param/id
                    :person/name :param/name
                    :person/age 0
-                   :person/cars [{:id 20 :model "Forester"}
-                                 {:id 21 :model "Leaf"}
-                                 {:id 22 :model "Pilot"}]}}
+                   :person/todos [{:id 1}
+                                 {:id 2 }
+                                 {:id 3}]}}
   (div :.ui.segment {}
     (h2 "Name: " name)
     (h2 "Age: " age)
     (button :.ui.button {:onClick
       #(comp/transact! this [(make-older {:person/id id})] {:refresh [:person-list/people]})} "Make Older")
     (h2 "id: " id)
-    (h2 "Cars:")
-    (ul (map ui-car cars)))
+    (h2 "Todos:")
+    (ul (map ui-todo todos)))
   )
 
 (def ui-person (comp/factory Person {:keyfn :person/id}))
