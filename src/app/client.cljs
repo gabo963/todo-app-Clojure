@@ -20,9 +20,13 @@
   )
 )
 
+(defn dissoc-in [map keys value]
+  (update-in map keys dissoc value)
+)
+
 (defmutation todo-deleted [{:todo/keys [id]}]
   (action [{:keys [state]}]
-    (swap! state dissoc [:todo/id] id)
+    (swap! state dissoc-in [:todo/id] id)
   )
 )
 
@@ -49,7 +53,8 @@
         )
       )
     (div :.two.wide.column.fluid
-      (button :.ui.icon.button {} ""
+      (button :.ui.icon.button {
+        :onClick #(comp/transact! this [(todo-deleted {:todo/id id})] {:refresh [:person/todos]} )} ""
         (i :.x.icon)
         )
       )
@@ -57,25 +62,16 @@
 
 (def ui-todo (comp/factory Todo {:keyfn :todo/id}))
 
-(defmutation make-older [{:person/keys [id]}]
-  (action [{:keys [state]}]
-    (swap! state update-in [:person/id id :person/age] inc)))
-
-(defsc Person [this {:person/keys [id name age todos] :as props}]
-  {:query [:person/id :person/name :person/age {:person/todos (comp/get-query Todo)}]
+(defsc Person [this {:person/keys [id name  todos] :as props}]
+  {:query [:person/id :person/name {:person/todos (comp/get-query Todo)}]
    :ident :person/id
    :initial-state {:person/id :param/id
                    :person/name :param/name
-                   :person/age 0
                    :person/todos [{:id 1}
                                  {:id 2 }
                                  {:id 3}]}}
   (div :.ui.segment {}
-    (h2 "Name: " name)
-    (h2 "Age: " age)
-    (button :.ui.button {:onClick
-      #(comp/transact! this [(make-older {:person/id id})] {:refresh [:person-list/people]})} "Make Older")
-    (h2 "id: " id)
+    (h2 name "'s Todos")
     (h2 "Todos:")
     (ul (map ui-todo todos)))
   )
@@ -87,9 +83,6 @@
    :ident (fn [] [:component/id ::person-list])
    :initial-state {:person-list/people [{:id 1 :name "Daniel"}]}}
   (div
-    (let [cnt (reduce (fn [c {:person/keys [age]}]
-                        (if (> age 30) (inc c) c)) 0 people)]
-    (h2 "People Over 30: " cnt))
     (ul (map ui-person people))
   ))
 
@@ -99,8 +92,9 @@
   {:query [{:root/list (comp/get-query PersonList)}]
    :initial-state {:root/list {}}}
   (div :.ui.segment{}
+  (h1 "Todo List")
     (if list
-      (div (h1 "People")
+      (div
            (ui-person-list list))
       (h3 "Loading..."))))
 
@@ -118,7 +112,6 @@
   (app/current-state APP)
 
   (app/schedule-render! APP)
-
 
   )
 
