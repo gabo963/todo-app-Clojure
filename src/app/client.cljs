@@ -2,46 +2,60 @@
   (:require
     [com.fulcrologic.fulcro.application :as app]
     [com.fulcrologic.fulcro.components :as comp :refer [defsc]]
-    [com.fulcrologic.fulcro.dom :as dom :refer [div ul li h1 h2 h3 h4 button input label i]]
+    [com.fulcrologic.fulcro.dom :as dom :refer [div ul li h1 h2 h3 h4 button input label i s]]
     [com.fulcrologic.fulcro.algorithms.merge :as merge]
+    [com.fulcrologic.fulcro.dom.events :as evt]
     [com.fulcrologic.fulcro.mutations :refer [defmutation]]
     [com.fulcrologic.fulcro.algorithms.data-targeting :as targeting]))
+
+(defmutation todo-text-changed [{:todo/keys [id text]}]
+  (action [{:keys [state]}]
+    (swap! state assoc-in [:todo/id id :todo/text] text)
+  )
+)
+
+(defmutation todo-done-changed [{:todo/keys [id done]}]
+  (action [{:keys [state]}]
+    (swap! state assoc-in [:todo/id id :todo/done] done)
+  )
+)
+
+(defmutation todo-deleted [{:todo/keys [id]}]
+  (action [{:keys [state]}]
+    (swap! state dissoc [:todo/id] id)
+  )
+)
 
 (defsc Todo [this {:todo/keys [id done text] :as props}]
   {:query [:todo/id :todo/done :todo/text]
    :ident :todo/id
    :initial-state {:todo/id :param/id
                    :todo/done false
-                   :todo/text "Write Something"}}
+                   :todo/text ""}}
   (div :.ui.grid
     (div :.column
-      (if done
-        (input {:type "checkbox" :name id :checked ""})
-        (input {:type "checkbox" :name id })
+      (input {:type "checkbox" :name id :checked done
+      :onChange #(comp/transact! this [(todo-done-changed {:todo/id id :todo/done (not done)})])}
       )
       (label "")
     )
-    (div :.ten.wide.column
-      (input :.w-full {:type "text" :placeholder text})
-    )
-    (div :.two.wide.column.fluid
-      (button :.ui.icon.button.fluid {} ""
-        (i :.x.icon)
+    (if done
+      (div :.ui.disabled.input.ten.wide.column
+        (input :.w-full {:type "text" :value text :style {:text-decoration "line-through"}})
+        )
+      (div :.ui.input.ten.wide.column
+        (input :.w-full {:type "text" :value text :placeholder "Write Something"
+        :onChange #(comp/transact! this [(todo-text-changed {:todo/id id :todo/text (evt/target-value %)})])})
+        )
       )
-    )
-
-  ))
+    (div :.two.wide.column.fluid
+      (button :.ui.icon.button {} ""
+        (i :.x.icon)
+        )
+      )
+    ))
 
 (def ui-todo (comp/factory Todo {:keyfn :todo/id}))
-
-(defsc Car [this {:car/keys [id model] :as props}]
-  {:query [:car/id :car/model]
-   :ident :car/id
-   :initial-state {:car/id :param/id
-                   :car/model :param/model}}
-  (div (h4 model)))
-
-(def ui-car (comp/factory Car {:keyfn :car/id}))
 
 (defmutation make-older [{:person/keys [id]}]
   (action [{:keys [state]}]
@@ -71,7 +85,7 @@
 (defsc PersonList [this { :person-list/keys [people]}]
   {:query [{:person-list/people (comp/get-query Person)}]
    :ident (fn [] [:component/id ::person-list])
-   :initial-state {:person-list/people [{:id 1 :name "Daniel"} {:id 2 :name "Nicolas"}]}}
+   :initial-state {:person-list/people [{:id 1 :name "Daniel"}]}}
   (div
     (let [cnt (reduce (fn [c {:person/keys [age]}]
                         (if (> age 30) (inc c) c)) 0 people)]

@@ -23,6 +23,7 @@ goog.scope(function() {
     this.opts = opts || {};
     this.preferStrings = this.opts["preferStrings"] != null ? this.opts["preferStrings"] : true;
     this.objectBuilder = this.opts["objectBuilder"] || null;
+    this.transform = this.opts["transform"] || null;
     this.handlers = new handlers.Handlers;
     var optsHandlers = this.opts["handlers"];
     if (optsHandlers) {
@@ -200,7 +201,7 @@ goog.scope(function() {
     var ret = x.constructor.toString();
     ret = ret.substr("function ".length);
     ret = ret.substr(0, ret.indexOf("("));
-    isObject = ret == "Object";
+    var isObject = ret == "Object";
     if (typeof Object.defineProperty != "undefined") {
       Object.defineProperty(x.constructor, "transit$isObject", {value:isObject, enumerable:false});
     } else {
@@ -342,6 +343,9 @@ goog.scope(function() {
     }
   };
   writer.marshal = function(em, obj, asMapKey, cache) {
+    if (em.transform !== null) {
+      obj = em.transform(obj);
+    }
     var h = em.handler(obj) || (em.handlerForForeign ? em.handlerForForeign(obj, em.handlers) : null), tag = h ? h.tag(obj) : null, rep = h ? h.rep(obj) : null;
     if (h != null && tag != null) {
       switch(tag) {

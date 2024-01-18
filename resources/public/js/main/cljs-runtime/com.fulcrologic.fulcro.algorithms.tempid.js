@@ -1,6 +1,5 @@
 goog.provide('com.fulcrologic.fulcro.algorithms.tempid');
 goog.require('cljs.core');
-goog.require('taoensso.timbre');
 goog.require('clojure.walk');
 com.fulcrologic.fulcro.algorithms.tempid.tag = "fulcro/tempid";
 
@@ -68,8 +67,8 @@ return (new com.fulcrologic.fulcro.algorithms.tempid.TempId(id,__hash));
  * Create a new tempid.
  */
 com.fulcrologic.fulcro.algorithms.tempid.tempid = (function com$fulcrologic$fulcro$algorithms$tempid$tempid(var_args){
-var G__51747 = arguments.length;
-switch (G__51747) {
+var G__47075 = arguments.length;
+switch (G__47075) {
 case 0:
 return com.fulcrologic.fulcro.algorithms.tempid.tempid.cljs$core$IFn$_invoke$arity$0();
 
@@ -137,18 +136,18 @@ return clojure.walk.prewalk_replace(tid__GT_rid,data_structure);
  *   guids).  It is unsafe to use this function if you're using something else for temporary IDs
  *   as this function might rewrite things that are not IDs.
  */
-com.fulcrologic.fulcro.algorithms.tempid.resolve_tempids_BANG_ = (function com$fulcrologic$fulcro$algorithms$tempid$resolve_tempids_BANG_(p__51752,tx_result){
-var map__51753 = p__51752;
-var map__51753__$1 = (((((!((map__51753 == null))))?(((((map__51753.cljs$lang$protocol_mask$partition0$ & (64))) || ((cljs.core.PROTOCOL_SENTINEL === map__51753.cljs$core$ISeq$))))?true:false):false))?cljs.core.apply.cljs$core$IFn$_invoke$arity$2(cljs.core.hash_map,map__51753):map__51753);
-var state_atom = cljs.core.get.cljs$core$IFn$_invoke$arity$2(map__51753__$1,new cljs.core.Keyword("com.fulcrologic.fulcro.application","state-atom","com.fulcrologic.fulcro.application/state-atom",648128366));
-var runtime_atom = cljs.core.get.cljs$core$IFn$_invoke$arity$2(map__51753__$1,new cljs.core.Keyword("com.fulcrologic.fulcro.application","runtime-atom","com.fulcrologic.fulcro.application/runtime-atom",-1167397772));
+com.fulcrologic.fulcro.algorithms.tempid.resolve_tempids_BANG_ = (function com$fulcrologic$fulcro$algorithms$tempid$resolve_tempids_BANG_(p__47085,tx_result){
+var map__47086 = p__47085;
+var map__47086__$1 = (((((!((map__47086 == null))))?(((((map__47086.cljs$lang$protocol_mask$partition0$ & (64))) || ((cljs.core.PROTOCOL_SENTINEL === map__47086.cljs$core$ISeq$))))?true:false):false))?cljs.core.apply.cljs$core$IFn$_invoke$arity$2(cljs.core.hash_map,map__47086):map__47086);
+var state_atom = cljs.core.get.cljs$core$IFn$_invoke$arity$2(map__47086__$1,new cljs.core.Keyword("com.fulcrologic.fulcro.application","state-atom","com.fulcrologic.fulcro.application/state-atom",648128366));
+var runtime_atom = cljs.core.get.cljs$core$IFn$_invoke$arity$2(map__47086__$1,new cljs.core.Keyword("com.fulcrologic.fulcro.application","runtime-atom","com.fulcrologic.fulcro.application/runtime-atom",-1167397772));
 var tid__GT_rid = com.fulcrologic.fulcro.algorithms.tempid.result__GT_tempid__GT_realid(tx_result);
 cljs.core.swap_BANG_.cljs$core$IFn$_invoke$arity$3(state_atom,com.fulcrologic.fulcro.algorithms.tempid.resolve_tempids,tid__GT_rid);
 
-return cljs.core.swap_BANG_.cljs$core$IFn$_invoke$arity$2(runtime_atom,((function (tid__GT_rid,map__51753,map__51753__$1,state_atom,runtime_atom){
+return cljs.core.swap_BANG_.cljs$core$IFn$_invoke$arity$2(runtime_atom,((function (tid__GT_rid,map__47086,map__47086__$1,state_atom,runtime_atom){
 return (function (r){
-return cljs.core.update.cljs$core$IFn$_invoke$arity$4(cljs.core.update.cljs$core$IFn$_invoke$arity$4(cljs.core.update.cljs$core$IFn$_invoke$arity$4(r,new cljs.core.Keyword("com.fulcrologic.fulcro.transactions","submission-queue","com.fulcrologic.fulcro.transactions/submission-queue",569885809),com.fulcrologic.fulcro.algorithms.tempid.resolve_tempids,tid__GT_rid),new cljs.core.Keyword("com.fulcrologic.fulcro.transactions","active-queue","com.fulcrologic.fulcro.transactions/active-queue",1444549947),com.fulcrologic.fulcro.algorithms.tempid.resolve_tempids,tid__GT_rid),new cljs.core.Keyword("com.fulcrologic.fulcro.transactions","send-queues","com.fulcrologic.fulcro.transactions/send-queues",965935990),com.fulcrologic.fulcro.algorithms.tempid.resolve_tempids,tid__GT_rid);
-});})(tid__GT_rid,map__51753,map__51753__$1,state_atom,runtime_atom))
+return cljs.core.update.cljs$core$IFn$_invoke$arity$4(cljs.core.update.cljs$core$IFn$_invoke$arity$4(cljs.core.update.cljs$core$IFn$_invoke$arity$4(r,new cljs.core.Keyword("com.fulcrologic.fulcro.algorithms.tx-processing","submission-queue","com.fulcrologic.fulcro.algorithms.tx-processing/submission-queue",-175778154),com.fulcrologic.fulcro.algorithms.tempid.resolve_tempids,tid__GT_rid),new cljs.core.Keyword("com.fulcrologic.fulcro.algorithms.tx-processing","active-queue","com.fulcrologic.fulcro.algorithms.tx-processing/active-queue",162531286),com.fulcrologic.fulcro.algorithms.tempid.resolve_tempids,tid__GT_rid),new cljs.core.Keyword("com.fulcrologic.fulcro.algorithms.tx-processing","send-queues","com.fulcrologic.fulcro.algorithms.tx-processing/send-queues",-1776480807),com.fulcrologic.fulcro.algorithms.tempid.resolve_tempids,tid__GT_rid);
+});})(tid__GT_rid,map__47086,map__47086__$1,state_atom,runtime_atom))
 );
 });
 /**
@@ -156,22 +155,22 @@ return cljs.core.update.cljs$core$IFn$_invoke$arity$4(cljs.core.update.cljs$core
  *   it generates a stable one based on that number (useful for testing). Works in cljc.
  */
 com.fulcrologic.fulcro.algorithms.tempid.uuid = (function com$fulcrologic$fulcro$algorithms$tempid$uuid(var_args){
-var G__51760 = arguments.length;
-switch (G__51760) {
+var G__47092 = arguments.length;
+switch (G__47092) {
 case 0:
 return com.fulcrologic.fulcro.algorithms.tempid.uuid.cljs$core$IFn$_invoke$arity$0();
 
 break;
 default:
 var args_arr__4751__auto__ = [];
-var len__4730__auto___51775 = arguments.length;
-var i__4731__auto___51776 = (0);
+var len__4730__auto___47115 = arguments.length;
+var i__4731__auto___47116 = (0);
 while(true){
-if((i__4731__auto___51776 < len__4730__auto___51775)){
-args_arr__4751__auto__.push((arguments[i__4731__auto___51776]));
+if((i__4731__auto___47116 < len__4730__auto___47115)){
+args_arr__4751__auto__.push((arguments[i__4731__auto___47116]));
 
-var G__51777 = (i__4731__auto___51776 + (1));
-i__4731__auto___51776 = G__51777;
+var G__47117 = (i__4731__auto___47116 + (1));
+i__4731__auto___47116 = G__47117;
 continue;
 } else {
 }
@@ -193,9 +192,9 @@ return cljs.core.uuid(cljs.core.apply.cljs$core$IFn$_invoke$arity$2(cljs.core.st
 });
 
 /** @this {Function} */
-com.fulcrologic.fulcro.algorithms.tempid.uuid.cljs$lang$applyTo = (function (seq51759){
+com.fulcrologic.fulcro.algorithms.tempid.uuid.cljs$lang$applyTo = (function (seq47089){
 var self__4718__auto__ = this;
-return self__4718__auto__.cljs$core$IFn$_invoke$arity$variadic(cljs.core.seq(seq51759));
+return self__4718__auto__.cljs$core$IFn$_invoke$arity$variadic(cljs.core.seq(seq47089));
 });
 
 com.fulcrologic.fulcro.algorithms.tempid.uuid.cljs$lang$maxFixedArity = (0);

@@ -184,7 +184,8 @@ goog.scope(function() {
     return x instanceof types.Symbol;
   };
   types.hexFor = function(aLong, sidx, eidx) {
-    var ret = "", eidx = eidx || sidx + 1;
+    var ret = "";
+    eidx = eidx || sidx + 1;
     for (var i = sidx, shift = (7 - i) * 8, mask = Long.fromInt(255).shiftLeft(shift); i < eidx; i++, shift -= 8, mask = mask.shiftRightUnsigned(8)) {
       var s = aLong.and(mask).shiftRightUnsigned(shift).toString(16);
       if (s.length == 1) {
@@ -228,7 +229,8 @@ goog.scope(function() {
     return this.hashCode;
   };
   types.UUIDfromString = function uuidFromString(s) {
-    var s = s.replace(/-/g, ""), hi64 = null, lo64 = null, hi32 = 0, lo32 = 0, off = 24, i = 0;
+    s = s.replace(/-/g, "");
+    var hi64 = null, lo64 = null, hi32 = 0, lo32 = 0, off = 24, i = 0;
     for (hi32 = 0, i = 0, off = 24; i < 8; i += 2, off -= 8) {
       hi32 |= parseInt(s.substring(i, i + 2), 16) << off;
     }
@@ -274,8 +276,8 @@ goog.scope(function() {
    * @return {(com.cognitect.transit.types.TaggedValue|Uint8Array)}
    */
   types.binary = function(str, decoder) {
-    if ((!decoder || decoder.preferBuffers !== false) && typeof Buffer != "undefined") {
-      return new Buffer(str, "base64");
+    if ((!decoder || decoder.preferBuffers !== false) && typeof goog.global.Buffer != "undefined") {
+      return new goog.global.Buffer(str, "base64");
     } else {
       if (typeof Uint8Array != "undefined") {
         return util.Base64ToUint8(str);
@@ -285,7 +287,7 @@ goog.scope(function() {
     }
   };
   types.isBinary = function(x) {
-    if (typeof Buffer != "undefined" && x instanceof Buffer) {
+    if (typeof goog.global.Buffer != "undefined" && x instanceof goog.global.Buffer) {
       return true;
     } else {
       if (typeof Uint8Array != "undefined" && x instanceof Uint8Array) {
@@ -421,10 +423,10 @@ goog.scope(function() {
     if (x == null) {
       return "null";
     }
-    if (goog.isArray(x)) {
+    if (goog.typeOf(x) === "array") {
       return "[" + x.toString() + "]";
     } else {
-      if (goog.isString(x)) {
+      if (goog.typeOf(x) === "string") {
         return '"' + x + '"';
       } else {
         return x.toString();
@@ -610,7 +612,7 @@ goog.scope(function() {
   types.TransitArrayMap.prototype["delete"] = function(k) {
     this.hashCode = -1;
     if (this.backingMap) {
-      var ret = this.backingMap["delete"](k);
+      var ret = this.backingMap.delete(k);
       this.size = this.backingMap.size;
       return ret;
     } else {
@@ -894,7 +896,7 @@ goog.scope(function() {
   };
   types.TransitSet.prototype["clear"] = types.TransitSet.prototype.clear;
   types.TransitSet.prototype["delete"] = function(value) {
-    var ret = this.map["delete"](value);
+    var ret = this.map.delete(value);
     this.size = this.map.size;
     return ret;
   };
