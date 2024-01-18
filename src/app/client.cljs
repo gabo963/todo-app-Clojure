@@ -74,7 +74,9 @@
     (div :.ui.segment {}
     (h2 name "'s Todos")
     (h2 "Todos:")
-    (ul (map #(ui-todo (comp/computed % {:onDelete delete-todo})) todos))))
+    (ul (map #(ui-todo (comp/computed % {:onDelete delete-todo})) todos))
+    (button :.ui.button {} "Add item")
+    ))
 )
 
 (def ui-lista (comp/factory Lista {:keyfn :lista/id}))
