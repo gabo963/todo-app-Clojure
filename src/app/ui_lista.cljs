@@ -1,15 +1,16 @@
 (ns app.ui-lista
   (:require
     [com.fulcrologic.fulcro.components :as comp :refer [defsc]]
-    [com.fulcrologic.fulcro.dom :as dom :refer [div ul li h1 h2 h3 h4 button input label i s]]
+    [com.fulcrologic.fulcro.dom :refer [div ul li h1 h2 h3 h4 button input label i s]]
     [app.mutations :as api]
     [app.ui-todo :as ui-todo-component]))
 
-(defn- ui-lista-todos [id this todos]
-  (let [delete-todo
-        (fn [todo-id]
-          (comp/transact! this [(api/todo-delete {:lista/id id :todo/id todo-id})]))]
-    (ul (map #(ui-todo-component/ui-todo (comp/computed % {:onDelete delete-todo})) todos))))
+(defn- delete-todo! [this list-id todo-id]
+  (comp/transact! this [(api/todo-delete {:lista/id list-id :todo/id todo-id})]))
+
+(defn- ui-todo [this list-id todo]
+  (ui-todo-component/ui-todo
+    (comp/computed todo {:onDelete (partial delete-todo! this list-id)})))
 
 (defsc Lista [this {:lista/keys [id name todos] :as props}]
   {:query         [:lista/id :lista/name {:lista/todos (comp/get-query ui-todo-component/Todo)}]
@@ -22,7 +23,10 @@
   (div :.ui.segment
     (h2 name "'s Todos")
     (h2 "Todos:")
-    (ui-lista-todos id this todos)
-    (button :.ui.button {} "Add item")))
+    (ul
+      (map #(ui-todo this id %) todos))
+    (button :.ui.button {} "Add item")
+    )
+  )
 
 (def ui-lista (comp/factory Lista {:keyfn :lista/id}))

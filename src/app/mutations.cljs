@@ -17,4 +17,4 @@
       (merge/remove-ident* [:todo/id todo-id] [:lista/id lista-id :lista/todos])
       (fns/dissoc-in [:todo/id todo-id]))))
 
-#_(defmutation todo)
+#_(defmutation todo-add)
