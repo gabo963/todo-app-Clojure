@@ -1,9 +1,9 @@
-(ns app.ui-lista
+(ns app.components.ui-lista
   (:require
     [com.fulcrologic.fulcro.components :as comp :refer [defsc]]
     [com.fulcrologic.fulcro.dom :refer [div ul li h1 h2 h3 h4 button input label i s]]
     [app.mutations :as api]
-    [app.ui-todo :as ui-todo-component]))
+    [app.components.ui-todo :as ui-todo-component]))
 
 (defn- delete-todo! [this list-id todo-id]
   (comp/transact! this [(api/todo-delete {:lista/id list-id :todo/id todo-id})]))

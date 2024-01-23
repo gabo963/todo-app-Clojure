@@ -1,4 +1,4 @@
-(ns app.mutations
+(ns app.model.todo
   (:require [com.fulcrologic.fulcro.mutations :refer [defmutation]]
             [com.fulcrologic.fulcro.algorithms.normalized-state :as fns]
             [com.fulcrologic.fulcro.algorithms.merge :as merge]))
@@ -17,4 +17,5 @@
       (merge/remove-ident* [:todo/id todo-id] [:lista/id lista-id :lista/todos])
       (fns/dissoc-in [:todo/id todo-id]))))
 
-
+; TODO: mutation to add a todo.
+#_(defmutation todo-add)
