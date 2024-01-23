@@ -1,6 +1,4 @@
 goog.provide('com.fulcrologic.fulcro.algorithms.lookup');
-goog.require('cljs.core');
-goog.require('taoensso.timbre');
 /**
  * Get the current value of a particular Fulcro plugin algorithm.  These are set by default and can be overridden
  *   when you create your fulcro app.
@@ -32,12 +30,12 @@ goog.require('taoensso.timbre');
  *   Returns nil if the algorithm is currently undefined.
  *   
  */
-com.fulcrologic.fulcro.algorithms.lookup.app_algorithm = (function com$fulcrologic$fulcro$algorithms$lookup$app_algorithm(p__51103,k){
-var map__51104 = p__51103;
-var map__51104__$1 = (((((!((map__51104 == null))))?(((((map__51104.cljs$lang$protocol_mask$partition0$ & (64))) || ((cljs.core.PROTOCOL_SENTINEL === map__51104.cljs$core$ISeq$))))?true:false):false))?cljs.core.apply.cljs$core$IFn$_invoke$arity$2(cljs.core.hash_map,map__51104):map__51104);
-var app__$1 = map__51104__$1;
-var algorithms = cljs.core.get.cljs$core$IFn$_invoke$arity$2(map__51104__$1,new cljs.core.Keyword("com.fulcrologic.fulcro.application","algorithms","com.fulcrologic.fulcro.application/algorithms",-397334538));
-var temp__5804__auto__ = ((((typeof k === 'string') || ((k instanceof cljs.core.Keyword)) || ((k instanceof cljs.core.Symbol))))?cljs.core.keyword.cljs$core$IFn$_invoke$arity$2("com.fulcrologic.fulcro.algorithm",cljs.core.name(k)):null);
+com.fulcrologic.fulcro.algorithms.lookup.app_algorithm = (function com$fulcrologic$fulcro$algorithms$lookup$app_algorithm(p__58130,k){
+var map__58131 = p__58130;
+var map__58131__$1 = cljs.core.__destructure_map(map__58131);
+var app__$1 = map__58131__$1;
+var algorithms = cljs.core.get.cljs$core$IFn$_invoke$arity$2(map__58131__$1,new cljs.core.Keyword("com.fulcrologic.fulcro.application","algorithms","com.fulcrologic.fulcro.application/algorithms",-397334538));
+var temp__5804__auto__ = ((((typeof k === 'string') || ((((k instanceof cljs.core.Keyword)) || ((k instanceof cljs.core.Symbol))))))?cljs.core.keyword.cljs$core$IFn$_invoke$arity$2("com.fulcrologic.fulcro.algorithm",cljs.core.name(k)):null);
 if(cljs.core.truth_(temp__5804__auto__)){
 var nm = temp__5804__auto__;
 return cljs.core.get_in.cljs$core$IFn$_invoke$arity$3(app__$1,new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword("com.fulcrologic.fulcro.application","algorithms","com.fulcrologic.fulcro.application/algorithms",-397334538),nm], null),null);

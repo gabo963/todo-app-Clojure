@@ -2,32 +2,22 @@ goog.provide("goog.structs.Pool");
 goog.require("goog.Disposable");
 goog.require("goog.structs.Queue");
 goog.require("goog.structs.Set");
-/**
- * @constructor
- * @extends {goog.Disposable}
- * @param {number=} opt_minCount
- * @param {number=} opt_maxCount
- * @template T
- */
 goog.structs.Pool = function(opt_minCount, opt_maxCount) {
   goog.Disposable.call(this);
-  /** @private @type {number} */ this.minCount_ = opt_minCount || 0;
-  /** @private @type {number} */ this.maxCount_ = opt_maxCount || 10;
+  this.minCount_ = opt_minCount || 0;
+  this.maxCount_ = opt_maxCount || 10;
   if (this.minCount_ > this.maxCount_) {
     throw new Error(goog.structs.Pool.ERROR_MIN_MAX_);
   }
-  /** @private @type {goog.structs.Queue<T>} */ this.freeQueue_ = new goog.structs.Queue;
-  /** @private @type {goog.structs.Set<T>} */ this.inUseSet_ = new goog.structs.Set;
-  /** @protected @type {number} */ this.delay = 0;
-  /** @protected @type {?number} */ this.lastAccess = null;
+  this.freeQueue_ = new goog.structs.Queue();
+  this.inUseSet_ = new goog.structs.Set();
+  this.delay = 0;
+  this.lastAccess = null;
   this.adjustForMinMax();
 };
 goog.inherits(goog.structs.Pool, goog.Disposable);
-/** @private @type {string} */ goog.structs.Pool.ERROR_MIN_MAX_ = "[goog.structs.Pool] Min can not be greater than max";
-/** @private @type {string} */ goog.structs.Pool.ERROR_DISPOSE_UNRELEASED_OBJS_ = "[goog.structs.Pool] Objects not released";
-/**
- * @param {number} min
- */
+goog.structs.Pool.ERROR_MIN_MAX_ = "[goog.structs.Pool] Min can not be greater than max";
+goog.structs.Pool.ERROR_DISPOSE_UNRELEASED_OBJS_ = "[goog.structs.Pool] Objects not released";
 goog.structs.Pool.prototype.setMinimumCount = function(min) {
   if (min > this.maxCount_) {
     throw new Error(goog.structs.Pool.ERROR_MIN_MAX_);
@@ -35,9 +25,6 @@ goog.structs.Pool.prototype.setMinimumCount = function(min) {
   this.minCount_ = min;
   this.adjustForMinMax();
 };
-/**
- * @param {number} max
- */
 goog.structs.Pool.prototype.setMaximumCount = function(max) {
   if (max < this.minCount_) {
     throw new Error(goog.structs.Pool.ERROR_MIN_MAX_);
@@ -45,18 +32,12 @@ goog.structs.Pool.prototype.setMaximumCount = function(max) {
   this.maxCount_ = max;
   this.adjustForMinMax();
 };
-/**
- * @param {number} delay
- */
 goog.structs.Pool.prototype.setDelay = function(delay) {
   this.delay = delay;
 };
-/**
- * @return {(T|undefined)}
- */
 goog.structs.Pool.prototype.getObject = function() {
-  var time = goog.now();
-  if (goog.isDefAndNotNull(this.lastAccess) && time - this.lastAccess < this.delay) {
+  var time = Date.now();
+  if (this.lastAccess != null && time - this.lastAccess < this.delay) {
     return undefined;
   }
   var obj = this.removeFreeObject_();
@@ -66,10 +47,6 @@ goog.structs.Pool.prototype.getObject = function() {
   }
   return obj;
 };
-/**
- * @param {T} obj
- * @return {boolean}
- */
 goog.structs.Pool.prototype.releaseObject = function(obj) {
   if (this.inUseSet_.remove(obj)) {
     this.addFreeObject(obj);
@@ -77,10 +54,6 @@ goog.structs.Pool.prototype.releaseObject = function(obj) {
   }
   return false;
 };
-/**
- * @private
- * @return {(T|undefined)}
- */
 goog.structs.Pool.prototype.removeFreeObject_ = function() {
   var obj;
   while (this.getFreeCount() > 0) {
@@ -96,9 +69,6 @@ goog.structs.Pool.prototype.removeFreeObject_ = function() {
   }
   return obj;
 };
-/**
- * @param {T} obj
- */
 goog.structs.Pool.prototype.addFreeObject = function(obj) {
   this.inUseSet_.remove(obj);
   if (this.objectCanBeReused(obj) && this.getCount() < this.maxCount_) {
@@ -116,15 +86,9 @@ goog.structs.Pool.prototype.adjustForMinMax = function() {
     this.disposeObject(freeQueue.dequeue());
   }
 };
-/**
- * @return {T}
- */
 goog.structs.Pool.prototype.createObject = function() {
   return {};
 };
-/**
- * @param {T} obj
- */
 goog.structs.Pool.prototype.disposeObject = function(obj) {
   if (typeof obj.dispose == "function") {
     obj.dispose();
@@ -134,48 +98,28 @@ goog.structs.Pool.prototype.disposeObject = function(obj) {
     }
   }
 };
-/**
- * @param {T} obj
- * @return {boolean}
- */
 goog.structs.Pool.prototype.objectCanBeReused = function(obj) {
   if (typeof obj.canBeReused == "function") {
     return obj.canBeReused();
   }
   return true;
 };
-/**
- * @param {T} obj
- * @return {boolean}
- */
 goog.structs.Pool.prototype.contains = function(obj) {
   return this.freeQueue_.contains(obj) || this.inUseSet_.contains(obj);
 };
-/**
- * @return {number}
- */
 goog.structs.Pool.prototype.getCount = function() {
   return this.freeQueue_.getCount() + this.inUseSet_.getCount();
 };
-/**
- * @return {number}
- */
 goog.structs.Pool.prototype.getInUseCount = function() {
   return this.inUseSet_.getCount();
 };
-/**
- * @return {number}
- */
 goog.structs.Pool.prototype.getFreeCount = function() {
   return this.freeQueue_.getCount();
 };
-/**
- * @return {boolean}
- */
 goog.structs.Pool.prototype.isEmpty = function() {
   return this.freeQueue_.isEmpty() && this.inUseSet_.isEmpty();
 };
-/** @protected @override */ goog.structs.Pool.prototype.disposeInternal = function() {
+goog.structs.Pool.prototype.disposeInternal = function() {
   goog.structs.Pool.superClass_.disposeInternal.call(this);
   if (this.getInUseCount() > 0) {
     throw new Error(goog.structs.Pool.ERROR_DISPOSE_UNRELEASED_OBJS_);

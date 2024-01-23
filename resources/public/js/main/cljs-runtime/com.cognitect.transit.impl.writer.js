@@ -19,12 +19,12 @@ goog.scope(function() {
       return string;
     }
   };
-  /** @constructor */ writer.JSONMarshaller = function Transit$JSONMarshaller(opts) {
+  writer.JSONMarshaller = function Transit$JSONMarshaller(opts) {
     this.opts = opts || {};
     this.preferStrings = this.opts["preferStrings"] != null ? this.opts["preferStrings"] : true;
     this.objectBuilder = this.opts["objectBuilder"] || null;
     this.transform = this.opts["transform"] || null;
-    this.handlers = new handlers.Handlers;
+    this.handlers = new handlers.Handlers();
     var optsHandlers = this.opts["handlers"];
     if (optsHandlers) {
       if (util.isArray(optsHandlers) || !optsHandlers.forEach) {
@@ -91,20 +91,14 @@ goog.scope(function() {
   writer.JSONMarshaller.prototype.emitInteger = function(i, asMapKey, cache) {
     if (i === Infinity) {
       return this.emitString(d.ESC, "z", "INF", asMapKey, cache);
+    } else if (i === -Infinity) {
+      return this.emitString(d.ESC, "z", "-INF", asMapKey, cache);
+    } else if (isNaN(i)) {
+      return this.emitString(d.ESC, "z", "NaN", asMapKey, cache);
+    } else if (asMapKey || typeof i === "string" || i instanceof Long) {
+      return this.emitString(d.ESC, "i", i.toString(), asMapKey, cache);
     } else {
-      if (i === -Infinity) {
-        return this.emitString(d.ESC, "z", "-INF", asMapKey, cache);
-      } else {
-        if (isNaN(i)) {
-          return this.emitString(d.ESC, "z", "NaN", asMapKey, cache);
-        } else {
-          if (asMapKey || typeof i === "string" || i instanceof Long) {
-            return this.emitString(d.ESC, "i", i.toString(), asMapKey, cache);
-          } else {
-            return i;
-          }
-        }
-      }
+      return i;
     }
   };
   writer.JSONMarshaller.prototype.emitDouble = function(d, asMapKey, cache) {
@@ -150,11 +144,6 @@ goog.scope(function() {
       return true;
     }
   };
-  /**
-   * @param em
-   * @param obj
-   * @return {boolean}
-   */
   writer.stringableKeys = function(em, obj) {
     var arr = em.unpack(obj), stringableKeys = true;
     if (arr) {
@@ -165,20 +154,18 @@ goog.scope(function() {
         }
       }
       return stringableKeys;
-    } else {
-      if (obj.keys) {
-        var iter = obj.keys(), step = null;
-        if (iter.next) {
-          step = iter.next();
-          while (!step.done) {
-            stringableKeys = writer.isStringableKey(em, step.value);
-            if (!stringableKeys) {
-              break;
-            }
-            step = iter.next();
+    } else if (obj.keys) {
+      var iter = obj.keys(), step = null;
+      if (iter.next) {
+        step = iter.next();
+        while (!step.done) {
+          stringableKeys = writer.isStringableKey(em, step.value);
+          if (!stringableKeys) {
+            break;
           }
-          return stringableKeys;
+          step = iter.next();
         }
+        return stringableKeys;
       }
     }
     if (obj.forEach) {
@@ -190,10 +177,6 @@ goog.scope(function() {
       throw new Error("Cannot walk keys of object type " + handlers.constructor(obj).name);
     }
   };
-  /**
-   * @param x
-   * @return {boolean}
-   */
   writer.isForeignObject = function(x) {
     if (x.constructor["transit$isObject"]) {
       return true;
@@ -291,18 +274,16 @@ goog.scope(function() {
           return ret;
         }
       }
+    } else if (em.objectBuilder != null) {
+      return em.objectBuilder(obj, function(k) {
+        return writer.marshal(em, k, true, cache);
+      }, function(v) {
+        return writer.marshal(em, v, false, cache);
+      });
     } else {
-      if (em.objectBuilder != null) {
-        return em.objectBuilder(obj, function(k) {
-          return writer.marshal(em, k, true, cache);
-        }, function(v) {
-          return writer.marshal(em, v, false, cache);
-        });
-      } else {
-        var name = handlers.constructor(obj).name, err = new Error("Cannot write " + name);
-        err.data = {obj:obj, type:name};
-        throw err;
-      }
+      var name = handlers.constructor(obj).name, err = new Error("Cannot write " + name);
+      err.data = {obj:obj, type:name};
+      throw err;
     }
   };
   writer.emitTaggedMap = function(em, tag, rep, skip, cache) {
@@ -318,25 +299,23 @@ goog.scope(function() {
     if (tag.length === 1) {
       if (typeof rep === "string") {
         return em.emitString(d.ESC, tag, rep, asMapKey, cache);
-      } else {
-        if (asMapKey || em.preferStrings) {
-          var vh = em.verbose && h.getVerboseHandler();
-          if (vh) {
-            tag = vh.tag(obj);
-            rep = vh.stringRep(obj, vh);
-          } else {
-            rep = h.stringRep(obj, h);
-          }
-          if (rep !== null) {
-            return em.emitString(d.ESC, tag, rep, asMapKey, cache);
-          } else {
-            var err = new Error('Tag "' + tag + '" cannot be encoded as string');
-            err.data = {tag:tag, rep:rep, obj:obj};
-            throw err;
-          }
+      } else if (asMapKey || em.preferStrings) {
+        var vh = em.verbose && h.getVerboseHandler();
+        if (vh) {
+          tag = vh.tag(obj);
+          rep = vh.stringRep(obj, vh);
         } else {
-          return writer.emitTaggedMap(em, tag, rep, asMapKey, cache);
+          rep = h.stringRep(obj, h);
         }
+        if (rep !== null) {
+          return em.emitString(d.ESC, tag, rep, asMapKey, cache);
+        } else {
+          var err = new Error('Tag "' + tag + '" cannot be encoded as string');
+          err.data = {tag:tag, rep:rep, obj:obj};
+          throw err;
+        }
+      } else {
+        return writer.emitTaggedMap(em, tag, rep, asMapKey, cache);
       }
     } else {
       return writer.emitTaggedMap(em, tag, rep, asMapKey, cache);
@@ -403,13 +382,13 @@ goog.scope(function() {
   writer.marshalTop = function(em, obj, asMapKey, cache) {
     return JSON.stringify(writer.marshal(em, writer.maybeQuoted(em, obj), asMapKey, cache));
   };
-  /** @constructor */ writer.Writer = function Transit$Writer(marshaller, options) {
+  writer.Writer = function Transit$Writer(marshaller, options) {
     this._marshaller = marshaller;
     this.options = options || {};
     if (this.options["cache"] === false) {
       this.cache = null;
     } else {
-      this.cache = this.options["cache"] ? this.options["cache"] : new caching.WriteCache;
+      this.cache = this.options["cache"] ? this.options["cache"] : new caching.WriteCache();
     }
   };
   writer.Writer.prototype.marshaller = function() {

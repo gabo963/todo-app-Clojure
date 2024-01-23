@@ -1,30 +1,13 @@
 goog.provide("goog.debug");
 goog.require("goog.array");
 goog.require("goog.debug.errorcontext");
-goog.require("goog.userAgent");
-/** @define {boolean} */ goog.define("goog.debug.LOGGING_ENABLED", goog.DEBUG);
-/** @define {boolean} */ goog.define("goog.debug.FORCE_SLOPPY_STACKS", false);
-/**
- * @param {function(Object)} logFunc
- * @param {boolean=} opt_cancel
- * @param {Object=} opt_target
- * @suppress {strictMissingProperties}
- */
+goog.debug.LOGGING_ENABLED = goog.define("goog.debug.LOGGING_ENABLED", goog.DEBUG);
+goog.debug.FORCE_SLOPPY_STACKS = goog.define("goog.debug.FORCE_SLOPPY_STACKS", false);
+goog.debug.CHECK_FOR_THROWN_EVENT = goog.define("goog.debug.CHECK_FOR_THROWN_EVENT", false);
 goog.debug.catchErrors = function(logFunc, opt_cancel, opt_target) {
   var target = opt_target || goog.global;
   var oldErrorHandler = target.onerror;
   var retVal = !!opt_cancel;
-  if (goog.userAgent.WEBKIT && !goog.userAgent.isVersionOrHigher("535.3")) {
-    retVal = !retVal;
-  }
-  /**
-   * @param {string} message
-   * @param {string} url
-   * @param {number} line
-   * @param {number=} opt_col
-   * @param {Error=} opt_error
-   * @return {boolean}
-   */
   target.onerror = function(message, url, line, opt_col, opt_error) {
     if (oldErrorHandler) {
       oldErrorHandler(message, url, line, opt_col, opt_error);
@@ -33,11 +16,6 @@ goog.debug.catchErrors = function(logFunc, opt_cancel, opt_target) {
     return retVal;
   };
 };
-/**
- * @param {(Object|null|undefined)} obj
- * @param {boolean=} opt_showFn
- * @return {string}
- */
 goog.debug.expose = function(obj, opt_showFn) {
   if (typeof obj == "undefined") {
     return "undefined";
@@ -47,7 +25,7 @@ goog.debug.expose = function(obj, opt_showFn) {
   }
   var str = [];
   for (var x in obj) {
-    if (!opt_showFn && goog.isFunction(obj[x])) {
+    if (!opt_showFn && typeof obj[x] === "function") {
       continue;
     }
     var s = x + " \x3d ";
@@ -60,11 +38,6 @@ goog.debug.expose = function(obj, opt_showFn) {
   }
   return str.join("\n");
 };
-/**
- * @param {*} obj
- * @param {boolean=} opt_showFn
- * @return {string}
- */
 goog.debug.deepExpose = function(obj, opt_showFn) {
   var str = [];
   var uidsToCleanup = [];
@@ -75,46 +48,38 @@ goog.debug.deepExpose = function(obj, opt_showFn) {
       return str.replace(/\n/g, "\n" + space);
     };
     try {
-      if (!goog.isDef(obj)) {
+      if (obj === undefined) {
         str.push("undefined");
-      } else {
-        if (goog.isNull(obj)) {
-          str.push("NULL");
-        } else {
-          if (goog.isString(obj)) {
-            str.push('"' + indentMultiline(obj) + '"');
-          } else {
-            if (goog.isFunction(obj)) {
-              str.push(indentMultiline(String(obj)));
-            } else {
-              if (goog.isObject(obj)) {
-                if (!goog.hasUid(obj)) {
-                  uidsToCleanup.push(obj);
-                }
-                var uid = goog.getUid(obj);
-                if (ancestorUids[uid]) {
-                  str.push("*** reference loop detected (id\x3d" + uid + ") ***");
-                } else {
-                  ancestorUids[uid] = true;
-                  str.push("{");
-                  for (var x in obj) {
-                    if (!opt_showFn && goog.isFunction(obj[x])) {
-                      continue;
-                    }
-                    str.push("\n");
-                    str.push(nestspace);
-                    str.push(x + " \x3d ");
-                    helper(obj[x], nestspace);
-                  }
-                  str.push("\n" + space + "}");
-                  delete ancestorUids[uid];
-                }
-              } else {
-                str.push(obj);
-              }
-            }
-          }
+      } else if (obj === null) {
+        str.push("NULL");
+      } else if (typeof obj === "string") {
+        str.push('"' + indentMultiline(obj) + '"');
+      } else if (typeof obj === "function") {
+        str.push(indentMultiline(String(obj)));
+      } else if (goog.isObject(obj)) {
+        if (!goog.hasUid(obj)) {
+          uidsToCleanup.push(obj);
         }
+        var uid = goog.getUid(obj);
+        if (ancestorUids[uid]) {
+          str.push("*** reference loop detected (id\x3d" + uid + ") ***");
+        } else {
+          ancestorUids[uid] = true;
+          str.push("{");
+          for (var x in obj) {
+            if (!opt_showFn && typeof obj[x] === "function") {
+              continue;
+            }
+            str.push("\n");
+            str.push(nestspace);
+            str.push(x + " \x3d ");
+            helper(obj[x], nestspace);
+          }
+          str.push("\n" + space + "}");
+          delete ancestorUids[uid];
+        }
+      } else {
+        str.push(obj);
       }
     } catch (e) {
       str.push("*** " + e + " ***");
@@ -126,14 +91,10 @@ goog.debug.deepExpose = function(obj, opt_showFn) {
   }
   return str.join("");
 };
-/**
- * @param {Array<?>} arr
- * @return {string}
- */
 goog.debug.exposeArray = function(arr) {
   var str = [];
   for (var i = 0; i < arr.length; i++) {
-    if (goog.isArray(arr[i])) {
+    if (Array.isArray(arr[i])) {
       str.push(goog.debug.exposeArray(arr[i]));
     } else {
       str.push(arr[i]);
@@ -141,17 +102,12 @@ goog.debug.exposeArray = function(arr) {
   }
   return "[ " + str.join(", ") + " ]";
 };
-/**
- * @param {*} err
- * @return {{message:(?|undefined),name:(?|undefined),lineNumber:(?|undefined),fileName:(?|undefined),stack:(?|undefined)}}
- * @suppress {strictMissingProperties}
- */
 goog.debug.normalizeErrorObject = function(err) {
   var href = goog.getObjectByName("window.location.href");
   if (err == null) {
     err = 'Unknown Error of type "null/undefined"';
   }
-  if (goog.isString(err)) {
+  if (typeof err === "string") {
     return {"message":err, "name":"Unknown error", "lineNumber":"Not available", "fileName":href, "stack":"Not available"};
   }
   var lineNumber, fileName;
@@ -164,29 +120,58 @@ goog.debug.normalizeErrorObject = function(err) {
   }
   try {
     fileName = err.fileName || err.filename || err.sourceURL || goog.global["$googDebugFname"] || href;
-  } catch (e$2) {
+  } catch (e) {
     fileName = "Not available";
     threwError = true;
   }
+  var stack = goog.debug.serializeErrorStack_(err);
   if (threwError || !err.lineNumber || !err.fileName || !err.stack || !err.message || !err.name) {
     var message = err.message;
     if (message == null) {
       if (err.constructor && err.constructor instanceof Function) {
         var ctorName = err.constructor.name ? err.constructor.name : goog.debug.getFunctionName(err.constructor);
         message = 'Unknown Error of type "' + ctorName + '"';
+        if (goog.debug.CHECK_FOR_THROWN_EVENT && ctorName == "Event") {
+          try {
+            message = message + ' with Event.type "' + (err.type || "") + '"';
+          } catch (e) {
+          }
+        }
       } else {
         message = "Unknown Error of unknown type";
       }
+      if (typeof err.toString === "function" && Object.prototype.toString !== err.toString) {
+        message += ": " + err.toString();
+      }
     }
-    return {"message":message, "name":err.name || "UnknownError", "lineNumber":lineNumber, "fileName":fileName, "stack":err.stack || "Not available"};
+    return {"message":message, "name":err.name || "UnknownError", "lineNumber":lineNumber, "fileName":fileName, "stack":stack || "Not available"};
   }
-  return (/** @type {?} */ (err));
+  err.stack = stack;
+  return {"message":err.message, "name":err.name, "lineNumber":err.lineNumber, "fileName":err.fileName, "stack":err.stack};
 };
-/**
- * @param {*} err
- * @param {string=} opt_message
- * @return {!Error}
- */
+goog.debug.serializeErrorStack_ = function(e, seen) {
+  if (!seen) {
+    seen = {};
+  }
+  seen[goog.debug.serializeErrorAsKey_(e)] = true;
+  var stack = e["stack"] || "";
+  var cause = e.cause;
+  if (cause && !seen[goog.debug.serializeErrorAsKey_(cause)]) {
+    stack += "\nCaused by: ";
+    if (!cause.stack || cause.stack.indexOf(cause.toString()) != 0) {
+      stack += typeof cause === "string" ? cause : cause.message + "\n";
+    }
+    stack += goog.debug.serializeErrorStack_(cause, seen);
+  }
+  return stack;
+};
+goog.debug.serializeErrorAsKey_ = function(e) {
+  var keyPrefix = "";
+  if (typeof e.toString === "function") {
+    keyPrefix = "" + e;
+  }
+  return keyPrefix + e["stack"];
+};
 goog.debug.enhanceError = function(err, opt_message) {
   var error;
   if (!(err instanceof Error)) {
@@ -209,11 +194,6 @@ goog.debug.enhanceError = function(err, opt_message) {
   }
   return error;
 };
-/**
- * @param {*} err
- * @param {!Object<string,string>=} opt_context
- * @return {!Error}
- */
 goog.debug.enhanceErrorWithContext = function(err, opt_context) {
   var error = goog.debug.enhanceError(err);
   if (opt_context) {
@@ -223,11 +203,6 @@ goog.debug.enhanceErrorWithContext = function(err, opt_context) {
   }
   return error;
 };
-/**
- * @param {number=} opt_depth
- * @return {string}
- * @suppress {es5Strict}
- */
 goog.debug.getStacktraceSimple = function(opt_depth) {
   if (!goog.debug.FORCE_SLOPPY_STACKS) {
     var stack = goog.debug.getNativeStackTrace_(goog.debug.getStacktraceSimple);
@@ -260,14 +235,9 @@ goog.debug.getStacktraceSimple = function(opt_depth) {
   }
   return sb.join("");
 };
-/** @type {number} */ goog.debug.MAX_STACK_DEPTH = 50;
-/**
- * @private
- * @param {Function} fn
- * @return {?string}
- */
+goog.debug.MAX_STACK_DEPTH = 50;
 goog.debug.getNativeStackTrace_ = function(fn) {
-  var tempErr = new Error;
+  var tempErr = new Error();
   if (Error.captureStackTrace) {
     Error.captureStackTrace(tempErr, fn);
     return String(tempErr.stack);
@@ -284,11 +254,6 @@ goog.debug.getNativeStackTrace_ = function(fn) {
   }
   return null;
 };
-/**
- * @param {?Function=} fn
- * @return {string}
- * @suppress {es5Strict}
- */
 goog.debug.getStacktrace = function(fn) {
   var stack;
   if (!goog.debug.FORCE_SLOPPY_STACKS) {
@@ -300,75 +265,60 @@ goog.debug.getStacktrace = function(fn) {
   }
   return stack;
 };
-/**
- * @private
- * @param {?Function} fn
- * @param {Array<!Function>} visited
- * @return {string}
- * @suppress {es5Strict}
- */
 goog.debug.getStacktraceHelper_ = function(fn, visited) {
   var sb = [];
   if (goog.array.contains(visited, fn)) {
     sb.push("[...circular reference...]");
-  } else {
-    if (fn && visited.length < goog.debug.MAX_STACK_DEPTH) {
-      sb.push(goog.debug.getFunctionName(fn) + "(");
-      var args = fn.arguments;
-      for (var i = 0; args && i < args.length; i++) {
-        if (i > 0) {
-          sb.push(", ");
-        }
-        var argDesc;
-        var arg = args[i];
-        switch(typeof arg) {
-          case "object":
-            argDesc = arg ? "object" : "null";
-            break;
-          case "string":
-            argDesc = arg;
-            break;
-          case "number":
-            argDesc = String(arg);
-            break;
-          case "boolean":
-            argDesc = arg ? "true" : "false";
-            break;
-          case "function":
-            argDesc = goog.debug.getFunctionName(arg);
-            argDesc = argDesc ? argDesc : "[fn]";
-            break;
-          case "undefined":
-          default:
-            argDesc = typeof arg;
-            break;
-        }
-        if (argDesc.length > 40) {
-          argDesc = argDesc.substr(0, 40) + "...";
-        }
-        sb.push(argDesc);
+  } else if (fn && visited.length < goog.debug.MAX_STACK_DEPTH) {
+    sb.push(goog.debug.getFunctionName(fn) + "(");
+    var args = fn.arguments;
+    for (var i = 0; args && i < args.length; i++) {
+      if (i > 0) {
+        sb.push(", ");
       }
-      visited.push(fn);
-      sb.push(")\n");
-      try {
-        sb.push(goog.debug.getStacktraceHelper_(fn.caller, visited));
-      } catch (e) {
-        sb.push("[exception trying to get caller]\n");
+      var argDesc;
+      var arg = args[i];
+      switch(typeof arg) {
+        case "object":
+          argDesc = arg ? "object" : "null";
+          break;
+        case "string":
+          argDesc = arg;
+          break;
+        case "number":
+          argDesc = String(arg);
+          break;
+        case "boolean":
+          argDesc = arg ? "true" : "false";
+          break;
+        case "function":
+          argDesc = goog.debug.getFunctionName(arg);
+          argDesc = argDesc ? argDesc : "[fn]";
+          break;
+        case "undefined":
+        default:
+          argDesc = typeof arg;
+          break;
       }
-    } else {
-      if (fn) {
-        sb.push("[...long stack...]");
-      } else {
-        sb.push("[end]");
+      if (argDesc.length > 40) {
+        argDesc = argDesc.substr(0, 40) + "...";
       }
+      sb.push(argDesc);
     }
+    visited.push(fn);
+    sb.push(")\n");
+    try {
+      sb.push(goog.debug.getStacktraceHelper_(fn.caller, visited));
+    } catch (e) {
+      sb.push("[exception trying to get caller]\n");
+    }
+  } else if (fn) {
+    sb.push("[...long stack...]");
+  } else {
+    sb.push("[end]");
   }
   return sb.join("");
 };
-/**
- * @param {Function} fn
- * @return {string}
- */
 goog.debug.getFunctionName = function(fn) {
   if (goog.debug.fnNameCache_[fn]) {
     return goog.debug.fnNameCache_[fn];
@@ -385,43 +335,22 @@ goog.debug.getFunctionName = function(fn) {
   }
   return goog.debug.fnNameCache_[functionSource];
 };
-/**
- * @param {string} string
- * @return {string}
- */
 goog.debug.makeWhitespaceVisible = function(string) {
   return string.replace(/ /g, "[_]").replace(/\f/g, "[f]").replace(/\n/g, "[n]\n").replace(/\r/g, "[r]").replace(/\t/g, "[t]");
 };
-/**
- * @param {*} value
- * @return {string}
- */
 goog.debug.runtimeType = function(value) {
   if (value instanceof Function) {
     return value.displayName || value.name || "unknown type name";
+  } else if (value instanceof Object) {
+    return value.constructor.displayName || value.constructor.name || Object.prototype.toString.call(value);
   } else {
-    if (value instanceof Object) {
-      return /** @type {string} */ (value.constructor.displayName) || value.constructor.name || Object.prototype.toString.call(value);
-    } else {
-      return value === null ? "null" : typeof value;
-    }
+    return value === null ? "null" : typeof value;
   }
 };
-/** @private @type {Object} */ goog.debug.fnNameCache_ = {};
-/**
- * @private
- * @param {T} arg
- * @return {T}
- * @template T
- */
+goog.debug.fnNameCache_ = {};
 goog.debug.freezeInternal_ = goog.DEBUG && Object.freeze || function(arg) {
   return arg;
 };
-/**
- * @param {T} arg
- * @return {T}
- * @template T
- */
 goog.debug.freeze = function(arg) {
   return {valueOf:function() {
     return goog.debug.freezeInternal_(arg);

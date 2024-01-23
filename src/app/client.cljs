@@ -9,7 +9,7 @@
 
 (defsc Root [this {:root/keys [lista]}]
   {:query         [{:root/lista (comp/get-query ui-lista-component/Lista)}]
-   :initial-state {:root/lista {:id 1 :name "Gabriel"}}}
+   :initial-state {:root/lista {}}}
   (div :.ui.segment {}
     (h1 "Todo List")
     (if lista
@@ -17,7 +17,10 @@
       (h1 "Loading..."))))
 
 (defonce APP (app/fulcro-app {:remotes          {:remote (http/fulcro-http-remote {})}
-                              :client-did-mount (fn [app] (js/console.log "Did mount"))}))
+                              :client-did-mount (fn [app]
+                                                  (js/console.log "Did mount")
+                                                  (df/load! app [:lista/id 1] ui-lista-component/Lista
+                                                    {:target [:root/lista]}))}))
 
 (defn ^:export init []
   (app/mount! APP Root "app"))

@@ -14,12 +14,7 @@
 
 (defsc Lista [this {:lista/keys [id name todos] :as props}]
   {:query         [:lista/id :lista/name {:lista/todos (comp/get-query ui-todo-component/Todo)}]
-   :ident         (fn [] [:lista/id (:lista/id props)])
-   :initial-state {:lista/id    :param/id
-                   :lista/name  :param/name
-                   :lista/todos [{:id 1}
-                                 {:id 2}
-                                 {:id 3}]}}
+   :ident         (fn [] [:lista/id (:lista/id props)])}
   (div :.ui.segment
     (h2 name "'s Todos")
     (h2 "Todos:")

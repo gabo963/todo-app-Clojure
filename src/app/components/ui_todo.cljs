@@ -29,10 +29,7 @@
 
 (defsc Todo [this {:todo/keys [id done text] :as props} {:keys [onDelete]}]
   {:query         [:todo/id :todo/done :todo/text]
-   :ident         (fn [] [:todo/id (:todo/id props)])
-   :initial-state {:todo/id   :param/id
-                   :todo/done false
-                   :todo/text ""}}
+   :ident         (fn [] [:todo/id (:todo/id props)])}
   (div :.ui.grid
     (div :.column
       (ui-todo-checkbox this id done))

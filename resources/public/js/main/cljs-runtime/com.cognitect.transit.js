@@ -6,20 +6,15 @@ goog.require("com.cognitect.transit.types");
 goog.require("com.cognitect.transit.eq");
 goog.require("com.cognitect.transit.impl.decoder");
 goog.require("com.cognitect.transit.caching");
-/** @define {boolean} */ var TRANSIT_DEV = true;
-/** @define {boolean} */ var TRANSIT_NODE_TARGET = false;
-/** @define {boolean} */ var TRANSIT_BROWSER_TARGET = false;
-/** @define {boolean} */ var TRANSIT_BROWSER_AMD_TARGET = false;
+var TRANSIT_DEV = true;
+var TRANSIT_NODE_TARGET = false;
+var TRANSIT_BROWSER_TARGET = false;
+var TRANSIT_BROWSER_AMD_TARGET = false;
 goog.scope(function() {
   var transit = com.cognitect.transit;
   var util = com.cognitect.transit.util, reader = com.cognitect.transit.impl.reader, writer = com.cognitect.transit.impl.writer, decoder = com.cognitect.transit.impl.decoder, types = com.cognitect.transit.types, eq = com.cognitect.transit.eq, caching = com.cognitect.transit.caching;
-  /** @typedef {(Map|com.cognitect.transit.types.TransitArrayMap|com.cognitect.transit.types.TransitMap)} */ transit.MapLike;
-  /** @typedef {(Set|com.cognitect.transit.types.TransitSet)} */ transit.SetLike;
-  /**
-   * @param {string=} type
-   * @param {Object=} opts
-   * @return {com.cognitect.transit.impl.reader.Reader}
-   */
+  transit.MapLike;
+  transit.SetLike;
   transit.reader = function(type, opts) {
     if (type === "json" || type === "json-verbose" || type == null) {
       type = "json";
@@ -29,11 +24,6 @@ goog.scope(function() {
       throw new Error("Cannot create reader of type " + type);
     }
   };
-  /**
-   * @param {string=} type
-   * @param {Object=} opts
-   * @return {com.cognitect.transit.impl.writer.Writer}
-   */
   transit.writer = function(type, opts) {
     if (type === "json" || type === "json-verbose" || type == null) {
       if (type === "json-verbose") {
@@ -50,206 +40,58 @@ goog.scope(function() {
       throw err;
     }
   };
-  /**
-   * @param {Object} obj
-   * @return {Object}
-   */
   transit.makeWriteHandler = function(obj) {
-    /** @constructor */ var Handler = function() {
+    var Handler = function() {
     };
     Handler.prototype.tag = obj["tag"];
     Handler.prototype.rep = obj["rep"];
     Handler.prototype.stringRep = obj["stringRep"];
     Handler.prototype.getVerboseHandler = obj["getVerboseHandler"];
-    return new Handler;
+    return new Handler();
   };
   transit.makeBuilder = function(obj) {
-    /** @constructor */ var Builder = function() {
+    var Builder = function() {
     };
     Builder.prototype.init = obj["init"];
     Builder.prototype.add = obj["add"];
     Builder.prototype.finalize = obj["finalize"];
     Builder.prototype.fromArray = obj["fromArray"];
-    return new Builder;
+    return new Builder();
   };
-  /**
-   * @param {(number|string)} x
-   * @return {Date}
-   */
   transit.date = types.date;
-  /**
-   * @param {(number|string)} s
-   * @return {(number|goog.math.Long)}
-   */
   transit.integer = types.intValue;
-  /**
-   * @param {*} x
-   * @return {boolean}
-   */
   transit.isInteger = types.isInteger;
-  /**
-   * @param {string} s
-   * @return {com.cognitect.transit.types.UUID}
-   */
   transit.uuid = types.uuid;
-  /**
-   * @param {*} x
-   * @return {boolean}
-   */
   transit.isUUID = types.isUUID;
-  /**
-   * @param {string} s
-   * @return {com.cognitect.transit.types.TaggedValue}
-   */
   transit.bigInt = types.bigInteger;
-  /**
-   * @param {*} x
-   * @return {boolean}
-   */
   transit.isBigInt = types.isBigInteger;
-  /**
-   * @param {string} s
-   * @return {com.cognitect.transit.types.TaggedValue}
-   */
   transit.bigDec = types.bigDecimalValue;
-  /**
-   * @param {*} x
-   * @return {boolean}
-   */
   transit.isBigDec = types.isBigDecimal;
-  /**
-   * @param {string} name
-   * @return {com.cognitect.transit.types.Keyword}
-   */
   transit.keyword = types.keyword;
-  /**
-   * @param {*} x
-   * @return {boolean}
-   */
   transit.isKeyword = types.isKeyword;
-  /**
-   * @param {string} name
-   * @return {com.cognitect.transit.types.Symbol}
-   */
   transit.symbol = types.symbol;
-  /**
-   * @param {*} x
-   * @return {boolean}
-   */
   transit.isSymbol = types.isSymbol;
-  /**
-   * @param {string} s
-   * @param {*=} decoder
-   * @return {(com.cognitect.transit.types.TaggedValue|Uint8Array)}
-   */
   transit.binary = types.binary;
-  /**
-   * @param {*} x
-   * @return {Boolean}
-   */
   transit.isBinary = types.isBinary;
-  /**
-   * @param {string} s
-   * @return {com.cognitect.transit.types.TaggedValue}
-   */
   transit.uri = types.uri;
-  /**
-   * @param {*} x
-   * @return {Boolean}
-   */
   transit.isURI = types.isURI;
-  /**
-   * @param {Array=} xs
-   * @return {com.cognitect.transit.MapLike}
-   */
   transit.map = types.map;
-  /**
-   * @param {*} x
-   * @return {boolean}
-   */
   transit.isMap = types.isMap;
-  /**
-   * @param {Array=} xs
-   * @return {com.cognitect.transit.SetLike}
-   */
   transit.set = types.set;
-  /**
-   * @param {*} x
-   * @return {boolean}
-   */
   transit.isSet = types.isSet;
-  /**
-   * @param {Array} xs
-   * @return {com.cognitect.transit.types.TaggedValue}
-   */
   transit.list = types.list;
-  /**
-   * @param {*} x
-   * @return {boolean}
-   */
   transit.isList = types.isList;
-  /**
-   * @param {*} x
-   * @return {com.cognitect.transit.types.TaggedValue}
-   */
   transit.quoted = types.quoted;
-  /**
-   * @param {*} x
-   * @return {boolean}
-   */
   transit.isQuoted = types.isQuoted;
-  /**
-   * @param {string} tag
-   * @param {*} value
-   * @return {com.cognitect.transit.types.TaggedValue}
-   */
   transit.tagged = types.taggedValue;
-  /**
-   * @param {*} x
-   * @return {boolean}
-   */
   transit.isTaggedValue = types.isTaggedValue;
-  /**
-   * @param {com.cognitect.transit.MapLike} m
-   * @return {Object}
-   */
   transit.link = types.link;
-  /**
-   * @param {*} x
-   * @return {boolean}
-   */
   transit.isLink = types.isLink;
-  /**
-   * @param {*} x
-   * @return {number}
-   */
   transit.hash = eq.hashCode;
-  /**
-   * @param {(Object|com.cognitect.transit.MapLike)} x
-   * @return {number}
-   */
   transit.hashMapLike = eq.hashMapLike;
-  /**
-   * @param {Object} x
-   * @return {number}
-   */
   transit.hashArrayLike = eq.hashArrayLike;
-  /**
-   * @param {*} x
-   * @param {*} y
-   * @return {Boolean}
-   */
   transit.equals = eq.equals;
-  /**
-   * @param {*} x
-   * @param {{hashCode:function(),equals:function(*,*):boolean}} A
-   * @return {*}
-   */
   transit.extendToEQ = eq.extendToEQ;
-  /**
-   * @param {com.cognitect.transit.MapLike} m
-   * @return {Object}
-   */
   transit.mapToObject = function(m) {
     var ret = {};
     m.forEach(function(v, k) {
@@ -261,10 +103,6 @@ goog.scope(function() {
     });
     return ret;
   };
-  /**
-   * @param {Object} obj
-   * @return {com.cognitect.transit.MapLike}
-   */
   transit.objectToMap = function(obj) {
     var ret = transit.map();
     for (var p in obj) {
@@ -274,18 +112,8 @@ goog.scope(function() {
     }
     return ret;
   };
-  /**
-   * @param {Object} opts
-   * @return {com.cognitect.transit.impl.decoder.Decoder}
-   */
   transit.decoder = decoder.decoder;
-  /**
-   * @return {com.cognitect.transit.caching.ReadCache}
-   */
   transit.readCache = caching.readCache;
-  /**
-   * @return {com.cognitect.transit.caching.WriteCache}
-   */
   transit.writeCache = caching.writeCache;
   transit.UUIDfromString = types.UUIDfromString;
   transit.randomUUID = util.randomUUID;

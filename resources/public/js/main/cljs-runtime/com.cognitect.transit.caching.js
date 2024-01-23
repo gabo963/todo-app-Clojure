@@ -2,11 +2,11 @@ goog.provide("com.cognitect.transit.caching");
 goog.require("com.cognitect.transit.delimiters");
 goog.scope(function() {
   var caching = com.cognitect.transit.caching, d = com.cognitect.transit.delimiters;
-  /** @const @type {number} */ caching.MIN_SIZE_CACHEABLE = 3;
-  /** @const @type {number} */ caching.BASE_CHAR_IDX = 48;
-  /** @const @type {number} */ caching.CACHE_CODE_DIGITS = 44;
-  /** @const @type {number} */ caching.MAX_CACHE_ENTRIES = caching.CACHE_CODE_DIGITS * caching.CACHE_CODE_DIGITS;
-  /** @const @type {number} */ caching.MAX_CACHE_SIZE = 4096;
+  caching.MIN_SIZE_CACHEABLE = 3;
+  caching.BASE_CHAR_IDX = 48;
+  caching.CACHE_CODE_DIGITS = 44;
+  caching.MAX_CACHE_ENTRIES = caching.CACHE_CODE_DIGITS * caching.CACHE_CODE_DIGITS;
+  caching.MAX_CACHE_SIZE = 4096;
   caching.isCacheable = function(string, asMapKey) {
     if (string.length > caching.MIN_SIZE_CACHEABLE) {
       if (asMapKey) {
@@ -31,7 +31,7 @@ goog.scope(function() {
       return d.SUB + String.fromCharCode(hi + caching.BASE_CHAR_IDX) + loc;
     }
   };
-  /** @constructor */ caching.WriteCache = function() {
+  caching.WriteCache = function() {
     this.idx = 0;
     this.gen = 0;
     this.cacheSize = 0;
@@ -43,25 +43,21 @@ goog.scope(function() {
         this.clear();
         this.gen = 0;
         this.cache = {};
-      } else {
-        if (this.idx === caching.MAX_CACHE_ENTRIES) {
-          this.clear();
-        }
+      } else if (this.idx === caching.MAX_CACHE_ENTRIES) {
+        this.clear();
       }
       var entry = this.cache[string];
       if (entry == null) {
         this.cache[string] = [caching.idxToCode(this.idx), this.gen];
         this.idx++;
         return string;
+      } else if (entry[1] != this.gen) {
+        entry[1] = this.gen;
+        entry[0] = caching.idxToCode(this.idx);
+        this.idx++;
+        return string;
       } else {
-        if (entry[1] != this.gen) {
-          entry[1] = this.gen;
-          entry[0] = caching.idxToCode(this.idx);
-          this.idx++;
-          return string;
-        } else {
-          return entry[0];
-        }
+        return entry[0];
       }
     } else {
       return string;
@@ -72,7 +68,7 @@ goog.scope(function() {
     this.gen++;
   };
   caching.writeCache = function() {
-    return new caching.WriteCache;
+    return new caching.WriteCache();
   };
   caching.isCacheCode = function(string) {
     return string.charAt(0) === d.SUB && string.charAt(1) !== " ";
@@ -85,7 +81,7 @@ goog.scope(function() {
       return hi + lo;
     }
   };
-  /** @constructor */ caching.ReadCache = function Transit$ReadCache() {
+  caching.ReadCache = function Transit$ReadCache() {
     this.idx = 0;
     this.cache = [];
   };
@@ -104,7 +100,7 @@ goog.scope(function() {
     this.idx = 0;
   };
   caching.readCache = function() {
-    return new caching.ReadCache;
+    return new caching.ReadCache();
   };
 });
 

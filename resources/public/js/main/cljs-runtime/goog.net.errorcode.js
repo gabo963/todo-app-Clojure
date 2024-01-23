@@ -1,9 +1,5 @@
 goog.provide("goog.net.ErrorCode");
-/** @enum {number} */ goog.net.ErrorCode = {NO_ERROR:0, ACCESS_DENIED:1, FILE_NOT_FOUND:2, FF_SILENT_ERROR:3, CUSTOM_ERROR:4, EXCEPTION:5, HTTP_ERROR:6, ABORT:7, TIMEOUT:8, OFFLINE:9};
-/**
- * @param {goog.net.ErrorCode} errorCode
- * @return {string}
- */
+goog.net.ErrorCode = {NO_ERROR:0, ACCESS_DENIED:1, FILE_NOT_FOUND:2, FF_SILENT_ERROR:3, CUSTOM_ERROR:4, EXCEPTION:5, HTTP_ERROR:6, ABORT:7, TIMEOUT:8, OFFLINE:9,};
 goog.net.ErrorCode.getDebugMessage = function(errorCode) {
   switch(errorCode) {
     case goog.net.ErrorCode.NO_ERROR:

@@ -1,35 +1,22 @@
 goog.provide("goog.structs.PriorityPool");
 goog.require("goog.structs.Pool");
 goog.require("goog.structs.PriorityQueue");
-/**
- * @constructor
- * @extends {goog.structs.Pool<VALUE>}
- * @param {number=} opt_minCount
- * @param {number=} opt_maxCount
- * @template VALUE
- */
 goog.structs.PriorityPool = function(opt_minCount, opt_maxCount) {
-  /** @private @type {(number|undefined)} */ this.delayTimeout_ = undefined;
-  /** @private @type {goog.structs.PriorityQueue<VALUE>} */ this.requestQueue_ = new goog.structs.PriorityQueue;
+  this.delayTimeout_ = undefined;
+  this.requestQueue_ = new goog.structs.PriorityQueue();
   goog.structs.Pool.call(this, opt_minCount, opt_maxCount);
 };
 goog.inherits(goog.structs.PriorityPool, goog.structs.Pool);
-/** @private @type {number} */ goog.structs.PriorityPool.DEFAULT_PRIORITY_ = 100;
-/** @override */ goog.structs.PriorityPool.prototype.setDelay = function(delay) {
+goog.structs.PriorityPool.DEFAULT_PRIORITY_ = 100;
+goog.structs.PriorityPool.prototype.setDelay = function(delay) {
   goog.structs.PriorityPool.base(this, "setDelay", delay);
-  if (!goog.isDefAndNotNull(this.lastAccess)) {
+  if (this.lastAccess == null) {
     return;
   }
   goog.global.clearTimeout(this.delayTimeout_);
-  this.delayTimeout_ = goog.global.setTimeout(goog.bind(this.handleQueueRequests_, this), this.delay + this.lastAccess - goog.now());
+  this.delayTimeout_ = goog.global.setTimeout(goog.bind(this.handleQueueRequests_, this), this.delay + this.lastAccess - Date.now());
   this.handleQueueRequests_();
 };
-/**
- * @param {Function=} opt_callback
- * @param {number=} opt_priority
- * @return {(VALUE|undefined)}
- * @override
- */
 goog.structs.PriorityPool.prototype.getObject = function(opt_callback, opt_priority) {
   if (!opt_callback) {
     var result = goog.structs.PriorityPool.base(this, "getObject");
@@ -38,12 +25,12 @@ goog.structs.PriorityPool.prototype.getObject = function(opt_callback, opt_prior
     }
     return result;
   }
-  var priority = goog.isDef(opt_priority) ? opt_priority : goog.structs.PriorityPool.DEFAULT_PRIORITY_;
+  var priority = opt_priority !== undefined ? opt_priority : goog.structs.PriorityPool.DEFAULT_PRIORITY_;
   this.requestQueue_.enqueue(priority, opt_callback);
   this.handleQueueRequests_();
   return undefined;
 };
-/** @private */ goog.structs.PriorityPool.prototype.handleQueueRequests_ = function() {
+goog.structs.PriorityPool.prototype.handleQueueRequests_ = function() {
   var requestQueue = this.requestQueue_;
   while (requestQueue.getCount() > 0) {
     var obj = this.getObject();
@@ -55,19 +42,15 @@ goog.structs.PriorityPool.prototype.getObject = function(opt_callback, opt_prior
     }
   }
 };
-/**
- * @param {VALUE} obj
- * @override
- */
 goog.structs.PriorityPool.prototype.addFreeObject = function(obj) {
   goog.structs.PriorityPool.superClass_.addFreeObject.call(this, obj);
   this.handleQueueRequests_();
 };
-/** @override */ goog.structs.PriorityPool.prototype.adjustForMinMax = function() {
+goog.structs.PriorityPool.prototype.adjustForMinMax = function() {
   goog.structs.PriorityPool.superClass_.adjustForMinMax.call(this);
   this.handleQueueRequests_();
 };
-/** @override */ goog.structs.PriorityPool.prototype.disposeInternal = function() {
+goog.structs.PriorityPool.prototype.disposeInternal = function() {
   goog.structs.PriorityPool.superClass_.disposeInternal.call(this);
   goog.global.clearTimeout(this.delayTimeout_);
   this.requestQueue_.clear();

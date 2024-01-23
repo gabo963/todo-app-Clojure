@@ -20,7 +20,7 @@ goog.scope(function() {
       return goog.typeOf(obj) === "array";
     };
   }
-  /** @const @type {string} */ util.chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/\x3d";
+  util.chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/\x3d";
   util.randInt = function(ub) {
     return Math.round(Math.random() * ub);
   };
@@ -47,9 +47,6 @@ goog.scope(function() {
       return output;
     }
   };
-  /**
-   * @suppress {uselessCode}
-   */
   util.atob = function(input) {
     if (typeof atob != "undefined") {
       return atob(input);

@@ -2,12 +2,7 @@ goog.provide("goog.async.run");
 goog.require("goog.async.WorkQueue");
 goog.require("goog.async.nextTick");
 goog.require("goog.async.throwException");
-/** @define {boolean} */ goog.define("goog.ASSUME_NATIVE_PROMISE", false);
-/**
- * @param {function(this:THIS)} callback
- * @param {THIS=} opt_context
- * @template THIS
- */
+goog.ASSUME_NATIVE_PROMISE = goog.define("goog.ASSUME_NATIVE_PROMISE", false);
 goog.async.run = function(callback, opt_context) {
   if (!goog.async.run.schedule_) {
     goog.async.run.initializeRunner_();
@@ -18,7 +13,7 @@ goog.async.run = function(callback, opt_context) {
   }
   goog.async.run.workQueue_.add(callback, opt_context);
 };
-/** @private */ goog.async.run.initializeRunner_ = function() {
+goog.async.run.initializeRunner_ = function() {
   if (goog.ASSUME_NATIVE_PROMISE || goog.global.Promise && goog.global.Promise.resolve) {
     var promise = goog.global.Promise.resolve(undefined);
     goog.async.run.schedule_ = function() {
@@ -30,9 +25,6 @@ goog.async.run = function(callback, opt_context) {
     };
   }
 };
-/**
- * @param {function(function())=} opt_realSetTimeout
- */
 goog.async.run.forceNextTick = function(opt_realSetTimeout) {
   goog.async.run.schedule_ = function() {
     goog.async.nextTick(goog.async.run.processWorkQueue);
@@ -41,13 +33,16 @@ goog.async.run.forceNextTick = function(opt_realSetTimeout) {
     }
   };
 };
-/** @private @type {function()} */ goog.async.run.schedule_;
-/** @private @type {boolean} */ goog.async.run.workQueueScheduled_ = false;
-/** @private @type {!goog.async.WorkQueue} */ goog.async.run.workQueue_ = new goog.async.WorkQueue;
+goog.async.run.schedule_;
+goog.async.run.workQueueScheduled_ = false;
+goog.async.run.workQueue_ = new goog.async.WorkQueue();
 if (goog.DEBUG) {
   goog.async.run.resetQueue = function() {
     goog.async.run.workQueueScheduled_ = false;
-    goog.async.run.workQueue_ = new goog.async.WorkQueue;
+    goog.async.run.workQueue_ = new goog.async.WorkQueue();
+  };
+  goog.async.run.resetSchedulerForTest = function() {
+    goog.async.run.initializeRunner_();
   };
 }
 goog.async.run.processWorkQueue = function() {

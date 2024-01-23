@@ -1,5 +1,4 @@
 goog.provide('com.fulcrologic.fulcro.dom.events');
-goog.require('cljs.core');
 /**
  * Calls .stopPropagation on the given event. Safe to use in CLJC files.
  */
