@@ -22,4 +22,16 @@
   {::pc/output [{:all-todos [:todo/id]}]}
   {:all-todos (mapv (fn [i] {:todo/id i}) (keys @todos))})
 
-(def resolvers [todo-resolver all-todos-resolver])
+(pc/defmutation todo-change-text [env {:todo/keys [id text]}]
+  {::pc/params [:todo/id :todo/text]
+   ::pc/output []}
+  (swap! todos assoc-in [id :todo/text] text )
+  {})
+
+(pc/defmutation todo-change-done [env {:todo/keys [id done]}]
+  {::pc/params [:todo/id :todo/done]
+  ::pc/output []}
+  (swap! todos assoc-in [id :todo/done] done)
+  {})
+
+(def resolvers [todo-resolver all-todos-resolver todo-change-text todo-change-done])

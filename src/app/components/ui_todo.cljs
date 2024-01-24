@@ -3,7 +3,7 @@
     [com.fulcrologic.fulcro.components :as comp :refer [defsc]]
     [com.fulcrologic.fulcro.dom :as dom :refer [div ul li h1 h2 h3 h4 button input label i s]]
     [com.fulcrologic.fulcro.dom.events :as evt]
-    [app.mutations :as api]))
+    [app.model.todo :as api]))
 
 (defn- ui-todo-checkbox [this id done]
   (div

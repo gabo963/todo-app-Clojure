@@ -18,7 +18,6 @@
 
 (defonce APP (app/fulcro-app {:remotes          {:remote (http/fulcro-http-remote {})}
                               :client-did-mount (fn [app]
-                                                  (js/console.log "Did mount")
                                                   (df/load! app [:lista/id 1] ui-lista-component/Lista
                                                     {:target [:root/lista]}))}))
 

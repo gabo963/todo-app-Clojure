@@ -2,7 +2,7 @@
   (:require
     [com.fulcrologic.fulcro.components :as comp :refer [defsc]]
     [com.fulcrologic.fulcro.dom :refer [div ul li h1 h2 h3 h4 button input label i s]]
-    [app.mutations :as api]
+    [app.model.lista :as api]
     [app.components.ui-todo :as ui-todo-component]))
 
 (defn- delete-todo! [this list-id todo-id]
@@ -16,11 +16,11 @@
   {:query         [:lista/id :lista/name {:lista/todos (comp/get-query ui-todo-component/Todo)}]
    :ident         (fn [] [:lista/id (:lista/id props)])}
   (div :.ui.segment
-    (h2 name "'s Todos")
+    (h2 name " Todos")
     (h2 "Todos:")
     (ul
       (map #(ui-todo this id %) todos))
-    (button :.ui.button {} "Add item")
+    (button :.ui.button {:onClick #(comp/transact! this [(api/todo-add {:lista/id id})])} "Add item")
     )
   )
 
