@@ -1,6 +1,7 @@
 (ns app.db
   (:require [datomic.client.api :as d]
-            [app.schema]))
+            [app.schema]
+            [app.seed]))
 
 ;; Initial setup
 
@@ -23,33 +24,8 @@
 (d/transact conn {:tx-data app.seed/seed-todos})
 (d/transact conn {:tx-data app.seed/seed-list})
 
-;; Queries
-
-(defn id-query [keyword id pattern db]
-  (-> (d/q '[:find (pull ?e pattern)
-             :in $ [?keyword ?id] pattern
-             :where
-             [?e ?keyword ?id]] db [keyword id] pattern)
-    (ffirst)))
-
-(defn all-items-query [item-id-keyword db]
-  (-> (d/q '[:find (pull ?e pattern)
-             :in $ ?item-keyword pattern
-             :where
-             [?e ?item-keyword]] db item-id-keyword [item-id-keyword])
-    (flatten)
-    (set)))
-
-;; Assertions
-
-(defn assertion [id-keyword entity-id changing-keyword changed-value conn]
-  (d/transact conn {:tx-data [[:db/add [id-keyword entity-id] changing-keyword changed-value]]})
-  )
-
-;; Retractions
-
 (comment
-;TODO: DELETE ONCE DONE TESTING
+  ;TODO: DELETE ONCE DONE TESTING
 
   (d/q '[:find (pull ?e [*])
          :in $
