@@ -4,7 +4,8 @@
  :deps    {com.fulcrologic/fulcro {:mvn/version "3.7.0"}
            ring/ring-core {:mvn/version "1.9.6"}
            http-kit/http-kit {:mvn/version "2.6.0"}
-           com.wsscode/pathom {:mvn/version "2.4.0"}}
+           com.wsscode/pathom {:mvn/version "2.4.0"}
+           com.datomic/local    {:mvn/version "1.0.276"}}
 
  :aliases {:dev {:extra-paths ["dev"]
                  :extra-deps {org.clojure/clojurescript {:mvn/version "1.11.60"}

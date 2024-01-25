@@ -1,7 +1,7 @@
 (ns app.server
   (:require
     [app.model.todo :as todo]
-    [app.model.lista :as lista]
+    [app.model.list :as list]
     [clojure.core.async :as async]
     [com.fulcrologic.fulcro.server.api-middleware :as fmw :refer [not-found-handler wrap-api]]
     [com.wsscode.pathom.connect :as pc]
@@ -10,7 +10,7 @@
     [ring.middleware.not-modified :refer [wrap-not-modified]]
     [ring.middleware.resource :refer [wrap-resource]]))
 
-(def my-resolvers [todo/resolvers lista/resolvers])
+(def my-resolvers [todo/resolvers list/resolvers])
 
 ;; setup for a given connect system
 (def parser
