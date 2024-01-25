@@ -16,7 +16,7 @@
   {:query         [:list/id :list/name {:list/todos (comp/get-query ui-todo-component/Todo)}]
    :ident         (fn [] [:list/id (:list/id props)])}
   (div :.ui.segment
-    (h2 name " Todos:")
+    (h2 name " To-dos:")
     (ul
       (map #(ui-todo this id %) todos))
     (when todos
