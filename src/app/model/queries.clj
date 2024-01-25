@@ -1,6 +1,7 @@
 (ns app.model.queries
   (:require [datomic.client.api :as d]))
 
+;; Queries
 
 (defn id-query [keyword id pattern conn]
   (-> (d/q '[:find (pull ?e pattern)
