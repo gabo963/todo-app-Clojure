@@ -16,7 +16,8 @@
              :where
              [?e ?item-keyword]] (d/db conn) item-id-keyword [item-id-keyword])
     (flatten)
-    (set)))
+    (vec )
+    ))
 
 ;; Assertions
 

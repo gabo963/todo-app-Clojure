@@ -16,11 +16,11 @@
   {:query         [:list/id :list/name {:list/todos (comp/get-query ui-todo-component/Todo)}]
    :ident         (fn [] [:list/id (:list/id props)])}
   (div :.ui.segment
-    (h2 name " Todos")
-    (h2 "Todos:")
+    (h2 name " Todos:")
     (ul
       (map #(ui-todo this id %) todos))
-    (button :.ui.button {:onClick #(comp/transact! this [(api/todo-add {:list/id id})])} "Add item")
+    (when todos
+      (button :.ui.button {:onClick #(comp/transact! this [(api/todo-add {:list/id id})])} "Add item"))
     )
   )
 

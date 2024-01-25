@@ -23,3 +23,8 @@
 
 (d/transact conn {:tx-data app.seed/seed-todos})
 (d/transact conn {:tx-data app.seed/seed-list})
+
+(comment
+
+  (app.model.queries/all-items-query :list/id conn)
+)

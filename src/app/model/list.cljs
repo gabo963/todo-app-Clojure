@@ -4,13 +4,12 @@
     [com.fulcrologic.fulcro.algorithms.normalized-state :as fns]
     [com.fulcrologic.fulcro.algorithms.merge :as merge]))
 
-
 (defmutation todo-add [{list-id :list/id}]
   (ok-action [{:keys [state] :as env}]
     (let [new-todo-id (-> env :result :body (get-in [`todo-add :todo/id]))]
       (fns/swap!-> state
         (update-in [:list/id list-id :list/todos] conj [:todo/id new-todo-id])
-        (assoc-in [:todo/id new-todo-id] {:todo/id new-todo-id :todo/text "" :todo/done false} ))
+        (assoc-in [:todo/id new-todo-id] {:todo/id new-todo-id :todo/text "" :todo/done false}))
       ))
   (remote [env] true))
 
