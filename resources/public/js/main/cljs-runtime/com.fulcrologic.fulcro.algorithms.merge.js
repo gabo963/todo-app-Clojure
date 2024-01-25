@@ -10,8 +10,8 @@ throw (new Error("Assert failed: (map? state-map)"));
 }
 
 var new_list = (function (old_list){
-return cljs.core.vec(cljs.core.filter.cljs$core$IFn$_invoke$arity$2((function (p1__61819_SHARP_){
-return cljs.core.not_EQ_.cljs$core$IFn$_invoke$arity$2(ident,p1__61819_SHARP_);
+return cljs.core.vec(cljs.core.filter.cljs$core$IFn$_invoke$arity$2((function (p1__50115_SHARP_){
+return cljs.core.not_EQ_.cljs$core$IFn$_invoke$arity$2(ident,p1__50115_SHARP_);
 }),old_list));
 });
 return cljs.core.update_in.cljs$core$IFn$_invoke$arity$3(state_map,path_to_idents,new_list);
@@ -22,12 +22,12 @@ return cljs.core.update_in.cljs$core$IFn$_invoke$arity$3(state_map,path_to_ident
 com.fulcrologic.fulcro.algorithms.merge.is_ui_query_fragment_QMARK_ = (function com$fulcrologic$fulcro$algorithms$merge$is_ui_query_fragment_QMARK_(kw){
 var kw__$1 = ((cljs.core.map_QMARK_(kw))?cljs.core.first(cljs.core.keys(kw)):kw);
 if((kw__$1 instanceof cljs.core.Keyword)){
-var G__61820 = kw__$1;
-var G__61820__$1 = (((G__61820 == null))?null:cljs.core.namespace(G__61820));
-if((G__61820__$1 == null)){
+var G__50116 = kw__$1;
+var G__50116__$1 = (((G__50116 == null))?null:cljs.core.namespace(G__50116));
+if((G__50116__$1 == null)){
 return null;
 } else {
-return cljs.core.re_find(/^ui(?:\.|$)/,G__61820__$1);
+return cljs.core.re_find(/^ui(?:\.|$)/,G__50116__$1);
 }
 } else {
 return null;
@@ -138,9 +138,9 @@ return result__$1;
 }
 } else {
 if(((join_QMARK_) && (((edn_query_language.core.ident_QMARK_(jk)) && ((cljs.core.get.cljs$core$IFn$_invoke$arity$2(result__$1,jk) == null)))))){
-var mock_missing_object = (function (){var G__61821 = cljs.core.PersistentArrayMap.EMPTY;
-var G__61822 = com.fulcrologic.fulcro.algorithms.do_not_use.join_value(element__$1);
-return (com.fulcrologic.fulcro.algorithms.merge.mark_missing_impl.cljs$core$IFn$_invoke$arity$2 ? com.fulcrologic.fulcro.algorithms.merge.mark_missing_impl.cljs$core$IFn$_invoke$arity$2(G__61821,G__61822) : com.fulcrologic.fulcro.algorithms.merge.mark_missing_impl.call(null,G__61821,G__61822));
+var mock_missing_object = (function (){var G__50126 = cljs.core.PersistentArrayMap.EMPTY;
+var G__50127 = com.fulcrologic.fulcro.algorithms.do_not_use.join_value(element__$1);
+return (com.fulcrologic.fulcro.algorithms.merge.mark_missing_impl.cljs$core$IFn$_invoke$arity$2 ? com.fulcrologic.fulcro.algorithms.merge.mark_missing_impl.cljs$core$IFn$_invoke$arity$2(G__50126,G__50127) : com.fulcrologic.fulcro.algorithms.merge.mark_missing_impl.call(null,G__50126,G__50127));
 })();
 var v = cljs.core.merge.cljs$core$IFn$_invoke$arity$variadic(cljs.core.prim_seq.cljs$core$IFn$_invoke$arity$2([mock_missing_object,missing_entity], 0));
 return cljs.core.assoc.cljs$core$IFn$_invoke$arity$3(result__$1,jk,v);
@@ -150,21 +150,21 @@ return cljs.core.assoc.cljs$core$IFn$_invoke$arity$3(result__$1,jk,new cljs.core
 } else {
 if(((join_QMARK_) && (cljs.core.sequential_QMARK_(cljs.core.get.cljs$core$IFn$_invoke$arity$2(result__$1,jk))))){
 return cljs.core.assoc.cljs$core$IFn$_invoke$arity$3(result__$1,jk,cljs.core.mapv.cljs$core$IFn$_invoke$arity$2((function (item){
-var G__61823 = item;
-var G__61824 = com.fulcrologic.fulcro.algorithms.do_not_use.join_value(element__$1);
-return (com.fulcrologic.fulcro.algorithms.merge.mark_missing_impl.cljs$core$IFn$_invoke$arity$2 ? com.fulcrologic.fulcro.algorithms.merge.mark_missing_impl.cljs$core$IFn$_invoke$arity$2(G__61823,G__61824) : com.fulcrologic.fulcro.algorithms.merge.mark_missing_impl.call(null,G__61823,G__61824));
+var G__50131 = item;
+var G__50132 = com.fulcrologic.fulcro.algorithms.do_not_use.join_value(element__$1);
+return (com.fulcrologic.fulcro.algorithms.merge.mark_missing_impl.cljs$core$IFn$_invoke$arity$2 ? com.fulcrologic.fulcro.algorithms.merge.mark_missing_impl.cljs$core$IFn$_invoke$arity$2(G__50131,G__50132) : com.fulcrologic.fulcro.algorithms.merge.mark_missing_impl.call(null,G__50131,G__50132));
 }),cljs.core.get.cljs$core$IFn$_invoke$arity$2(result__$1,jk)));
 } else {
 if(((join_QMARK_) && (cljs.core.map_QMARK_(cljs.core.get.cljs$core$IFn$_invoke$arity$2(result__$1,jk))))){
-return cljs.core.assoc.cljs$core$IFn$_invoke$arity$3(result__$1,jk,(function (){var G__61825 = cljs.core.get.cljs$core$IFn$_invoke$arity$2(result__$1,jk);
-var G__61826 = com.fulcrologic.fulcro.algorithms.do_not_use.join_value(element__$1);
-return (com.fulcrologic.fulcro.algorithms.merge.mark_missing_impl.cljs$core$IFn$_invoke$arity$2 ? com.fulcrologic.fulcro.algorithms.merge.mark_missing_impl.cljs$core$IFn$_invoke$arity$2(G__61825,G__61826) : com.fulcrologic.fulcro.algorithms.merge.mark_missing_impl.call(null,G__61825,G__61826));
+return cljs.core.assoc.cljs$core$IFn$_invoke$arity$3(result__$1,jk,(function (){var G__50133 = cljs.core.get.cljs$core$IFn$_invoke$arity$2(result__$1,jk);
+var G__50134 = com.fulcrologic.fulcro.algorithms.do_not_use.join_value(element__$1);
+return (com.fulcrologic.fulcro.algorithms.merge.mark_missing_impl.cljs$core$IFn$_invoke$arity$2 ? com.fulcrologic.fulcro.algorithms.merge.mark_missing_impl.cljs$core$IFn$_invoke$arity$2(G__50133,G__50134) : com.fulcrologic.fulcro.algorithms.merge.mark_missing_impl.call(null,G__50133,G__50134));
 })());
 } else {
 if(((join_QMARK_) && (((cljs.core.vector_QMARK_(com.fulcrologic.fulcro.algorithms.do_not_use.join_value(element__$1))) && ((!(((cljs.core.map_QMARK_(result_value)) || (cljs.core.sequential_QMARK_(result_value)))))))))){
-return cljs.core.assoc.cljs$core$IFn$_invoke$arity$3(result__$1,result_key,(function (){var G__61827 = cljs.core.PersistentArrayMap.EMPTY;
-var G__61828 = com.fulcrologic.fulcro.algorithms.do_not_use.join_value(element__$1);
-return (com.fulcrologic.fulcro.algorithms.merge.mark_missing_impl.cljs$core$IFn$_invoke$arity$2 ? com.fulcrologic.fulcro.algorithms.merge.mark_missing_impl.cljs$core$IFn$_invoke$arity$2(G__61827,G__61828) : com.fulcrologic.fulcro.algorithms.merge.mark_missing_impl.call(null,G__61827,G__61828));
+return cljs.core.assoc.cljs$core$IFn$_invoke$arity$3(result__$1,result_key,(function (){var G__50135 = cljs.core.PersistentArrayMap.EMPTY;
+var G__50136 = com.fulcrologic.fulcro.algorithms.do_not_use.join_value(element__$1);
+return (com.fulcrologic.fulcro.algorithms.merge.mark_missing_impl.cljs$core$IFn$_invoke$arity$2 ? com.fulcrologic.fulcro.algorithms.merge.mark_missing_impl.cljs$core$IFn$_invoke$arity$2(G__50135,G__50136) : com.fulcrologic.fulcro.algorithms.merge.mark_missing_impl.call(null,G__50135,G__50136));
 })());
 } else {
 if(cljs.core.truth_(result_key)){
@@ -199,10 +199,10 @@ return result__$1;
  */
 com.fulcrologic.fulcro.algorithms.merge.mark_missing = (function com$fulcrologic$fulcro$algorithms$merge$mark_missing(result,query){
 try{return com.fulcrologic.fulcro.algorithms.merge.mark_missing_impl(result,query);
-}catch (e61829){var e = e61829;
+}catch (e50137){var e = e50137;
 taoensso.timbre._log_BANG_.cljs$core$IFn$_invoke$arity$11(taoensso.timbre._STAR_config_STAR_,new cljs.core.Keyword(null,"error","error",-978969032),"com.fulcrologic.fulcro.algorithms.merge",null,162,new cljs.core.Keyword(null,"p","p",151049309),new cljs.core.Keyword(null,"auto","auto",-566279492),(new cljs.core.Delay((function (){
 return new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [e,"Unable to mark missing on result. Returning unmarked result. See https://book.fulcrologic.com/#err-merge-unable2mark"], null);
-}),null)),null,-2082245962,null);
+}),null)),null,-1703215814,null);
 
 return result;
 }});
@@ -211,10 +211,10 @@ return result;
  */
 com.fulcrologic.fulcro.algorithms.merge.sweep_one = (function com$fulcrologic$fulcro$algorithms$merge$sweep_one(m){
 if((((!(com.fulcrologic.fulcro.algorithms.tempid.tempid_QMARK_(m)))) && (cljs.core.map_QMARK_(m)))){
-return cljs.core.reduce.cljs$core$IFn$_invoke$arity$3((function (acc,p__61830){
-var vec__61831 = p__61830;
-var k = cljs.core.nth.cljs$core$IFn$_invoke$arity$3(vec__61831,(0),null);
-var v = cljs.core.nth.cljs$core$IFn$_invoke$arity$3(vec__61831,(1),null);
+return cljs.core.reduce.cljs$core$IFn$_invoke$arity$3((function (acc,p__50141){
+var vec__50142 = p__50141;
+var k = cljs.core.nth.cljs$core$IFn$_invoke$arity$3(vec__50142,(0),null);
+var v = cljs.core.nth.cljs$core$IFn$_invoke$arity$3(vec__50142,(1),null);
 if(((cljs.core._EQ_.cljs$core$IFn$_invoke$arity$2(new cljs.core.Keyword("com.fulcrologic.fulcro.algorithms.merge","not-found","com.fulcrologic.fulcro.algorithms.merge/not-found",190673437),k)) || (((cljs.core._EQ_.cljs$core$IFn$_invoke$arity$2(new cljs.core.Keyword("com.fulcrologic.fulcro.algorithms.merge","not-found","com.fulcrologic.fulcro.algorithms.merge/not-found",190673437),v)) || (cljs.core._EQ_.cljs$core$IFn$_invoke$arity$2(new cljs.core.Keyword(null,"tempids","tempids",1767509089),k)))))){
 return acc;
 } else {
@@ -239,10 +239,10 @@ if(com.fulcrologic.fulcro.algorithms.merge.leaf_QMARK_(m)){
 return com.fulcrologic.fulcro.algorithms.merge.sweep_one(m);
 } else {
 if((((!(com.fulcrologic.fulcro.algorithms.tempid.tempid_QMARK_(m)))) && (cljs.core.map_QMARK_(m)))){
-return cljs.core.reduce.cljs$core$IFn$_invoke$arity$3((function (acc,p__61834){
-var vec__61835 = p__61834;
-var k = cljs.core.nth.cljs$core$IFn$_invoke$arity$3(vec__61835,(0),null);
-var v = cljs.core.nth.cljs$core$IFn$_invoke$arity$3(vec__61835,(1),null);
+return cljs.core.reduce.cljs$core$IFn$_invoke$arity$3((function (acc,p__50147){
+var vec__50148 = p__50147;
+var k = cljs.core.nth.cljs$core$IFn$_invoke$arity$3(vec__50148,(0),null);
+var v = cljs.core.nth.cljs$core$IFn$_invoke$arity$3(vec__50148,(1),null);
 if(((cljs.core._EQ_.cljs$core$IFn$_invoke$arity$2(new cljs.core.Keyword("com.fulcrologic.fulcro.algorithms.merge","not-found","com.fulcrologic.fulcro.algorithms.merge/not-found",190673437),k)) || (((cljs.core._EQ_.cljs$core$IFn$_invoke$arity$2(new cljs.core.Keyword("com.fulcrologic.fulcro.algorithms.merge","not-found","com.fulcrologic.fulcro.algorithms.merge/not-found",190673437),v)) || (cljs.core._EQ_.cljs$core$IFn$_invoke$arity$2(new cljs.core.Keyword(null,"tempids","tempids",1767509089),k)))))){
 return acc;
 } else {
@@ -275,10 +275,10 @@ return m;
  *   it as our 'best guess').
  */
 com.fulcrologic.fulcro.algorithms.merge.sweep_merge = (function com$fulcrologic$fulcro$algorithms$merge$sweep_merge(target,source){
-return cljs.core.reduce.cljs$core$IFn$_invoke$arity$3((function (acc,p__61838){
-var vec__61839 = p__61838;
-var key = cljs.core.nth.cljs$core$IFn$_invoke$arity$3(vec__61839,(0),null);
-var new_value = cljs.core.nth.cljs$core$IFn$_invoke$arity$3(vec__61839,(1),null);
+return cljs.core.reduce.cljs$core$IFn$_invoke$arity$3((function (acc,p__50153){
+var vec__50154 = p__50153;
+var key = cljs.core.nth.cljs$core$IFn$_invoke$arity$3(vec__50154,(0),null);
+var new_value = cljs.core.nth.cljs$core$IFn$_invoke$arity$3(vec__50154,(1),null);
 var existing_value = cljs.core.get.cljs$core$IFn$_invoke$arity$2(acc,key);
 if(((cljs.core._EQ_.cljs$core$IFn$_invoke$arity$2(key,new cljs.core.Keyword(null,"tempids","tempids",1767509089))) || (cljs.core._EQ_.cljs$core$IFn$_invoke$arity$2(key,new cljs.core.Keyword("com.fulcrologic.fulcro.algorithms.merge","not-found","com.fulcrologic.fulcro.algorithms.merge/not-found",190673437))))){
 return acc;
@@ -306,11 +306,11 @@ return cljs.core.assoc.cljs$core$IFn$_invoke$arity$3(acc,key,com.fulcrologic.ful
 });
 com.fulcrologic.fulcro.algorithms.merge.component_pre_merge = (function com$fulcrologic$fulcro$algorithms$merge$component_pre_merge(class$,query,state,data,options){
 if(com.fulcrologic.fulcro.raw.components.has_pre_merge_QMARK_(class$)){
-var entity = (function (){var G__61842 = com.fulcrologic.fulcro.raw.components.get_ident.cljs$core$IFn$_invoke$arity$2(class$,data);
-if((G__61842 == null)){
+var entity = (function (){var G__50162 = com.fulcrologic.fulcro.raw.components.get_ident.cljs$core$IFn$_invoke$arity$2(class$,data);
+if((G__50162 == null)){
 return null;
 } else {
-return cljs.core.get_in.cljs$core$IFn$_invoke$arity$2(state,G__61842);
+return cljs.core.get_in.cljs$core$IFn$_invoke$arity$2(state,G__50162);
 }
 })();
 var result = com.fulcrologic.fulcro.raw.components.pre_merge(class$,new cljs.core.PersistentArrayMap(null, 4, [new cljs.core.Keyword(null,"state-map","state-map",-1313872128),state,new cljs.core.Keyword(null,"current-normalized","current-normalized",851723724),entity,new cljs.core.Keyword(null,"data-tree","data-tree",1311167582),data,new cljs.core.Keyword(null,"query","query",-1288509510),query], null));
@@ -323,8 +323,8 @@ return data;
  * Transform function that modifies data using component pre-merge hook.
  */
 com.fulcrologic.fulcro.algorithms.merge.pre_merge_transform = (function com$fulcrologic$fulcro$algorithms$merge$pre_merge_transform(var_args){
-var G__61844 = arguments.length;
-switch (G__61844) {
+var G__50164 = arguments.length;
+switch (G__50164) {
 case 1:
 return com.fulcrologic.fulcro.algorithms.merge.pre_merge_transform.cljs$core$IFn$_invoke$arity$1((arguments[(0)]));
 
@@ -364,8 +364,8 @@ return data;
  *   and this function will sweep the result.
  */
 com.fulcrologic.fulcro.algorithms.merge.merge_mutation_joins = (function com$fulcrologic$fulcro$algorithms$merge$merge_mutation_joins(var_args){
-var G__61846 = arguments.length;
-switch (G__61846) {
+var G__50168 = arguments.length;
+switch (G__50168) {
 case 3:
 return com.fulcrologic.fulcro.algorithms.merge.merge_mutation_joins.cljs$core$IFn$_invoke$arity$3((arguments[(0)]),(arguments[(1)]),(arguments[(2)]));
 
@@ -408,12 +408,12 @@ var idnt = new cljs.core.Keyword("com.fulcrologic.fulcro.algorithms.merge","temp
 var norm_query = new cljs.core.PersistentVector(null, 1, 5, cljs.core.PersistentVector.EMPTY_NODE, [cljs.core.PersistentArrayMap.createAsIfByAssoc([idnt,subquery])], null);
 var norm_tree = cljs.core.PersistentArrayMap.createAsIfByAssoc([idnt,subtree]);
 var db = com.fulcrologic.fulcro.algorithms.normalize.tree__GT_db.cljs$core$IFn$_invoke$arity$4(norm_query,norm_tree,true,com.fulcrologic.fulcro.algorithms.merge.pre_merge_transform.cljs$core$IFn$_invoke$arity$2(state,options));
-var G__61847 = com.fulcrologic.fulcro.algorithms.merge.sweep_merge(updated_state,db);
-var G__61847__$1 = (cljs.core.truth_(target)?com.fulcrologic.fulcro.algorithms.data_targeting.process_target.cljs$core$IFn$_invoke$arity$3(G__61847,idnt,target):G__61847);
+var G__50172 = com.fulcrologic.fulcro.algorithms.merge.sweep_merge(updated_state,db);
+var G__50172__$1 = (cljs.core.truth_(target)?com.fulcrologic.fulcro.algorithms.data_targeting.process_target.cljs$core$IFn$_invoke$arity$3(G__50172,idnt,target):G__50172);
 if(cljs.core.not(target)){
-return cljs.core.dissoc.cljs$core$IFn$_invoke$arity$variadic(G__61847__$1,db,cljs.core.prim_seq.cljs$core$IFn$_invoke$arity$2([idnt], 0));
+return cljs.core.dissoc.cljs$core$IFn$_invoke$arity$variadic(G__50172__$1,db,cljs.core.prim_seq.cljs$core$IFn$_invoke$arity$2([idnt], 0));
 } else {
-return G__61847__$1;
+return G__50172__$1;
 }
 } else {
 return updated_state;
@@ -430,12 +430,12 @@ com.fulcrologic.fulcro.algorithms.merge.merge_ident = (function com$fulcrologic$
 return cljs.core.update_in.cljs$core$IFn$_invoke$arity$4(app_state,ident,cljs.core.comp.cljs$core$IFn$_invoke$arity$2(com.fulcrologic.fulcro.algorithms.merge.sweep_one,cljs.core.merge),props);
 });
 com.fulcrologic.fulcro.algorithms.merge.sift_idents = (function com$fulcrologic$fulcro$algorithms$merge$sift_idents(res){
-var map__61849 = cljs.core.group_by((function (p1__61848_SHARP_){
-return cljs.core.vector_QMARK_(cljs.core.first(p1__61848_SHARP_));
+var map__50174 = cljs.core.group_by((function (p1__50173_SHARP_){
+return cljs.core.vector_QMARK_(cljs.core.first(p1__50173_SHARP_));
 }),res);
-var map__61849__$1 = cljs.core.__destructure_map(map__61849);
-var idents = cljs.core.get.cljs$core$IFn$_invoke$arity$2(map__61849__$1,true);
-var rest = cljs.core.get.cljs$core$IFn$_invoke$arity$2(map__61849__$1,false);
+var map__50174__$1 = cljs.core.__destructure_map(map__50174);
+var idents = cljs.core.get.cljs$core$IFn$_invoke$arity$2(map__50174__$1,true);
+var rest = cljs.core.get.cljs$core$IFn$_invoke$arity$2(map__50174__$1,false);
 return new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [cljs.core.into.cljs$core$IFn$_invoke$arity$2(cljs.core.PersistentArrayMap.EMPTY,idents),cljs.core.into.cljs$core$IFn$_invoke$arity$2(cljs.core.PersistentArrayMap.EMPTY,rest)], null);
 });
 /**
@@ -443,10 +443,10 @@ return new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMP
  * mutation join results are ignored (they must be merged via `merge-mutation-joins`).
  */
 com.fulcrologic.fulcro.algorithms.merge.merge_tree = (function com$fulcrologic$fulcro$algorithms$merge$merge_tree(target,source){
-var source_to_merge = cljs.core.into.cljs$core$IFn$_invoke$arity$3(cljs.core.PersistentArrayMap.EMPTY,cljs.core.filter.cljs$core$IFn$_invoke$arity$1((function (p__61850){
-var vec__61851 = p__61850;
-var k = cljs.core.nth.cljs$core$IFn$_invoke$arity$3(vec__61851,(0),null);
-var _ = cljs.core.nth.cljs$core$IFn$_invoke$arity$3(vec__61851,(1),null);
+var source_to_merge = cljs.core.into.cljs$core$IFn$_invoke$arity$3(cljs.core.PersistentArrayMap.EMPTY,cljs.core.filter.cljs$core$IFn$_invoke$arity$1((function (p__50175){
+var vec__50176 = p__50175;
+var k = cljs.core.nth.cljs$core$IFn$_invoke$arity$3(vec__50176,(0),null);
+var _ = cljs.core.nth.cljs$core$IFn$_invoke$arity$3(vec__50176,(1),null);
 return (!((k instanceof cljs.core.Symbol)));
 })),source);
 return com.fulcrologic.fulcro.algorithms.merge.sweep_merge(target,source_to_merge);
@@ -457,20 +457,20 @@ return com.fulcrologic.fulcro.algorithms.merge.sweep_merge(target,source_to_merg
  *   returns a new tree with the data merged into the proper ident-based tables.
  */
 com.fulcrologic.fulcro.algorithms.merge.merge_idents = (function com$fulcrologic$fulcro$algorithms$merge$merge_idents(tree,query,refs,options){
-var ident_joins = cljs.core.into.cljs$core$IFn$_invoke$arity$3(cljs.core.PersistentArrayMap.EMPTY,cljs.core.comp.cljs$core$IFn$_invoke$arity$2(cljs.core.map.cljs$core$IFn$_invoke$arity$1((function (p1__61854_SHARP_){
-var G__61856 = p1__61854_SHARP_;
-if(cljs.core.seq_QMARK_(p1__61854_SHARP_)){
-return cljs.core.first(G__61856);
+var ident_joins = cljs.core.into.cljs$core$IFn$_invoke$arity$3(cljs.core.PersistentArrayMap.EMPTY,cljs.core.comp.cljs$core$IFn$_invoke$arity$2(cljs.core.map.cljs$core$IFn$_invoke$arity$1((function (p1__50179_SHARP_){
+var G__50181 = p1__50179_SHARP_;
+if(cljs.core.seq_QMARK_(p1__50179_SHARP_)){
+return cljs.core.first(G__50181);
 } else {
-return G__61856;
+return G__50181;
 }
-})),cljs.core.filter.cljs$core$IFn$_invoke$arity$1((function (p1__61855_SHARP_){
-return ((com.fulcrologic.fulcro.algorithms.do_not_use.join_QMARK_(p1__61855_SHARP_)) && (edn_query_language.core.ident_QMARK_(com.fulcrologic.fulcro.algorithms.do_not_use.join_key(p1__61855_SHARP_))));
+})),cljs.core.filter.cljs$core$IFn$_invoke$arity$1((function (p1__50180_SHARP_){
+return ((com.fulcrologic.fulcro.algorithms.do_not_use.join_QMARK_(p1__50180_SHARP_)) && (edn_query_language.core.ident_QMARK_(com.fulcrologic.fulcro.algorithms.do_not_use.join_key(p1__50180_SHARP_))));
 }))),query);
-var step = (function com$fulcrologic$fulcro$algorithms$merge$merge_idents_$_step(result_tree,p__61861){
-var vec__61862 = p__61861;
-var ident = cljs.core.nth.cljs$core$IFn$_invoke$arity$3(vec__61862,(0),null);
-var props = cljs.core.nth.cljs$core$IFn$_invoke$arity$3(vec__61862,(1),null);
+var step = (function com$fulcrologic$fulcro$algorithms$merge$merge_idents_$_step(result_tree,p__50186){
+var vec__50187 = p__50186;
+var ident = cljs.core.nth.cljs$core$IFn$_invoke$arity$3(vec__50187,(0),null);
+var props = cljs.core.nth.cljs$core$IFn$_invoke$arity$3(vec__50187,(1),null);
 var component_query = cljs.core.get.cljs$core$IFn$_invoke$arity$3(ident_joins,ident,new cljs.core.PersistentVector(null, 1, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Symbol(null,"*","*",345799209,null)], null));
 var normalized_data = com.fulcrologic.fulcro.algorithms.normalize.tree__GT_db.cljs$core$IFn$_invoke$arity$4(component_query,props,false,com.fulcrologic.fulcro.algorithms.merge.pre_merge_transform.cljs$core$IFn$_invoke$arity$2(tree,options));
 var refs__$1 = cljs.core.meta(normalized_data);
@@ -499,8 +499,8 @@ return cljs.core.reduce.cljs$core$IFn$_invoke$arity$3(step,tree,refs);
  *   Returns the new normalized database.
  */
 com.fulcrologic.fulcro.algorithms.merge.merge_STAR_ = (function com$fulcrologic$fulcro$algorithms$merge$merge_STAR_(var_args){
-var G__61866 = arguments.length;
-switch (G__61866) {
+var G__50193 = arguments.length;
+switch (G__50193) {
 case 3:
 return com.fulcrologic.fulcro.algorithms.merge.merge_STAR_.cljs$core$IFn$_invoke$arity$3((arguments[(0)]),(arguments[(1)]),(arguments[(2)]));
 
@@ -520,9 +520,9 @@ return com.fulcrologic.fulcro.algorithms.merge.merge_STAR_.cljs$core$IFn$_invoke
 }));
 
 (com.fulcrologic.fulcro.algorithms.merge.merge_STAR_.cljs$core$IFn$_invoke$arity$4 = (function (state_map,query,result_tree,options){
-var vec__61867 = com.fulcrologic.fulcro.algorithms.merge.sift_idents(result_tree);
-var idts = cljs.core.nth.cljs$core$IFn$_invoke$arity$3(vec__61867,(0),null);
-var result_tree__$1 = cljs.core.nth.cljs$core$IFn$_invoke$arity$3(vec__61867,(1),null);
+var vec__50196 = com.fulcrologic.fulcro.algorithms.merge.sift_idents(result_tree);
+var idts = cljs.core.nth.cljs$core$IFn$_invoke$arity$3(vec__50196,(0),null);
+var result_tree__$1 = cljs.core.nth.cljs$core$IFn$_invoke$arity$3(vec__50196,(1),null);
 var normalized_result = com.fulcrologic.fulcro.algorithms.normalize.tree__GT_db.cljs$core$IFn$_invoke$arity$4(query,result_tree__$1,true,com.fulcrologic.fulcro.algorithms.merge.pre_merge_transform.cljs$core$IFn$_invoke$arity$2(state_map,options));
 return com.fulcrologic.fulcro.algorithms.merge.merge_tree(com.fulcrologic.fulcro.algorithms.merge.merge_idents(com.fulcrologic.fulcro.algorithms.merge.merge_mutation_joins.cljs$core$IFn$_invoke$arity$4(state_map,query,result_tree__$1,options),query,idts,options),normalized_result);
 }));
@@ -549,16 +549,16 @@ var com$fulcrologic$fulcro$algorithms$merge$merge_alternate_unions_$_walk_ast = 
 var com$fulcrologic$fulcro$algorithms$merge$merge_alternate_unions_$_walk_ast__2 = (function (ast,visitor){
 return com$fulcrologic$fulcro$algorithms$merge$merge_alternate_unions_$_walk_ast.cljs$core$IFn$_invoke$arity$3(ast,visitor,null);
 });
-var com$fulcrologic$fulcro$algorithms$merge$merge_alternate_unions_$_walk_ast__3 = (function (p__61876,visitor,parent_union){
-var map__61877 = p__61876;
-var map__61877__$1 = cljs.core.__destructure_map(map__61877);
-var parent_ast = map__61877__$1;
-var children = cljs.core.get.cljs$core$IFn$_invoke$arity$2(map__61877__$1,new cljs.core.Keyword(null,"children","children",-940561982));
-var component = cljs.core.get.cljs$core$IFn$_invoke$arity$2(map__61877__$1,new cljs.core.Keyword(null,"component","component",1555936782));
-var type = cljs.core.get.cljs$core$IFn$_invoke$arity$2(map__61877__$1,new cljs.core.Keyword(null,"type","type",1174270348));
-var dispatch_key = cljs.core.get.cljs$core$IFn$_invoke$arity$2(map__61877__$1,new cljs.core.Keyword(null,"dispatch-key","dispatch-key",733619510));
-var union_key = cljs.core.get.cljs$core$IFn$_invoke$arity$2(map__61877__$1,new cljs.core.Keyword(null,"union-key","union-key",1529707234));
-var key = cljs.core.get.cljs$core$IFn$_invoke$arity$2(map__61877__$1,new cljs.core.Keyword(null,"key","key",-1516042587));
+var com$fulcrologic$fulcro$algorithms$merge$merge_alternate_unions_$_walk_ast__3 = (function (p__50228,visitor,parent_union){
+var map__50229 = p__50228;
+var map__50229__$1 = cljs.core.__destructure_map(map__50229);
+var parent_ast = map__50229__$1;
+var children = cljs.core.get.cljs$core$IFn$_invoke$arity$2(map__50229__$1,new cljs.core.Keyword(null,"children","children",-940561982));
+var component = cljs.core.get.cljs$core$IFn$_invoke$arity$2(map__50229__$1,new cljs.core.Keyword(null,"component","component",1555936782));
+var type = cljs.core.get.cljs$core$IFn$_invoke$arity$2(map__50229__$1,new cljs.core.Keyword(null,"type","type",1174270348));
+var dispatch_key = cljs.core.get.cljs$core$IFn$_invoke$arity$2(map__50229__$1,new cljs.core.Keyword(null,"dispatch-key","dispatch-key",733619510));
+var union_key = cljs.core.get.cljs$core$IFn$_invoke$arity$2(map__50229__$1,new cljs.core.Keyword(null,"union-key","union-key",1529707234));
+var key = cljs.core.get.cljs$core$IFn$_invoke$arity$2(map__50229__$1,new cljs.core.Keyword(null,"key","key",-1516042587));
 if(cljs.core.truth_((function (){var and__5043__auto__ = component;
 if(cljs.core.truth_(and__5043__auto__)){
 var and__5043__auto____$1 = parent_union;
@@ -576,13 +576,13 @@ return and__5043__auto__;
 }
 
 if(cljs.core.truth_(children)){
-var seq__61878 = cljs.core.seq(children);
-var chunk__61879 = null;
-var count__61880 = (0);
-var i__61881 = (0);
+var seq__50230 = cljs.core.seq(children);
+var chunk__50231 = null;
+var count__50232 = (0);
+var i__50233 = (0);
 while(true){
-if((i__61881 < count__61880)){
-var ast = chunk__61879.cljs$core$IIndexed$_nth$arity$2(null,i__61881);
+if((i__50233 < count__50232)){
+var ast = chunk__50231.cljs$core$IIndexed$_nth$arity$2(null,i__50233);
 if(cljs.core._EQ_.cljs$core$IFn$_invoke$arity$2(new cljs.core.Keyword(null,"type","type",1174270348).cljs$core$IFn$_invoke$arity$1(ast),new cljs.core.Keyword(null,"union","union",2142937499))){
 com$fulcrologic$fulcro$algorithms$merge$merge_alternate_unions_$_walk_ast.cljs$core$IFn$_invoke$arity$3(ast,visitor,component);
 } else {
@@ -597,32 +597,32 @@ com$fulcrologic$fulcro$algorithms$merge$merge_alternate_unions_$_walk_ast.cljs$c
 }
 
 
-var G__61905 = seq__61878;
-var G__61906 = chunk__61879;
-var G__61907 = count__61880;
-var G__61908 = (i__61881 + (1));
-seq__61878 = G__61905;
-chunk__61879 = G__61906;
-count__61880 = G__61907;
-i__61881 = G__61908;
+var G__50347 = seq__50230;
+var G__50348 = chunk__50231;
+var G__50349 = count__50232;
+var G__50350 = (i__50233 + (1));
+seq__50230 = G__50347;
+chunk__50231 = G__50348;
+count__50232 = G__50349;
+i__50233 = G__50350;
 continue;
 } else {
-var temp__5804__auto__ = cljs.core.seq(seq__61878);
+var temp__5804__auto__ = cljs.core.seq(seq__50230);
 if(temp__5804__auto__){
-var seq__61878__$1 = temp__5804__auto__;
-if(cljs.core.chunked_seq_QMARK_(seq__61878__$1)){
-var c__5568__auto__ = cljs.core.chunk_first(seq__61878__$1);
-var G__61909 = cljs.core.chunk_rest(seq__61878__$1);
-var G__61910 = c__5568__auto__;
-var G__61911 = cljs.core.count(c__5568__auto__);
-var G__61912 = (0);
-seq__61878 = G__61909;
-chunk__61879 = G__61910;
-count__61880 = G__61911;
-i__61881 = G__61912;
+var seq__50230__$1 = temp__5804__auto__;
+if(cljs.core.chunked_seq_QMARK_(seq__50230__$1)){
+var c__5568__auto__ = cljs.core.chunk_first(seq__50230__$1);
+var G__50351 = cljs.core.chunk_rest(seq__50230__$1);
+var G__50352 = c__5568__auto__;
+var G__50353 = cljs.core.count(c__5568__auto__);
+var G__50354 = (0);
+seq__50230 = G__50351;
+chunk__50231 = G__50352;
+count__50232 = G__50353;
+i__50233 = G__50354;
 continue;
 } else {
-var ast = cljs.core.first(seq__61878__$1);
+var ast = cljs.core.first(seq__50230__$1);
 if(cljs.core._EQ_.cljs$core$IFn$_invoke$arity$2(new cljs.core.Keyword(null,"type","type",1174270348).cljs$core$IFn$_invoke$arity$1(ast),new cljs.core.Keyword(null,"union","union",2142937499))){
 com$fulcrologic$fulcro$algorithms$merge$merge_alternate_unions_$_walk_ast.cljs$core$IFn$_invoke$arity$3(ast,visitor,component);
 } else {
@@ -637,14 +637,14 @@ com$fulcrologic$fulcro$algorithms$merge$merge_alternate_unions_$_walk_ast.cljs$c
 }
 
 
-var G__61913 = cljs.core.next(seq__61878__$1);
-var G__61914 = null;
-var G__61915 = (0);
-var G__61916 = (0);
-seq__61878 = G__61913;
-chunk__61879 = G__61914;
-count__61880 = G__61915;
-i__61881 = G__61916;
+var G__50356 = cljs.core.next(seq__50230__$1);
+var G__50357 = null;
+var G__50358 = (0);
+var G__50359 = (0);
+seq__50230 = G__50356;
+chunk__50231 = G__50357;
+count__50232 = G__50358;
+i__50233 = G__50359;
 continue;
 }
 } else {
@@ -657,12 +657,12 @@ break;
 return null;
 }
 });
-com$fulcrologic$fulcro$algorithms$merge$merge_alternate_unions_$_walk_ast = function(p__61876,visitor,parent_union){
+com$fulcrologic$fulcro$algorithms$merge$merge_alternate_unions_$_walk_ast = function(p__50228,visitor,parent_union){
 switch(arguments.length){
 case 2:
-return com$fulcrologic$fulcro$algorithms$merge$merge_alternate_unions_$_walk_ast__2.call(this,p__61876,visitor);
+return com$fulcrologic$fulcro$algorithms$merge$merge_alternate_unions_$_walk_ast__2.call(this,p__50228,visitor);
 case 3:
-return com$fulcrologic$fulcro$algorithms$merge$merge_alternate_unions_$_walk_ast__3.call(this,p__61876,visitor,parent_union);
+return com$fulcrologic$fulcro$algorithms$merge$merge_alternate_unions_$_walk_ast__3.call(this,p__50228,visitor,parent_union);
 }
 throw(new Error('Invalid arity: ' + arguments.length));
 };
@@ -738,8 +738,8 @@ return walk_ast(edn_query_language.core.query__GT_ast(com.fulcrologic.fulcro.raw
  *   See also `merge*`.
  */
 com.fulcrologic.fulcro.algorithms.merge.merge_BANG_ = (function com$fulcrologic$fulcro$algorithms$merge$merge_BANG_(var_args){
-var G__61883 = arguments.length;
-switch (G__61883) {
+var G__50245 = arguments.length;
+switch (G__50245) {
 case 3:
 return com.fulcrologic.fulcro.algorithms.merge.merge_BANG_.cljs$core$IFn$_invoke$arity$3((arguments[(0)]),(arguments[(1)]),(arguments[(2)]));
 
@@ -764,9 +764,9 @@ var render_BANG_ = com.fulcrologic.fulcro.algorithms.lookup.app_algorithm(app__$
 if(cljs.core.truth_(state_atom)){
 cljs.core.swap_BANG_.cljs$core$IFn$_invoke$arity$variadic(state_atom,com.fulcrologic.fulcro.algorithms.merge.merge_STAR_,query,data_tree,cljs.core.prim_seq.cljs$core$IFn$_invoke$arity$2([options], 0));
 
-var G__61884 = app__$1;
-var G__61885 = cljs.core.PersistentArrayMap.EMPTY;
-return (render_BANG_.cljs$core$IFn$_invoke$arity$2 ? render_BANG_.cljs$core$IFn$_invoke$arity$2(G__61884,G__61885) : render_BANG_.call(null,G__61884,G__61885));
+var G__50250 = app__$1;
+var G__50251 = cljs.core.PersistentArrayMap.EMPTY;
+return (render_BANG_.cljs$core$IFn$_invoke$arity$2 ? render_BANG_.cljs$core$IFn$_invoke$arity$2(G__50250,G__50251) : render_BANG_.call(null,G__50250,G__50251));
 } else {
 return null;
 }
@@ -792,14 +792,14 @@ return null;
  */
 com.fulcrologic.fulcro.algorithms.merge.merge_component = (function com$fulcrologic$fulcro$algorithms$merge$merge_component(var_args){
 var args__5775__auto__ = [];
-var len__5769__auto___61918 = arguments.length;
-var i__5770__auto___61919 = (0);
+var len__5769__auto___50365 = arguments.length;
+var i__5770__auto___50366 = (0);
 while(true){
-if((i__5770__auto___61919 < len__5769__auto___61918)){
-args__5775__auto__.push((arguments[i__5770__auto___61919]));
+if((i__5770__auto___50366 < len__5769__auto___50365)){
+args__5775__auto__.push((arguments[i__5770__auto___50366]));
 
-var G__61920 = (i__5770__auto___61919 + (1));
-i__5770__auto___61919 = G__61920;
+var G__50367 = (i__5770__auto___50366 + (1));
+i__5770__auto___50366 = G__50367;
 continue;
 } else {
 }
@@ -813,19 +813,19 @@ return com.fulcrologic.fulcro.algorithms.merge.merge_component.cljs$core$IFn$_in
 (com.fulcrologic.fulcro.algorithms.merge.merge_component.cljs$core$IFn$_invoke$arity$variadic = (function (state_map,component,component_data,named_parameters){
 if(com.fulcrologic.fulcro.raw.components.has_ident_QMARK_(component)){
 var options = cljs.core.apply.cljs$core$IFn$_invoke$arity$2(cljs.core.hash_map,named_parameters);
-var map__61890 = options;
-var map__61890__$1 = cljs.core.__destructure_map(map__61890);
-var remove_missing_QMARK_ = cljs.core.get.cljs$core$IFn$_invoke$arity$2(map__61890__$1,new cljs.core.Keyword(null,"remove-missing?","remove-missing?",-2044119224));
+var map__50271 = options;
+var map__50271__$1 = cljs.core.__destructure_map(map__50271);
+var remove_missing_QMARK_ = cljs.core.get.cljs$core$IFn$_invoke$arity$2(map__50271__$1,new cljs.core.Keyword(null,"remove-missing?","remove-missing?",-2044119224));
 var query = com.fulcrologic.fulcro.raw.components.get_query.cljs$core$IFn$_invoke$arity$2(component,state_map);
 var marked_data = (cljs.core.truth_(remove_missing_QMARK_)?com.fulcrologic.fulcro.algorithms.merge.mark_missing(component_data,query):component_data);
 var updated_state = com.fulcrologic.fulcro.algorithms.merge.merge_STAR_.cljs$core$IFn$_invoke$arity$4(state_map,new cljs.core.PersistentVector(null, 1, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword("com.fulcrologic.fulcro.algorithms.merge","merge","com.fulcrologic.fulcro.algorithms.merge/merge",1176000440),query], null)], null),new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword("com.fulcrologic.fulcro.algorithms.merge","merge","com.fulcrologic.fulcro.algorithms.merge/merge",1176000440),marked_data], null),options);
 var real_ident = cljs.core.get.cljs$core$IFn$_invoke$arity$2(updated_state,new cljs.core.Keyword("com.fulcrologic.fulcro.algorithms.merge","merge","com.fulcrologic.fulcro.algorithms.merge/merge",1176000440));
-var integrate_params = cljs.core.mapcat.cljs$core$IFn$_invoke$arity$variadic((function (p__61891){
-var vec__61892 = p__61891;
-var k = cljs.core.nth.cljs$core$IFn$_invoke$arity$3(vec__61892,(0),null);
-var v = cljs.core.nth.cljs$core$IFn$_invoke$arity$3(vec__61892,(1),null);
-if(cljs.core.truth_((function (){var fexpr__61895 = new cljs.core.PersistentHashSet(null, new cljs.core.PersistentArrayMap(null, 3, [new cljs.core.Keyword(null,"replace","replace",-786587770),null,new cljs.core.Keyword(null,"prepend","prepend",342616040),null,new cljs.core.Keyword(null,"append","append",-291298229),null], null), null);
-return (fexpr__61895.cljs$core$IFn$_invoke$arity$1 ? fexpr__61895.cljs$core$IFn$_invoke$arity$1(k) : fexpr__61895.call(null,k));
+var integrate_params = cljs.core.mapcat.cljs$core$IFn$_invoke$arity$variadic((function (p__50272){
+var vec__50274 = p__50272;
+var k = cljs.core.nth.cljs$core$IFn$_invoke$arity$3(vec__50274,(0),null);
+var v = cljs.core.nth.cljs$core$IFn$_invoke$arity$3(vec__50274,(1),null);
+if(cljs.core.truth_((function (){var fexpr__50277 = new cljs.core.PersistentHashSet(null, new cljs.core.PersistentArrayMap(null, 3, [new cljs.core.Keyword(null,"replace","replace",-786587770),null,new cljs.core.Keyword(null,"prepend","prepend",342616040),null,new cljs.core.Keyword(null,"append","append",-291298229),null], null), null);
+return (fexpr__50277.cljs$core$IFn$_invoke$arity$1 ? fexpr__50277.cljs$core$IFn$_invoke$arity$1(k) : fexpr__50277.call(null,k));
 })())){
 return new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [k,v], null);
 } else {
@@ -843,7 +843,7 @@ return cljs.core.dissoc.cljs$core$IFn$_invoke$arity$2(integrate_targets(updated_
 } else {
 taoensso.timbre._log_BANG_.cljs$core$IFn$_invoke$arity$11(taoensso.timbre._STAR_config_STAR_,new cljs.core.Keyword(null,"error","error",-978969032),"com.fulcrologic.fulcro.algorithms.merge",null,426,new cljs.core.Keyword(null,"p","p",151049309),new cljs.core.Keyword(null,"auto","auto",-566279492),(new cljs.core.Delay((function (){
 return new cljs.core.PersistentVector(null, 3, 5, cljs.core.PersistentVector.EMPTY_NODE, ["Cannot merge component ",component," because it does not have an ident! See https://book.fulcrologic.com/#err-merge-comp-missing-ident"], null);
-}),null)),null,763831563,null);
+}),null)),null,1672894756,null);
 
 return state_map;
 }
@@ -852,15 +852,15 @@ return state_map;
 (com.fulcrologic.fulcro.algorithms.merge.merge_component.cljs$lang$maxFixedArity = (3));
 
 /** @this {Function} */
-(com.fulcrologic.fulcro.algorithms.merge.merge_component.cljs$lang$applyTo = (function (seq61886){
-var G__61887 = cljs.core.first(seq61886);
-var seq61886__$1 = cljs.core.next(seq61886);
-var G__61888 = cljs.core.first(seq61886__$1);
-var seq61886__$2 = cljs.core.next(seq61886__$1);
-var G__61889 = cljs.core.first(seq61886__$2);
-var seq61886__$3 = cljs.core.next(seq61886__$2);
+(com.fulcrologic.fulcro.algorithms.merge.merge_component.cljs$lang$applyTo = (function (seq50252){
+var G__50253 = cljs.core.first(seq50252);
+var seq50252__$1 = cljs.core.next(seq50252);
+var G__50254 = cljs.core.first(seq50252__$1);
+var seq50252__$2 = cljs.core.next(seq50252__$1);
+var G__50255 = cljs.core.first(seq50252__$2);
+var seq50252__$3 = cljs.core.next(seq50252__$2);
 var self__5754__auto__ = this;
-return self__5754__auto__.cljs$core$IFn$_invoke$arity$variadic(G__61887,G__61888,G__61889,seq61886__$3);
+return self__5754__auto__.cljs$core$IFn$_invoke$arity$variadic(G__50253,G__50254,G__50255,seq50252__$3);
 }));
 
 /**
@@ -896,14 +896,14 @@ return self__5754__auto__.cljs$core$IFn$_invoke$arity$variadic(G__61887,G__61888
  */
 com.fulcrologic.fulcro.algorithms.merge.merge_component_BANG_ = (function com$fulcrologic$fulcro$algorithms$merge$merge_component_BANG_(var_args){
 var args__5775__auto__ = [];
-var len__5769__auto___61921 = arguments.length;
-var i__5770__auto___61922 = (0);
+var len__5769__auto___50372 = arguments.length;
+var i__5770__auto___50373 = (0);
 while(true){
-if((i__5770__auto___61922 < len__5769__auto___61921)){
-args__5775__auto__.push((arguments[i__5770__auto___61922]));
+if((i__5770__auto___50373 < len__5769__auto___50372)){
+args__5775__auto__.push((arguments[i__5770__auto___50373]));
 
-var G__61923 = (i__5770__auto___61922 + (1));
-i__5770__auto___61922 = G__61923;
+var G__50374 = (i__5770__auto___50373 + (1));
+i__5770__auto___50373 = G__50374;
 continue;
 } else {
 }
@@ -921,7 +921,7 @@ var app__$2 = temp__5804__auto__;
 if((!(com.fulcrologic.fulcro.raw.components.has_ident_QMARK_(component)))){
 return taoensso.timbre._log_BANG_.cljs$core$IFn$_invoke$arity$11(taoensso.timbre._STAR_config_STAR_,new cljs.core.Keyword(null,"error","error",-978969032),"com.fulcrologic.fulcro.algorithms.merge",null,462,new cljs.core.Keyword(null,"p","p",151049309),new cljs.core.Keyword(null,"auto","auto",-566279492),(new cljs.core.Delay((function (){
 return new cljs.core.PersistentVector(null, 1, 5, cljs.core.PersistentVector.EMPTY_NODE, ["merge-component!: component must implement Ident. Merge skipped. See https://book.fulcrologic.com/#err-merge-comp-missing-ident2"], null);
-}),null)),null,1284608916,null);
+}),null)),null,1117964965,null);
 } else {
 var state = new cljs.core.Keyword("com.fulcrologic.fulcro.application","state-atom","com.fulcrologic.fulcro.application/state-atom",648128366).cljs$core$IFn$_invoke$arity$1(app__$2);
 var render_BANG_ = com.fulcrologic.fulcro.algorithms.lookup.app_algorithm(app__$2,new cljs.core.Keyword(null,"schedule-render!","schedule-render!",2095050350));
@@ -929,9 +929,9 @@ cljs.core.swap_BANG_.cljs$core$IFn$_invoke$arity$2(state,(function (s){
 return cljs.core.apply.cljs$core$IFn$_invoke$arity$5(com.fulcrologic.fulcro.algorithms.merge.merge_component,s,component,object_data,named_parameters);
 }));
 
-var G__61900 = app__$2;
-var G__61901 = cljs.core.PersistentArrayMap.EMPTY;
-return (render_BANG_.cljs$core$IFn$_invoke$arity$2 ? render_BANG_.cljs$core$IFn$_invoke$arity$2(G__61900,G__61901) : render_BANG_.call(null,G__61900,G__61901));
+var G__50299 = app__$2;
+var G__50300 = cljs.core.PersistentArrayMap.EMPTY;
+return (render_BANG_.cljs$core$IFn$_invoke$arity$2 ? render_BANG_.cljs$core$IFn$_invoke$arity$2(G__50299,G__50300) : render_BANG_.call(null,G__50299,G__50300));
 }
 } else {
 return null;
@@ -941,15 +941,15 @@ return null;
 (com.fulcrologic.fulcro.algorithms.merge.merge_component_BANG_.cljs$lang$maxFixedArity = (3));
 
 /** @this {Function} */
-(com.fulcrologic.fulcro.algorithms.merge.merge_component_BANG_.cljs$lang$applyTo = (function (seq61896){
-var G__61897 = cljs.core.first(seq61896);
-var seq61896__$1 = cljs.core.next(seq61896);
-var G__61898 = cljs.core.first(seq61896__$1);
-var seq61896__$2 = cljs.core.next(seq61896__$1);
-var G__61899 = cljs.core.first(seq61896__$2);
-var seq61896__$3 = cljs.core.next(seq61896__$2);
+(com.fulcrologic.fulcro.algorithms.merge.merge_component_BANG_.cljs$lang$applyTo = (function (seq50293){
+var G__50294 = cljs.core.first(seq50293);
+var seq50293__$1 = cljs.core.next(seq50293);
+var G__50295 = cljs.core.first(seq50293__$1);
+var seq50293__$2 = cljs.core.next(seq50293__$1);
+var G__50296 = cljs.core.first(seq50293__$2);
+var seq50293__$3 = cljs.core.next(seq50293__$2);
 var self__5754__auto__ = this;
-return self__5754__auto__.cljs$core$IFn$_invoke$arity$variadic(G__61897,G__61898,G__61899,seq61896__$3);
+return self__5754__auto__.cljs$core$IFn$_invoke$arity$variadic(G__50294,G__50295,G__50296,seq50293__$3);
 }));
 
 /**

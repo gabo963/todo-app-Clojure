@@ -30,6 +30,7 @@
                   {:db/ident       :list/todos
                    :db/valueType   :db.type/ref
                    :db/cardinality :db.cardinality/many
+                   :db/isComponent true
                    :db/doc         "Mark if a todo has been completed or is pending"}])
 
 

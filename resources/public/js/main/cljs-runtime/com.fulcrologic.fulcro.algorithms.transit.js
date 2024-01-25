@@ -22,8 +22,8 @@ return cljs.core.get.cljs$core$IFn$_invoke$arity$3(cljs.core.deref(com.fulcrolog
  *   - `opts`: (optional) options to pass to `cognitect.transit/writer` (such as handlers).
  */
 com.fulcrologic.fulcro.algorithms.transit.writer = (function com$fulcrologic$fulcro$algorithms$transit$writer(var_args){
-var G__57330 = arguments.length;
-switch (G__57330) {
+var G__47991 = arguments.length;
+switch (G__47991) {
 case 0:
 return com.fulcrologic.fulcro.algorithms.transit.writer.cljs$core$IFn$_invoke$arity$0();
 
@@ -54,8 +54,8 @@ return cognitect.transit.writer.cljs$core$IFn$_invoke$arity$2(new cljs.core.Keyw
  *   - `opts`: (optional) options to pass to `cognitect.transit/reader` (such as data type handlers).
  */
 com.fulcrologic.fulcro.algorithms.transit.reader = (function com$fulcrologic$fulcro$algorithms$transit$reader(var_args){
-var G__57338 = arguments.length;
-switch (G__57338) {
+var G__48009 = arguments.length;
+switch (G__48009) {
 case 0:
 return com.fulcrologic.fulcro.algorithms.transit.reader.cljs$core$IFn$_invoke$arity$0();
 
@@ -88,7 +88,7 @@ com.fulcrologic.fulcro.algorithms.transit.serializable_QMARK_ = (function com$fu
 try{com.fulcrologic.fulcro.algorithms.transit.writer.cljs$core$IFn$_invoke$arity$0().write(v);
 
 return true;
-}catch (e57341){var e = e57341;
+}catch (e48025){var e = e48025;
 return false;
 }});
 /**
@@ -99,8 +99,8 @@ return false;
  *  will turn on/off metadata support. Defaults to on.
  */
 com.fulcrologic.fulcro.algorithms.transit.transit_clj__GT_str = (function com$fulcrologic$fulcro$algorithms$transit$transit_clj__GT_str(var_args){
-var G__57343 = arguments.length;
-switch (G__57343) {
+var G__48038 = arguments.length;
+switch (G__48038) {
 case 1:
 return com.fulcrologic.fulcro.algorithms.transit.transit_clj__GT_str.cljs$core$IFn$_invoke$arity$1((arguments[(0)]));
 
@@ -121,7 +121,7 @@ return com.fulcrologic.fulcro.algorithms.transit.transit_clj__GT_str.cljs$core$I
 
 (com.fulcrologic.fulcro.algorithms.transit.transit_clj__GT_str.cljs$core$IFn$_invoke$arity$2 = (function (data,opts){
 var write_meta = cognitect.transit.write_meta;
-var opts__$1 = (function (){var G__57344 = cljs.core.dissoc.cljs$core$IFn$_invoke$arity$2(opts,new cljs.core.Keyword(null,"metadata?","metadata?",-1465487050));
+var opts__$1 = (function (){var G__48045 = cljs.core.dissoc.cljs$core$IFn$_invoke$arity$2(opts,new cljs.core.Keyword(null,"metadata?","metadata?",-1465487050));
 if(cljs.core.truth_((function (){var and__5043__auto__ = write_meta;
 if(cljs.core.truth_(and__5043__auto__)){
 return (!(new cljs.core.Keyword(null,"metadata?","metadata?",-1465487050).cljs$core$IFn$_invoke$arity$1(opts) === false));
@@ -129,9 +129,9 @@ return (!(new cljs.core.Keyword(null,"metadata?","metadata?",-1465487050).cljs$c
 return and__5043__auto__;
 }
 })())){
-return cljs.core.assoc.cljs$core$IFn$_invoke$arity$3(G__57344,new cljs.core.Keyword(null,"transform","transform",1381301764),write_meta);
+return cljs.core.assoc.cljs$core$IFn$_invoke$arity$3(G__48045,new cljs.core.Keyword(null,"transform","transform",1381301764),write_meta);
 } else {
-return G__57344;
+return G__48045;
 }
 })();
 return cognitect.transit.write(com.fulcrologic.fulcro.algorithms.transit.writer.cljs$core$IFn$_invoke$arity$1(opts__$1),data);
@@ -144,8 +144,8 @@ return cognitect.transit.write(com.fulcrologic.fulcro.algorithms.transit.writer.
  * when starting from a server-side rendering.
  */
 com.fulcrologic.fulcro.algorithms.transit.transit_str__GT_clj = (function com$fulcrologic$fulcro$algorithms$transit$transit_str__GT_clj(var_args){
-var G__57346 = arguments.length;
-switch (G__57346) {
+var G__48048 = arguments.length;
+switch (G__48048) {
 case 1:
 return com.fulcrologic.fulcro.algorithms.transit.transit_str__GT_clj.cljs$core$IFn$_invoke$arity$1((arguments[(0)]));
 

@@ -1,7 +1,9 @@
 (ns app.model.list
   (:require
     [com.wsscode.pathom.connect :as pc]
-    [app.model.todo]))
+    [datomic.client.api :as d]
+    [app.model.todo]
+    [app.db]))
 
 (def lists
   (atom {1 {:list/id    1
@@ -11,10 +13,7 @@
 (pc/defresolver list-resolver [env {:list/keys [id]}]
   {::pc/input  #{:list/id}
    ::pc/output [:list/id :list/name {:list/todos [:todo/id]}]}
-  (let [list (-> @lists
-                (get id)
-                (update :list/todos (fn [ids] (mapv (fn [id] {:todo/id id}) ids))))]
-    list))
+  (app.db/id-query :list/id id [:list/id :list/name {:list/todos [:todo/id]}] (d/db app.db/conn)))
 
 (defn- conj-in [m k v]
   (update-in m k conj v)
@@ -22,7 +21,7 @@
 
 (pc/defresolver all-lists-resolver [env {}]
   {::pc/output [{:all-lists [:list/id]}]}
-  {:all-lists (mapv (fn [i] {:list/id i}) (keys @lists))})
+  {:all-lists (app.db/all-items-query :list/id (d/db app.db/conn)) })
 
 (pc/defmutation todo-delete [env {list-id :list/id todo-id :todo/id}]
   {::pc/params [:list/id :todo/id]
@@ -39,4 +38,4 @@
     (swap! app.model.todo/todos assoc new-todo-id {:todo/id new-todo-id :todo/text "" :todo/done false})
     {:todo/id new-todo-id}))
 
-  (def resolvers [list-resolver all-lists-resolver todo-delete todo-add])
+(def resolvers [list-resolver all-lists-resolver todo-delete todo-add])

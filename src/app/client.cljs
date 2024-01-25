@@ -18,7 +18,7 @@
 
 (defonce APP (app/fulcro-app {:remotes          {:remote (http/fulcro-http-remote {})}
                               :client-did-mount (fn [app]
-                                                  (df/load! app [:list/id 1] ui-list-component/Lista
+                                                  (df/load! app [:list/id #uuid"1bd2ab8b-73d2-4c6f-9966-0671b16a372e"] ui-list-component/Lista
                                                     {:target [:root/list]}))}))
 
 (defn ^:export init []

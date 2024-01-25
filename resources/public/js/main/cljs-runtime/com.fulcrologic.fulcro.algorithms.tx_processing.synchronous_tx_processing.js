@@ -13,22 +13,22 @@ return (0);
 /**
  * Returns true if the current thread is running non-nested transaction processing code.
  */
-com.fulcrologic.fulcro.algorithms.tx_processing.synchronous_tx_processing.top_level_QMARK_ = (function com$fulcrologic$fulcro$algorithms$tx_processing$synchronous_tx_processing$top_level_QMARK_(p__65826){
-var map__65827 = p__65826;
-var map__65827__$1 = cljs.core.__destructure_map(map__65827);
-var id = cljs.core.get.cljs$core$IFn$_invoke$arity$2(map__65827__$1,new cljs.core.Keyword("com.fulcrologic.fulcro.application","id","com.fulcrologic.fulcro.application/id",-2008968625));
+com.fulcrologic.fulcro.algorithms.tx_processing.synchronous_tx_processing.top_level_QMARK_ = (function com$fulcrologic$fulcro$algorithms$tx_processing$synchronous_tx_processing$top_level_QMARK_(p__54833){
+var map__54834 = p__54833;
+var map__54834__$1 = cljs.core.__destructure_map(map__54834);
+var id = cljs.core.get.cljs$core$IFn$_invoke$arity$2(map__54834__$1,new cljs.core.Keyword("com.fulcrologic.fulcro.application","id","com.fulcrologic.fulcro.application/id",-2008968625));
 return cljs.core._EQ_.cljs$core$IFn$_invoke$arity$2((0),cljs.core.count(cljs.core.get.cljs$core$IFn$_invoke$arity$3(cljs.core.deref(com.fulcrologic.fulcro.algorithms.tx_processing.synchronous_tx_processing.apps_in_tx),id,cljs.core.PersistentVector.EMPTY)));
 });
 com.fulcrologic.fulcro.algorithms.tx_processing.synchronous_tx_processing.swap_submission_queue_BANG_ = (function com$fulcrologic$fulcro$algorithms$tx_processing$synchronous_tx_processing$swap_submission_queue_BANG_(var_args){
 var args__5775__auto__ = [];
-var len__5769__auto___65957 = arguments.length;
-var i__5770__auto___65958 = (0);
+var len__5769__auto___54984 = arguments.length;
+var i__5770__auto___54985 = (0);
 while(true){
-if((i__5770__auto___65958 < len__5769__auto___65957)){
-args__5775__auto__.push((arguments[i__5770__auto___65958]));
+if((i__5770__auto___54985 < len__5769__auto___54984)){
+args__5775__auto__.push((arguments[i__5770__auto___54985]));
 
-var G__65959 = (i__5770__auto___65958 + (1));
-i__5770__auto___65958 = G__65959;
+var G__54986 = (i__5770__auto___54985 + (1));
+i__5770__auto___54985 = G__54986;
 continue;
 } else {
 }
@@ -46,11 +46,11 @@ return cljs.core.apply.cljs$core$IFn$_invoke$arity$3(cljs.core.swap_BANG_,cljs.c
 (com.fulcrologic.fulcro.algorithms.tx_processing.synchronous_tx_processing.swap_submission_queue_BANG_.cljs$lang$maxFixedArity = (1));
 
 /** @this {Function} */
-(com.fulcrologic.fulcro.algorithms.tx_processing.synchronous_tx_processing.swap_submission_queue_BANG_.cljs$lang$applyTo = (function (seq65828){
-var G__65829 = cljs.core.first(seq65828);
-var seq65828__$1 = cljs.core.next(seq65828);
+(com.fulcrologic.fulcro.algorithms.tx_processing.synchronous_tx_processing.swap_submission_queue_BANG_.cljs$lang$applyTo = (function (seq54836){
+var G__54837 = cljs.core.first(seq54836);
+var seq54836__$1 = cljs.core.next(seq54836);
 var self__5754__auto__ = this;
-return self__5754__auto__.cljs$core$IFn$_invoke$arity$variadic(G__65829,seq65828__$1);
+return self__5754__auto__.cljs$core$IFn$_invoke$arity$variadic(G__54837,seq54836__$1);
 }));
 
 com.fulcrologic.fulcro.algorithms.tx_processing.synchronous_tx_processing.reset_submission_queue_BANG_ = (function com$fulcrologic$fulcro$algorithms$tx_processing$synchronous_tx_processing$reset_submission_queue_BANG_(app__$1,v){
@@ -61,14 +61,14 @@ return cljs.core.deref(cljs.core.get_in.cljs$core$IFn$_invoke$arity$2(app__$1,ne
 });
 com.fulcrologic.fulcro.algorithms.tx_processing.synchronous_tx_processing.swap_post_processing_steps_BANG_ = (function com$fulcrologic$fulcro$algorithms$tx_processing$synchronous_tx_processing$swap_post_processing_steps_BANG_(var_args){
 var args__5775__auto__ = [];
-var len__5769__auto___65960 = arguments.length;
-var i__5770__auto___65961 = (0);
+var len__5769__auto___54987 = arguments.length;
+var i__5770__auto___54988 = (0);
 while(true){
-if((i__5770__auto___65961 < len__5769__auto___65960)){
-args__5775__auto__.push((arguments[i__5770__auto___65961]));
+if((i__5770__auto___54988 < len__5769__auto___54987)){
+args__5775__auto__.push((arguments[i__5770__auto___54988]));
 
-var G__65962 = (i__5770__auto___65961 + (1));
-i__5770__auto___65961 = G__65962;
+var G__54989 = (i__5770__auto___54988 + (1));
+i__5770__auto___54988 = G__54989;
 continue;
 } else {
 }
@@ -86,11 +86,11 @@ return cljs.core.apply.cljs$core$IFn$_invoke$arity$3(cljs.core.swap_BANG_,cljs.c
 (com.fulcrologic.fulcro.algorithms.tx_processing.synchronous_tx_processing.swap_post_processing_steps_BANG_.cljs$lang$maxFixedArity = (1));
 
 /** @this {Function} */
-(com.fulcrologic.fulcro.algorithms.tx_processing.synchronous_tx_processing.swap_post_processing_steps_BANG_.cljs$lang$applyTo = (function (seq65833){
-var G__65834 = cljs.core.first(seq65833);
-var seq65833__$1 = cljs.core.next(seq65833);
+(com.fulcrologic.fulcro.algorithms.tx_processing.synchronous_tx_processing.swap_post_processing_steps_BANG_.cljs$lang$applyTo = (function (seq54841){
+var G__54842 = cljs.core.first(seq54841);
+var seq54841__$1 = cljs.core.next(seq54841);
 var self__5754__auto__ = this;
-return self__5754__auto__.cljs$core$IFn$_invoke$arity$variadic(G__65834,seq65833__$1);
+return self__5754__auto__.cljs$core$IFn$_invoke$arity$variadic(G__54842,seq54841__$1);
 }));
 
 com.fulcrologic.fulcro.algorithms.tx_processing.synchronous_tx_processing.reset_post_processing_steps_BANG_ = (function com$fulcrologic$fulcro$algorithms$tx_processing$synchronous_tx_processing$reset_post_processing_steps_BANG_(app__$1,v){
@@ -101,14 +101,14 @@ return cljs.core.deref(cljs.core.get_in.cljs$core$IFn$_invoke$arity$2(app__$1,ne
 });
 com.fulcrologic.fulcro.algorithms.tx_processing.synchronous_tx_processing.swap_active_queue_BANG_ = (function com$fulcrologic$fulcro$algorithms$tx_processing$synchronous_tx_processing$swap_active_queue_BANG_(var_args){
 var args__5775__auto__ = [];
-var len__5769__auto___65963 = arguments.length;
-var i__5770__auto___65964 = (0);
+var len__5769__auto___54990 = arguments.length;
+var i__5770__auto___54991 = (0);
 while(true){
-if((i__5770__auto___65964 < len__5769__auto___65963)){
-args__5775__auto__.push((arguments[i__5770__auto___65964]));
+if((i__5770__auto___54991 < len__5769__auto___54990)){
+args__5775__auto__.push((arguments[i__5770__auto___54991]));
 
-var G__65965 = (i__5770__auto___65964 + (1));
-i__5770__auto___65964 = G__65965;
+var G__54992 = (i__5770__auto___54991 + (1));
+i__5770__auto___54991 = G__54992;
 continue;
 } else {
 }
@@ -126,11 +126,11 @@ return cljs.core.apply.cljs$core$IFn$_invoke$arity$3(cljs.core.swap_BANG_,cljs.c
 (com.fulcrologic.fulcro.algorithms.tx_processing.synchronous_tx_processing.swap_active_queue_BANG_.cljs$lang$maxFixedArity = (1));
 
 /** @this {Function} */
-(com.fulcrologic.fulcro.algorithms.tx_processing.synchronous_tx_processing.swap_active_queue_BANG_.cljs$lang$applyTo = (function (seq65835){
-var G__65836 = cljs.core.first(seq65835);
-var seq65835__$1 = cljs.core.next(seq65835);
+(com.fulcrologic.fulcro.algorithms.tx_processing.synchronous_tx_processing.swap_active_queue_BANG_.cljs$lang$applyTo = (function (seq54851){
+var G__54852 = cljs.core.first(seq54851);
+var seq54851__$1 = cljs.core.next(seq54851);
 var self__5754__auto__ = this;
-return self__5754__auto__.cljs$core$IFn$_invoke$arity$variadic(G__65836,seq65835__$1);
+return self__5754__auto__.cljs$core$IFn$_invoke$arity$variadic(G__54852,seq54851__$1);
 }));
 
 com.fulcrologic.fulcro.algorithms.tx_processing.synchronous_tx_processing.reset_active_queue_BANG_ = (function com$fulcrologic$fulcro$algorithms$tx_processing$synchronous_tx_processing$reset_active_queue_BANG_(app__$1,v){
@@ -141,14 +141,14 @@ return cljs.core.deref(cljs.core.get_in.cljs$core$IFn$_invoke$arity$2(app__$1,ne
 });
 com.fulcrologic.fulcro.algorithms.tx_processing.synchronous_tx_processing.swap_send_queue_BANG_ = (function com$fulcrologic$fulcro$algorithms$tx_processing$synchronous_tx_processing$swap_send_queue_BANG_(var_args){
 var args__5775__auto__ = [];
-var len__5769__auto___65966 = arguments.length;
-var i__5770__auto___65967 = (0);
+var len__5769__auto___54993 = arguments.length;
+var i__5770__auto___54994 = (0);
 while(true){
-if((i__5770__auto___65967 < len__5769__auto___65966)){
-args__5775__auto__.push((arguments[i__5770__auto___65967]));
+if((i__5770__auto___54994 < len__5769__auto___54993)){
+args__5775__auto__.push((arguments[i__5770__auto___54994]));
 
-var G__65968 = (i__5770__auto___65967 + (1));
-i__5770__auto___65967 = G__65968;
+var G__54995 = (i__5770__auto___54994 + (1));
+i__5770__auto___54994 = G__54995;
 continue;
 } else {
 }
@@ -166,13 +166,13 @@ return cljs.core.apply.cljs$core$IFn$_invoke$arity$3(cljs.core.swap_BANG_,cljs.c
 (com.fulcrologic.fulcro.algorithms.tx_processing.synchronous_tx_processing.swap_send_queue_BANG_.cljs$lang$maxFixedArity = (2));
 
 /** @this {Function} */
-(com.fulcrologic.fulcro.algorithms.tx_processing.synchronous_tx_processing.swap_send_queue_BANG_.cljs$lang$applyTo = (function (seq65837){
-var G__65838 = cljs.core.first(seq65837);
-var seq65837__$1 = cljs.core.next(seq65837);
-var G__65839 = cljs.core.first(seq65837__$1);
-var seq65837__$2 = cljs.core.next(seq65837__$1);
+(com.fulcrologic.fulcro.algorithms.tx_processing.synchronous_tx_processing.swap_send_queue_BANG_.cljs$lang$applyTo = (function (seq54858){
+var G__54859 = cljs.core.first(seq54858);
+var seq54858__$1 = cljs.core.next(seq54858);
+var G__54860 = cljs.core.first(seq54858__$1);
+var seq54858__$2 = cljs.core.next(seq54858__$1);
 var self__5754__auto__ = this;
-return self__5754__auto__.cljs$core$IFn$_invoke$arity$variadic(G__65838,G__65839,seq65837__$2);
+return self__5754__auto__.cljs$core$IFn$_invoke$arity$variadic(G__54859,G__54860,seq54858__$2);
 }));
 
 com.fulcrologic.fulcro.algorithms.tx_processing.synchronous_tx_processing.reset_send_queue_BANG_ = (function com$fulcrologic$fulcro$algorithms$tx_processing$synchronous_tx_processing$reset_send_queue_BANG_(app__$1,remote,v){
@@ -201,65 +201,65 @@ var steps = com.fulcrologic.fulcro.algorithms.tx_processing.synchronous_tx_proce
 while(true){
 com.fulcrologic.fulcro.algorithms.tx_processing.synchronous_tx_processing.reset_post_processing_steps_BANG_(app__$1,cljs.core.PersistentVector.EMPTY);
 
-var seq__65840_65969 = cljs.core.seq(steps);
-var chunk__65841_65970 = null;
-var count__65842_65971 = (0);
-var i__65843_65972 = (0);
+var seq__54861_54996 = cljs.core.seq(steps);
+var chunk__54862_54997 = null;
+var count__54863_54998 = (0);
+var i__54864_54999 = (0);
 while(true){
-if((i__65843_65972 < count__65842_65971)){
-var f_65973 = chunk__65841_65970.cljs$core$IIndexed$_nth$arity$2(null,i__65843_65972);
-try{(f_65973.cljs$core$IFn$_invoke$arity$0 ? f_65973.cljs$core$IFn$_invoke$arity$0() : f_65973.call(null));
-}catch (e65846){var e_65974 = e65846;
-taoensso.timbre._log_BANG_.cljs$core$IFn$_invoke$arity$11(taoensso.timbre._STAR_config_STAR_,new cljs.core.Keyword(null,"error","error",-978969032),"com.fulcrologic.fulcro.algorithms.tx-processing.synchronous-tx-processing",null,144,new cljs.core.Keyword(null,"p","p",151049309),new cljs.core.Keyword(null,"auto","auto",-566279492),(new cljs.core.Delay(((function (seq__65840_65969,chunk__65841_65970,count__65842_65971,i__65843_65972,steps,e_65974,f_65973){
+if((i__54864_54999 < count__54863_54998)){
+var f_55000 = chunk__54862_54997.cljs$core$IIndexed$_nth$arity$2(null,i__54864_54999);
+try{(f_55000.cljs$core$IFn$_invoke$arity$0 ? f_55000.cljs$core$IFn$_invoke$arity$0() : f_55000.call(null));
+}catch (e54867){var e_55001 = e54867;
+taoensso.timbre._log_BANG_.cljs$core$IFn$_invoke$arity$11(taoensso.timbre._STAR_config_STAR_,new cljs.core.Keyword(null,"error","error",-978969032),"com.fulcrologic.fulcro.algorithms.tx-processing.synchronous-tx-processing",null,144,new cljs.core.Keyword(null,"p","p",151049309),new cljs.core.Keyword(null,"auto","auto",-566279492),(new cljs.core.Delay(((function (seq__54861_54996,chunk__54862_54997,count__54863_54998,i__54864_54999,steps,e_55001,f_55000){
 return (function (){
-return new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [e_65974,"Post processing step failed. See https://book.fulcrologic.com/#err-stp-postproc-failed"], null);
-});})(seq__65840_65969,chunk__65841_65970,count__65842_65971,i__65843_65972,steps,e_65974,f_65973))
-,null)),null,892392316,null);
+return new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [e_55001,"Post processing step failed. See https://book.fulcrologic.com/#err-stp-postproc-failed"], null);
+});})(seq__54861_54996,chunk__54862_54997,count__54863_54998,i__54864_54999,steps,e_55001,f_55000))
+,null)),null,1476374652,null);
 }
 
-var G__65975 = seq__65840_65969;
-var G__65976 = chunk__65841_65970;
-var G__65977 = count__65842_65971;
-var G__65978 = (i__65843_65972 + (1));
-seq__65840_65969 = G__65975;
-chunk__65841_65970 = G__65976;
-count__65842_65971 = G__65977;
-i__65843_65972 = G__65978;
+var G__55002 = seq__54861_54996;
+var G__55003 = chunk__54862_54997;
+var G__55004 = count__54863_54998;
+var G__55005 = (i__54864_54999 + (1));
+seq__54861_54996 = G__55002;
+chunk__54862_54997 = G__55003;
+count__54863_54998 = G__55004;
+i__54864_54999 = G__55005;
 continue;
 } else {
-var temp__5804__auto___65979 = cljs.core.seq(seq__65840_65969);
-if(temp__5804__auto___65979){
-var seq__65840_65980__$1 = temp__5804__auto___65979;
-if(cljs.core.chunked_seq_QMARK_(seq__65840_65980__$1)){
-var c__5568__auto___65981 = cljs.core.chunk_first(seq__65840_65980__$1);
-var G__65982 = cljs.core.chunk_rest(seq__65840_65980__$1);
-var G__65983 = c__5568__auto___65981;
-var G__65984 = cljs.core.count(c__5568__auto___65981);
-var G__65985 = (0);
-seq__65840_65969 = G__65982;
-chunk__65841_65970 = G__65983;
-count__65842_65971 = G__65984;
-i__65843_65972 = G__65985;
+var temp__5804__auto___55006 = cljs.core.seq(seq__54861_54996);
+if(temp__5804__auto___55006){
+var seq__54861_55007__$1 = temp__5804__auto___55006;
+if(cljs.core.chunked_seq_QMARK_(seq__54861_55007__$1)){
+var c__5568__auto___55008 = cljs.core.chunk_first(seq__54861_55007__$1);
+var G__55009 = cljs.core.chunk_rest(seq__54861_55007__$1);
+var G__55010 = c__5568__auto___55008;
+var G__55011 = cljs.core.count(c__5568__auto___55008);
+var G__55012 = (0);
+seq__54861_54996 = G__55009;
+chunk__54862_54997 = G__55010;
+count__54863_54998 = G__55011;
+i__54864_54999 = G__55012;
 continue;
 } else {
-var f_65986 = cljs.core.first(seq__65840_65980__$1);
-try{(f_65986.cljs$core$IFn$_invoke$arity$0 ? f_65986.cljs$core$IFn$_invoke$arity$0() : f_65986.call(null));
-}catch (e65847){var e_65987 = e65847;
-taoensso.timbre._log_BANG_.cljs$core$IFn$_invoke$arity$11(taoensso.timbre._STAR_config_STAR_,new cljs.core.Keyword(null,"error","error",-978969032),"com.fulcrologic.fulcro.algorithms.tx-processing.synchronous-tx-processing",null,144,new cljs.core.Keyword(null,"p","p",151049309),new cljs.core.Keyword(null,"auto","auto",-566279492),(new cljs.core.Delay(((function (seq__65840_65969,chunk__65841_65970,count__65842_65971,i__65843_65972,steps,e_65987,f_65986,seq__65840_65980__$1,temp__5804__auto___65979){
+var f_55013 = cljs.core.first(seq__54861_55007__$1);
+try{(f_55013.cljs$core$IFn$_invoke$arity$0 ? f_55013.cljs$core$IFn$_invoke$arity$0() : f_55013.call(null));
+}catch (e54868){var e_55014 = e54868;
+taoensso.timbre._log_BANG_.cljs$core$IFn$_invoke$arity$11(taoensso.timbre._STAR_config_STAR_,new cljs.core.Keyword(null,"error","error",-978969032),"com.fulcrologic.fulcro.algorithms.tx-processing.synchronous-tx-processing",null,144,new cljs.core.Keyword(null,"p","p",151049309),new cljs.core.Keyword(null,"auto","auto",-566279492),(new cljs.core.Delay(((function (seq__54861_54996,chunk__54862_54997,count__54863_54998,i__54864_54999,steps,e_55014,f_55013,seq__54861_55007__$1,temp__5804__auto___55006){
 return (function (){
-return new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [e_65987,"Post processing step failed. See https://book.fulcrologic.com/#err-stp-postproc-failed"], null);
-});})(seq__65840_65969,chunk__65841_65970,count__65842_65971,i__65843_65972,steps,e_65987,f_65986,seq__65840_65980__$1,temp__5804__auto___65979))
-,null)),null,-777567925,null);
+return new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [e_55014,"Post processing step failed. See https://book.fulcrologic.com/#err-stp-postproc-failed"], null);
+});})(seq__54861_54996,chunk__54862_54997,count__54863_54998,i__54864_54999,steps,e_55014,f_55013,seq__54861_55007__$1,temp__5804__auto___55006))
+,null)),null,1227031272,null);
 }
 
-var G__65988 = cljs.core.next(seq__65840_65980__$1);
-var G__65989 = null;
-var G__65990 = (0);
-var G__65991 = (0);
-seq__65840_65969 = G__65988;
-chunk__65841_65970 = G__65989;
-count__65842_65971 = G__65990;
-i__65843_65972 = G__65991;
+var G__55015 = cljs.core.next(seq__54861_55007__$1);
+var G__55016 = null;
+var G__55017 = (0);
+var G__55018 = (0);
+seq__54861_54996 = G__55015;
+chunk__54862_54997 = G__55016;
+count__54863_54998 = G__55017;
+i__54864_54999 = G__55018;
 continue;
 }
 } else {
@@ -271,8 +271,8 @@ break;
 var temp__5804__auto__ = cljs.core.seq(com.fulcrologic.fulcro.algorithms.tx_processing.synchronous_tx_processing.post_processing_steps(app__$1));
 if(temp__5804__auto__){
 var next_steps = temp__5804__auto__;
-var G__65992 = next_steps;
-steps = G__65992;
+var G__55019 = next_steps;
+steps = G__55019;
 continue;
 } else {
 return null;
@@ -283,21 +283,21 @@ break;
 /**
  * Returns true if the current thread is in the midst of running the optimistic actions of a new transaction.
  */
-com.fulcrologic.fulcro.algorithms.tx_processing.synchronous_tx_processing.in_transaction_QMARK_ = (function com$fulcrologic$fulcro$algorithms$tx_processing$synchronous_tx_processing$in_transaction_QMARK_(p__65848){
-var map__65849 = p__65848;
-var map__65849__$1 = cljs.core.__destructure_map(map__65849);
-var app__$1 = map__65849__$1;
-var id = cljs.core.get.cljs$core$IFn$_invoke$arity$2(map__65849__$1,new cljs.core.Keyword("com.fulcrologic.fulcro.application","id","com.fulcrologic.fulcro.application/id",-2008968625));
+com.fulcrologic.fulcro.algorithms.tx_processing.synchronous_tx_processing.in_transaction_QMARK_ = (function com$fulcrologic$fulcro$algorithms$tx_processing$synchronous_tx_processing$in_transaction_QMARK_(p__54869){
+var map__54870 = p__54869;
+var map__54870__$1 = cljs.core.__destructure_map(map__54870);
+var app__$1 = map__54870__$1;
+var id = cljs.core.get.cljs$core$IFn$_invoke$arity$2(map__54870__$1,new cljs.core.Keyword("com.fulcrologic.fulcro.application","id","com.fulcrologic.fulcro.application/id",-2008968625));
 return cljs.core.not_EQ_.cljs$core$IFn$_invoke$arity$2((0),cljs.core.count(cljs.core.get.cljs$core$IFn$_invoke$arity$3(cljs.core.deref(com.fulcrologic.fulcro.algorithms.tx_processing.synchronous_tx_processing.apps_in_tx),id,cljs.core.PersistentVector.EMPTY)));
 });
 /**
  * Is the current thread running the TX queue?
  */
-com.fulcrologic.fulcro.algorithms.tx_processing.synchronous_tx_processing.current_thread_running_tx_QMARK_ = (function com$fulcrologic$fulcro$algorithms$tx_processing$synchronous_tx_processing$current_thread_running_tx_QMARK_(p__65850){
-var map__65851 = p__65850;
-var map__65851__$1 = cljs.core.__destructure_map(map__65851);
-var app__$1 = map__65851__$1;
-var id = cljs.core.get.cljs$core$IFn$_invoke$arity$2(map__65851__$1,new cljs.core.Keyword("com.fulcrologic.fulcro.application","id","com.fulcrologic.fulcro.application/id",-2008968625));
+com.fulcrologic.fulcro.algorithms.tx_processing.synchronous_tx_processing.current_thread_running_tx_QMARK_ = (function com$fulcrologic$fulcro$algorithms$tx_processing$synchronous_tx_processing$current_thread_running_tx_QMARK_(p__54871){
+var map__54872 = p__54871;
+var map__54872__$1 = cljs.core.__destructure_map(map__54872);
+var app__$1 = map__54872__$1;
+var id = cljs.core.get.cljs$core$IFn$_invoke$arity$2(map__54872__$1,new cljs.core.Keyword("com.fulcrologic.fulcro.application","id","com.fulcrologic.fulcro.application/id",-2008968625));
 return cljs.core.contains_QMARK_(cljs.core.set(cljs.core.get.cljs$core$IFn$_invoke$arity$3(cljs.core.deref(com.fulcrologic.fulcro.algorithms.tx_processing.synchronous_tx_processing.apps_in_tx),id,cljs.core.PersistentVector.EMPTY)),com.fulcrologic.fulcro.algorithms.tx_processing.synchronous_tx_processing.current_thread_id());
 });
 /**
@@ -317,24 +317,24 @@ return cljs.core.update.cljs$core$IFn$_invoke$arity$4(node,new cljs.core.Keyword
  * 
  *   Returns the tx-element with the remote marked complete.
  */
-com.fulcrologic.fulcro.algorithms.tx_processing.synchronous_tx_processing.dispatch_result_BANG_ = (function com$fulcrologic$fulcro$algorithms$tx_processing$synchronous_tx_processing$dispatch_result_BANG_(app__$1,tx_node,p__65852,remote){
-var map__65853 = p__65852;
-var map__65853__$1 = cljs.core.__destructure_map(map__65853);
-var tx_element = map__65853__$1;
-var results = cljs.core.get.cljs$core$IFn$_invoke$arity$2(map__65853__$1,new cljs.core.Keyword("com.fulcrologic.fulcro.algorithms.tx-processing","results","com.fulcrologic.fulcro.algorithms.tx-processing/results",-1876101852));
-var dispatch = cljs.core.get.cljs$core$IFn$_invoke$arity$2(map__65853__$1,new cljs.core.Keyword("com.fulcrologic.fulcro.algorithms.tx-processing","dispatch","com.fulcrologic.fulcro.algorithms.tx-processing/dispatch",-262239660));
-var desired_ast_nodes = cljs.core.get.cljs$core$IFn$_invoke$arity$2(map__65853__$1,new cljs.core.Keyword("com.fulcrologic.fulcro.algorithms.tx-processing","desired-ast-nodes","com.fulcrologic.fulcro.algorithms.tx-processing/desired-ast-nodes",-1718643425));
-var transmitted_ast_nodes = cljs.core.get.cljs$core$IFn$_invoke$arity$2(map__65853__$1,new cljs.core.Keyword("com.fulcrologic.fulcro.algorithms.tx-processing","transmitted-ast-nodes","com.fulcrologic.fulcro.algorithms.tx-processing/transmitted-ast-nodes",1065250687));
-var original_ast_node = cljs.core.get.cljs$core$IFn$_invoke$arity$2(map__65853__$1,new cljs.core.Keyword("com.fulcrologic.fulcro.algorithms.tx-processing","original-ast-node","com.fulcrologic.fulcro.algorithms.tx-processing/original-ast-node",2080944477));
-var result_65993 = cljs.core.get.cljs$core$IFn$_invoke$arity$2(results,remote);
-var handler_65994 = cljs.core.get.cljs$core$IFn$_invoke$arity$2(dispatch,new cljs.core.Keyword(null,"result-action","result-action",-1254630246));
-if(cljs.core.truth_(handler_65994)){
-var env_65995 = com.fulcrologic.fulcro.algorithms.tx_processing.build_env.cljs$core$IFn$_invoke$arity$3(app__$1,tx_node,new cljs.core.PersistentArrayMap(null, 5, [new cljs.core.Keyword(null,"dispatch","dispatch",1319337009),dispatch,new cljs.core.Keyword(null,"transacted-ast","transacted-ast",-442737948),original_ast_node,new cljs.core.Keyword(null,"mutation-ast","mutation-ast",1077959891),cljs.core.get.cljs$core$IFn$_invoke$arity$2(desired_ast_nodes,remote),new cljs.core.Keyword(null,"transmitted-ast","transmitted-ast",1828931690),cljs.core.get.cljs$core$IFn$_invoke$arity$2(transmitted_ast_nodes,remote),new cljs.core.Keyword(null,"result","result",1415092211),result_65993], null));
-try{(handler_65994.cljs$core$IFn$_invoke$arity$1 ? handler_65994.cljs$core$IFn$_invoke$arity$1(env_65995) : handler_65994.call(null,env_65995));
-}catch (e65854){var e_65996 = e65854;
+com.fulcrologic.fulcro.algorithms.tx_processing.synchronous_tx_processing.dispatch_result_BANG_ = (function com$fulcrologic$fulcro$algorithms$tx_processing$synchronous_tx_processing$dispatch_result_BANG_(app__$1,tx_node,p__54873,remote){
+var map__54874 = p__54873;
+var map__54874__$1 = cljs.core.__destructure_map(map__54874);
+var tx_element = map__54874__$1;
+var results = cljs.core.get.cljs$core$IFn$_invoke$arity$2(map__54874__$1,new cljs.core.Keyword("com.fulcrologic.fulcro.algorithms.tx-processing","results","com.fulcrologic.fulcro.algorithms.tx-processing/results",-1876101852));
+var dispatch = cljs.core.get.cljs$core$IFn$_invoke$arity$2(map__54874__$1,new cljs.core.Keyword("com.fulcrologic.fulcro.algorithms.tx-processing","dispatch","com.fulcrologic.fulcro.algorithms.tx-processing/dispatch",-262239660));
+var desired_ast_nodes = cljs.core.get.cljs$core$IFn$_invoke$arity$2(map__54874__$1,new cljs.core.Keyword("com.fulcrologic.fulcro.algorithms.tx-processing","desired-ast-nodes","com.fulcrologic.fulcro.algorithms.tx-processing/desired-ast-nodes",-1718643425));
+var transmitted_ast_nodes = cljs.core.get.cljs$core$IFn$_invoke$arity$2(map__54874__$1,new cljs.core.Keyword("com.fulcrologic.fulcro.algorithms.tx-processing","transmitted-ast-nodes","com.fulcrologic.fulcro.algorithms.tx-processing/transmitted-ast-nodes",1065250687));
+var original_ast_node = cljs.core.get.cljs$core$IFn$_invoke$arity$2(map__54874__$1,new cljs.core.Keyword("com.fulcrologic.fulcro.algorithms.tx-processing","original-ast-node","com.fulcrologic.fulcro.algorithms.tx-processing/original-ast-node",2080944477));
+var result_55020 = cljs.core.get.cljs$core$IFn$_invoke$arity$2(results,remote);
+var handler_55021 = cljs.core.get.cljs$core$IFn$_invoke$arity$2(dispatch,new cljs.core.Keyword(null,"result-action","result-action",-1254630246));
+if(cljs.core.truth_(handler_55021)){
+var env_55022 = com.fulcrologic.fulcro.algorithms.tx_processing.build_env.cljs$core$IFn$_invoke$arity$3(app__$1,tx_node,new cljs.core.PersistentArrayMap(null, 5, [new cljs.core.Keyword(null,"dispatch","dispatch",1319337009),dispatch,new cljs.core.Keyword(null,"transacted-ast","transacted-ast",-442737948),original_ast_node,new cljs.core.Keyword(null,"mutation-ast","mutation-ast",1077959891),cljs.core.get.cljs$core$IFn$_invoke$arity$2(desired_ast_nodes,remote),new cljs.core.Keyword(null,"transmitted-ast","transmitted-ast",1828931690),cljs.core.get.cljs$core$IFn$_invoke$arity$2(transmitted_ast_nodes,remote),new cljs.core.Keyword(null,"result","result",1415092211),result_55020], null));
+try{(handler_55021.cljs$core$IFn$_invoke$arity$1 ? handler_55021.cljs$core$IFn$_invoke$arity$1(env_55022) : handler_55021.call(null,env_55022));
+}catch (e54875){var e_55023 = e54875;
 taoensso.timbre._log_BANG_.cljs$core$IFn$_invoke$arity$11(taoensso.timbre._STAR_config_STAR_,new cljs.core.Keyword(null,"error","error",-978969032),"com.fulcrologic.fulcro.algorithms.tx-processing.synchronous-tx-processing",null,182,new cljs.core.Keyword(null,"p","p",151049309),new cljs.core.Keyword(null,"auto","auto",-566279492),(new cljs.core.Delay((function (){
-return new cljs.core.PersistentVector(null, 4, 5, cljs.core.PersistentVector.EMPTY_NODE, [e_65996,"The result-action mutation handler for mutation",new cljs.core.Keyword(null,"dispatch-key","dispatch-key",733619510).cljs$core$IFn$_invoke$arity$1(original_ast_node),"threw an exception. See https://book.fulcrologic.com/#err-stp-res-action-exc"], null);
-}),null)),null,-469999478,null);
+return new cljs.core.PersistentVector(null, 4, 5, cljs.core.PersistentVector.EMPTY_NODE, [e_55023,"The result-action mutation handler for mutation",new cljs.core.Keyword(null,"dispatch-key","dispatch-key",733619510).cljs$core$IFn$_invoke$arity$1(original_ast_node),"threw an exception. See https://book.fulcrologic.com/#err-stp-res-action-exc"], null);
+}),null)),null,-1559992258,null);
 }} else {
 }
 
@@ -343,12 +343,12 @@ return cljs.core.update.cljs$core$IFn$_invoke$arity$4(tx_element,new cljs.core.K
 /**
  * Distribute results and mark the remotes for those elements as complete.
  */
-com.fulcrologic.fulcro.algorithms.tx_processing.synchronous_tx_processing.distribute_element_results_BANG_ = (function com$fulcrologic$fulcro$algorithms$tx_processing$synchronous_tx_processing$distribute_element_results_BANG_(app__$1,tx_node,p__65855){
-var map__65856 = p__65855;
-var map__65856__$1 = cljs.core.__destructure_map(map__65856);
-var tx_element = map__65856__$1;
-var results = cljs.core.get.cljs$core$IFn$_invoke$arity$2(map__65856__$1,new cljs.core.Keyword("com.fulcrologic.fulcro.algorithms.tx-processing","results","com.fulcrologic.fulcro.algorithms.tx-processing/results",-1876101852));
-var complete_QMARK_ = cljs.core.get.cljs$core$IFn$_invoke$arity$2(map__65856__$1,new cljs.core.Keyword("com.fulcrologic.fulcro.algorithms.tx-processing","complete?","com.fulcrologic.fulcro.algorithms.tx-processing/complete?",-311612706));
+com.fulcrologic.fulcro.algorithms.tx_processing.synchronous_tx_processing.distribute_element_results_BANG_ = (function com$fulcrologic$fulcro$algorithms$tx_processing$synchronous_tx_processing$distribute_element_results_BANG_(app__$1,tx_node,p__54876){
+var map__54877 = p__54876;
+var map__54877__$1 = cljs.core.__destructure_map(map__54877);
+var tx_element = map__54877__$1;
+var results = cljs.core.get.cljs$core$IFn$_invoke$arity$2(map__54877__$1,new cljs.core.Keyword("com.fulcrologic.fulcro.algorithms.tx-processing","results","com.fulcrologic.fulcro.algorithms.tx-processing/results",-1876101852));
+var complete_QMARK_ = cljs.core.get.cljs$core$IFn$_invoke$arity$2(map__54877__$1,new cljs.core.Keyword("com.fulcrologic.fulcro.algorithms.tx-processing","complete?","com.fulcrologic.fulcro.algorithms.tx-processing/complete?",-311612706));
 return cljs.core.reduce.cljs$core$IFn$_invoke$arity$3((function (new_element,remote){
 if(cljs.core.truth_((complete_QMARK_.cljs$core$IFn$_invoke$arity$1 ? complete_QMARK_.cljs$core$IFn$_invoke$arity$1(remote) : complete_QMARK_.call(null,remote)))){
 return new_element;
@@ -359,10 +359,10 @@ return com.fulcrologic.fulcro.algorithms.tx_processing.synchronous_tx_processing
 });
 com.fulcrologic.fulcro.algorithms.tx_processing.synchronous_tx_processing.node_index = (function com$fulcrologic$fulcro$algorithms$tx_processing$synchronous_tx_processing$node_index(queue,txn_id){
 var n = cljs.core.count(queue);
-var idx = cljs.core.reduce.cljs$core$IFn$_invoke$arity$3((function (idx,p__65857){
-var map__65858 = p__65857;
-var map__65858__$1 = cljs.core.__destructure_map(map__65858);
-var id = cljs.core.get.cljs$core$IFn$_invoke$arity$2(map__65858__$1,new cljs.core.Keyword("com.fulcrologic.fulcro.algorithms.tx-processing","id","com.fulcrologic.fulcro.algorithms.tx-processing/id",1199810423));
+var idx = cljs.core.reduce.cljs$core$IFn$_invoke$arity$3((function (idx,p__54883){
+var map__54884 = p__54883;
+var map__54884__$1 = cljs.core.__destructure_map(map__54884);
+var id = cljs.core.get.cljs$core$IFn$_invoke$arity$2(map__54884__$1,new cljs.core.Keyword("com.fulcrologic.fulcro.algorithms.tx-processing","id","com.fulcrologic.fulcro.algorithms.tx-processing/id",1199810423));
 if(cljs.core._EQ_.cljs$core$IFn$_invoke$arity$2(id,txn_id)){
 return cljs.core.reduced(idx);
 } else {
@@ -383,16 +383,16 @@ com.fulcrologic.fulcro.algorithms.tx_processing.synchronous_tx_processing.distri
 var active_queue = com.fulcrologic.fulcro.algorithms.tx_processing.synchronous_tx_processing.active_queue(app__$1);
 var idx = com.fulcrologic.fulcro.algorithms.tx_processing.synchronous_tx_processing.node_index(active_queue,txn_id);
 var tx_node = cljs.core.get.cljs$core$IFn$_invoke$arity$2(active_queue,idx);
-return com.fulcrologic.fulcro.algorithms.tx_processing.synchronous_tx_processing.swap_active_queue_BANG_.cljs$core$IFn$_invoke$arity$variadic(app__$1,cljs.core.prim_seq.cljs$core$IFn$_invoke$arity$2([cljs.core.update_in,new cljs.core.PersistentVector(null, 3, 5, cljs.core.PersistentVector.EMPTY_NODE, [idx,new cljs.core.Keyword("com.fulcrologic.fulcro.algorithms.tx-processing","elements","com.fulcrologic.fulcro.algorithms.tx-processing/elements",-925101330),ele_idx], null),(function (p1__65859_SHARP_){
-return com.fulcrologic.fulcro.algorithms.tx_processing.synchronous_tx_processing.distribute_element_results_BANG_(app__$1,tx_node,p1__65859_SHARP_);
+return com.fulcrologic.fulcro.algorithms.tx_processing.synchronous_tx_processing.swap_active_queue_BANG_.cljs$core$IFn$_invoke$arity$variadic(app__$1,cljs.core.prim_seq.cljs$core$IFn$_invoke$arity$2([cljs.core.update_in,new cljs.core.PersistentVector(null, 3, 5, cljs.core.PersistentVector.EMPTY_NODE, [idx,new cljs.core.Keyword("com.fulcrologic.fulcro.algorithms.tx-processing","elements","com.fulcrologic.fulcro.algorithms.tx-processing/elements",-925101330),ele_idx], null),(function (p1__54885_SHARP_){
+return com.fulcrologic.fulcro.algorithms.tx_processing.synchronous_tx_processing.distribute_element_results_BANG_(app__$1,tx_node,p1__54885_SHARP_);
 })], 0));
 });
 /**
  * Deal with a network result on the given txn/element.
  */
 com.fulcrologic.fulcro.algorithms.tx_processing.synchronous_tx_processing.record_result_BANG_ = (function com$fulcrologic$fulcro$algorithms$tx_processing$synchronous_tx_processing$record_result_BANG_(var_args){
-var G__65861 = arguments.length;
-switch (G__65861) {
+var G__54888 = arguments.length;
+switch (G__54888) {
 case 6:
 return com.fulcrologic.fulcro.algorithms.tx_processing.synchronous_tx_processing.record_result_BANG_.cljs$core$IFn$_invoke$arity$6((arguments[(0)]),(arguments[(1)]),(arguments[(2)]),(arguments[(3)]),(arguments[(4)]),(arguments[(5)]));
 
@@ -414,7 +414,7 @@ var not_found_QMARK_ = (((txn_idx >= cljs.core.count(active_queue))) || (cljs.co
 if(not_found_QMARK_){
 return taoensso.timbre._log_BANG_.cljs$core$IFn$_invoke$arity$11(taoensso.timbre._STAR_config_STAR_,new cljs.core.Keyword(null,"error","error",-978969032),"com.fulcrologic.fulcro.algorithms.tx-processing.synchronous-tx-processing",null,225,new cljs.core.Keyword(null,"p","p",151049309),new cljs.core.Keyword(null,"auto","auto",-566279492),(new cljs.core.Delay((function (){
 return new cljs.core.PersistentVector(null, 3, 5, cljs.core.PersistentVector.EMPTY_NODE, ["Network result for",remote,"does not have a valid node on the active queue! See https://book.fulcrologic.com/#err-stp-res-lacks-valid-node"], null);
-}),null)),null,-1705775236,null);
+}),null)),null,252969103,null);
 } else {
 com.fulcrologic.fulcro.algorithms.tx_processing.synchronous_tx_processing.swap_active_queue_BANG_.cljs$core$IFn$_invoke$arity$variadic(app__$1,cljs.core.prim_seq.cljs$core$IFn$_invoke$arity$2([cljs.core.assoc_in,new cljs.core.PersistentVector(null, 5, 5, cljs.core.PersistentVector.EMPTY_NODE, [txn_idx,new cljs.core.Keyword("com.fulcrologic.fulcro.algorithms.tx-processing","elements","com.fulcrologic.fulcro.algorithms.tx-processing/elements",-925101330),ele_idx,result_key,remote], null),result], 0));
 
@@ -433,11 +433,11 @@ return com.fulcrologic.fulcro.algorithms.tx_processing.synchronous_tx_processing
  */
 com.fulcrologic.fulcro.algorithms.tx_processing.synchronous_tx_processing.remove_send_BANG_ = (function com$fulcrologic$fulcro$algorithms$tx_processing$synchronous_tx_processing$remove_send_BANG_(app__$1,remote,txn_id,ele_idx){
 return com.fulcrologic.fulcro.algorithms.tx_processing.synchronous_tx_processing.swap_send_queue_BANG_.cljs$core$IFn$_invoke$arity$variadic(app__$1,remote,cljs.core.prim_seq.cljs$core$IFn$_invoke$arity$2([(function (old_queue){
-return cljs.core.filterv((function (p__65862){
-var map__65863 = p__65862;
-var map__65863__$1 = cljs.core.__destructure_map(map__65863);
-var id = cljs.core.get.cljs$core$IFn$_invoke$arity$2(map__65863__$1,new cljs.core.Keyword("com.fulcrologic.fulcro.algorithms.tx-processing","id","com.fulcrologic.fulcro.algorithms.tx-processing/id",1199810423));
-var idx = cljs.core.get.cljs$core$IFn$_invoke$arity$2(map__65863__$1,new cljs.core.Keyword("com.fulcrologic.fulcro.algorithms.tx-processing","idx","com.fulcrologic.fulcro.algorithms.tx-processing/idx",-1121773698));
+return cljs.core.filterv((function (p__54889){
+var map__54890 = p__54889;
+var map__54890__$1 = cljs.core.__destructure_map(map__54890);
+var id = cljs.core.get.cljs$core$IFn$_invoke$arity$2(map__54890__$1,new cljs.core.Keyword("com.fulcrologic.fulcro.algorithms.tx-processing","id","com.fulcrologic.fulcro.algorithms.tx-processing/id",1199810423));
+var idx = cljs.core.get.cljs$core$IFn$_invoke$arity$2(map__54890__$1,new cljs.core.Keyword("com.fulcrologic.fulcro.algorithms.tx-processing","idx","com.fulcrologic.fulcro.algorithms.tx-processing/idx",-1121773698));
 return (!(((cljs.core._EQ_.cljs$core$IFn$_invoke$arity$2(txn_id,id)) && (cljs.core._EQ_.cljs$core$IFn$_invoke$arity$2(ele_idx,idx)))));
 }),old_queue);
 })], 0));
@@ -445,22 +445,22 @@ return (!(((cljs.core._EQ_.cljs$core$IFn$_invoke$arity$2(txn_id,id)) && (cljs.co
 /**
  * Generate a new send node and add it to the appropriate send queue.
  */
-com.fulcrologic.fulcro.algorithms.tx_processing.synchronous_tx_processing.add_send_BANG_ = (function com$fulcrologic$fulcro$algorithms$tx_processing$synchronous_tx_processing$add_send_BANG_(app__$1,p__65864,ele_idx,remote){
-var map__65865 = p__65864;
-var map__65865__$1 = cljs.core.__destructure_map(map__65865);
-var tx_node = map__65865__$1;
-var id = cljs.core.get.cljs$core$IFn$_invoke$arity$2(map__65865__$1,new cljs.core.Keyword("com.fulcrologic.fulcro.algorithms.tx-processing","id","com.fulcrologic.fulcro.algorithms.tx-processing/id",1199810423));
-var options = cljs.core.get.cljs$core$IFn$_invoke$arity$2(map__65865__$1,new cljs.core.Keyword("com.fulcrologic.fulcro.algorithms.tx-processing","options","com.fulcrologic.fulcro.algorithms.tx-processing/options",2016767420));
+com.fulcrologic.fulcro.algorithms.tx_processing.synchronous_tx_processing.add_send_BANG_ = (function com$fulcrologic$fulcro$algorithms$tx_processing$synchronous_tx_processing$add_send_BANG_(app__$1,p__54891,ele_idx,remote){
+var map__54892 = p__54891;
+var map__54892__$1 = cljs.core.__destructure_map(map__54892);
+var tx_node = map__54892__$1;
+var id = cljs.core.get.cljs$core$IFn$_invoke$arity$2(map__54892__$1,new cljs.core.Keyword("com.fulcrologic.fulcro.algorithms.tx-processing","id","com.fulcrologic.fulcro.algorithms.tx-processing/id",1199810423));
+var options = cljs.core.get.cljs$core$IFn$_invoke$arity$2(map__54892__$1,new cljs.core.Keyword("com.fulcrologic.fulcro.algorithms.tx-processing","options","com.fulcrologic.fulcro.algorithms.tx-processing/options",2016767420));
 var update_handler = (function com$fulcrologic$fulcro$algorithms$tx_processing$synchronous_tx_processing$add_send_BANG__$_progress_handler_STAR_(result){
-var id__65607__auto__ = new cljs.core.Keyword("com.fulcrologic.fulcro.application","id","com.fulcrologic.fulcro.application/id",-2008968625).cljs$core$IFn$_invoke$arity$1(app__$1);
-cljs.core.swap_BANG_.cljs$core$IFn$_invoke$arity$variadic(com.fulcrologic.fulcro.algorithms.tx_processing.synchronous_tx_processing.apps_in_tx,cljs.core.update,id__65607__auto__,cljs.core.conj,cljs.core.prim_seq.cljs$core$IFn$_invoke$arity$2([com.fulcrologic.fulcro.algorithms.tx_processing.synchronous_tx_processing.current_thread_id()], 0));
+var id__54614__auto__ = new cljs.core.Keyword("com.fulcrologic.fulcro.application","id","com.fulcrologic.fulcro.application/id",-2008968625).cljs$core$IFn$_invoke$arity$1(app__$1);
+cljs.core.swap_BANG_.cljs$core$IFn$_invoke$arity$variadic(com.fulcrologic.fulcro.algorithms.tx_processing.synchronous_tx_processing.apps_in_tx,cljs.core.update,id__54614__auto__,cljs.core.conj,cljs.core.prim_seq.cljs$core$IFn$_invoke$arity$2([com.fulcrologic.fulcro.algorithms.tx_processing.synchronous_tx_processing.current_thread_id()], 0));
 
 try{com.fulcrologic.fulcro.algorithms.tx_processing.synchronous_tx_processing.record_result_BANG_.cljs$core$IFn$_invoke$arity$6(app__$1,id,ele_idx,remote,result,new cljs.core.Keyword("com.fulcrologic.fulcro.algorithms.tx-processing","progress","com.fulcrologic.fulcro.algorithms.tx-processing/progress",1012736442));
 
-var G__65866 = app__$1;
-var G__65867 = cljs.core.PersistentArrayMap.EMPTY;
-return (com.fulcrologic.fulcro.algorithms.tx_processing.synchronous_tx_processing.run_queue_BANG_.cljs$core$IFn$_invoke$arity$2 ? com.fulcrologic.fulcro.algorithms.tx_processing.synchronous_tx_processing.run_queue_BANG_.cljs$core$IFn$_invoke$arity$2(G__65866,G__65867) : com.fulcrologic.fulcro.algorithms.tx_processing.synchronous_tx_processing.run_queue_BANG_.call(null,G__65866,G__65867));
-}finally {cljs.core.swap_BANG_.cljs$core$IFn$_invoke$arity$4(com.fulcrologic.fulcro.algorithms.tx_processing.synchronous_tx_processing.apps_in_tx,cljs.core.update,id__65607__auto__,cljs.core.pop);
+var G__54893 = app__$1;
+var G__54894 = cljs.core.PersistentArrayMap.EMPTY;
+return (com.fulcrologic.fulcro.algorithms.tx_processing.synchronous_tx_processing.run_queue_BANG_.cljs$core$IFn$_invoke$arity$2 ? com.fulcrologic.fulcro.algorithms.tx_processing.synchronous_tx_processing.run_queue_BANG_.cljs$core$IFn$_invoke$arity$2(G__54893,G__54894) : com.fulcrologic.fulcro.algorithms.tx_processing.synchronous_tx_processing.run_queue_BANG_.call(null,G__54893,G__54894));
+}finally {cljs.core.swap_BANG_.cljs$core$IFn$_invoke$arity$4(com.fulcrologic.fulcro.algorithms.tx_processing.synchronous_tx_processing.apps_in_tx,cljs.core.update,id__54614__auto__,cljs.core.pop);
 }});
 var ast = cljs.core.get_in.cljs$core$IFn$_invoke$arity$2(tx_node,new cljs.core.PersistentVector(null, 4, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword("com.fulcrologic.fulcro.algorithms.tx-processing","elements","com.fulcrologic.fulcro.algorithms.tx-processing/elements",-925101330),ele_idx,new cljs.core.Keyword("com.fulcrologic.fulcro.algorithms.tx-processing","transmitted-ast-nodes","com.fulcrologic.fulcro.algorithms.tx-processing/transmitted-ast-nodes",1065250687),remote], null));
 var handler = (function com$fulcrologic$fulcro$algorithms$tx_processing$synchronous_tx_processing$add_send_BANG__$_result_handler_STAR_(result){
@@ -478,32 +478,32 @@ return cljs.core.not_EQ_.cljs$core$IFn$_invoke$arity$2("disabled",com.fulcrologi
 return and__5043__auto__;
 }
 })())){
-try{var map__65869_65998 = result;
-var map__65869_65999__$1 = cljs.core.__destructure_map(map__65869_65998);
-var status_code_66000 = cljs.core.get.cljs$core$IFn$_invoke$arity$2(map__65869_65999__$1,new cljs.core.Keyword(null,"status-code","status-code",-1060410130));
-var body_66001 = cljs.core.get.cljs$core$IFn$_invoke$arity$2(map__65869_65999__$1,new cljs.core.Keyword(null,"body","body",-2049205669));
-if(cljs.core._EQ_.cljs$core$IFn$_invoke$arity$2((200),status_code_66000)){
-com.fulcrologic.fulcro.inspect.inspect_client.send_finished_BANG_(app__$1,remote,id,body_66001);
+try{var map__54896_55025 = result;
+var map__54896_55026__$1 = cljs.core.__destructure_map(map__54896_55025);
+var status_code_55027 = cljs.core.get.cljs$core$IFn$_invoke$arity$2(map__54896_55026__$1,new cljs.core.Keyword(null,"status-code","status-code",-1060410130));
+var body_55028 = cljs.core.get.cljs$core$IFn$_invoke$arity$2(map__54896_55026__$1,new cljs.core.Keyword(null,"body","body",-2049205669));
+if(cljs.core._EQ_.cljs$core$IFn$_invoke$arity$2((200),status_code_55027)){
+com.fulcrologic.fulcro.inspect.inspect_client.send_finished_BANG_(app__$1,remote,id,body_55028);
 } else {
-com.fulcrologic.fulcro.inspect.inspect_client.send_failed_BANG_(app__$1,id,cljs.core.str.cljs$core$IFn$_invoke$arity$1(status_code_66000));
+com.fulcrologic.fulcro.inspect.inspect_client.send_failed_BANG_(app__$1,id,cljs.core.str.cljs$core$IFn$_invoke$arity$1(status_code_55027));
 }
-}catch (e65868){var e_66002 = e65868;
+}catch (e54895){var e_55029 = e54895;
 }} else {
 }
 } else {
 }
 
-var id__65607__auto__ = new cljs.core.Keyword("com.fulcrologic.fulcro.application","id","com.fulcrologic.fulcro.application/id",-2008968625).cljs$core$IFn$_invoke$arity$1(app__$1);
-cljs.core.swap_BANG_.cljs$core$IFn$_invoke$arity$variadic(com.fulcrologic.fulcro.algorithms.tx_processing.synchronous_tx_processing.apps_in_tx,cljs.core.update,id__65607__auto__,cljs.core.conj,cljs.core.prim_seq.cljs$core$IFn$_invoke$arity$2([com.fulcrologic.fulcro.algorithms.tx_processing.synchronous_tx_processing.current_thread_id()], 0));
+var id__54614__auto__ = new cljs.core.Keyword("com.fulcrologic.fulcro.application","id","com.fulcrologic.fulcro.application/id",-2008968625).cljs$core$IFn$_invoke$arity$1(app__$1);
+cljs.core.swap_BANG_.cljs$core$IFn$_invoke$arity$variadic(com.fulcrologic.fulcro.algorithms.tx_processing.synchronous_tx_processing.apps_in_tx,cljs.core.update,id__54614__auto__,cljs.core.conj,cljs.core.prim_seq.cljs$core$IFn$_invoke$arity$2([com.fulcrologic.fulcro.algorithms.tx_processing.synchronous_tx_processing.current_thread_id()], 0));
 
 try{com.fulcrologic.fulcro.algorithms.tx_processing.synchronous_tx_processing.record_result_BANG_.cljs$core$IFn$_invoke$arity$5(app__$1,id,ele_idx,remote,result);
 
 com.fulcrologic.fulcro.algorithms.tx_processing.synchronous_tx_processing.remove_send_BANG_(app__$1,remote,id,ele_idx);
 
-var G__65870 = app__$1;
-var G__65871 = cljs.core.PersistentArrayMap.EMPTY;
-return (com.fulcrologic.fulcro.algorithms.tx_processing.synchronous_tx_processing.run_queue_BANG_.cljs$core$IFn$_invoke$arity$2 ? com.fulcrologic.fulcro.algorithms.tx_processing.synchronous_tx_processing.run_queue_BANG_.cljs$core$IFn$_invoke$arity$2(G__65870,G__65871) : com.fulcrologic.fulcro.algorithms.tx_processing.synchronous_tx_processing.run_queue_BANG_.call(null,G__65870,G__65871));
-}finally {cljs.core.swap_BANG_.cljs$core$IFn$_invoke$arity$4(com.fulcrologic.fulcro.algorithms.tx_processing.synchronous_tx_processing.apps_in_tx,cljs.core.update,id__65607__auto__,cljs.core.pop);
+var G__54897 = app__$1;
+var G__54898 = cljs.core.PersistentArrayMap.EMPTY;
+return (com.fulcrologic.fulcro.algorithms.tx_processing.synchronous_tx_processing.run_queue_BANG_.cljs$core$IFn$_invoke$arity$2 ? com.fulcrologic.fulcro.algorithms.tx_processing.synchronous_tx_processing.run_queue_BANG_.cljs$core$IFn$_invoke$arity$2(G__54897,G__54898) : com.fulcrologic.fulcro.algorithms.tx_processing.synchronous_tx_processing.run_queue_BANG_.call(null,G__54897,G__54898));
+}finally {cljs.core.swap_BANG_.cljs$core$IFn$_invoke$arity$4(com.fulcrologic.fulcro.algorithms.tx_processing.synchronous_tx_processing.apps_in_tx,cljs.core.update,id__54614__auto__,cljs.core.pop);
 }});
 var send_node = new cljs.core.PersistentArrayMap(null, 7, [new cljs.core.Keyword("com.fulcrologic.fulcro.algorithms.tx-processing","id","com.fulcrologic.fulcro.algorithms.tx-processing/id",1199810423),id,new cljs.core.Keyword("com.fulcrologic.fulcro.algorithms.tx-processing","idx","com.fulcrologic.fulcro.algorithms.tx-processing/idx",-1121773698),ele_idx,new cljs.core.Keyword("com.fulcrologic.fulcro.algorithms.tx-processing","ast","com.fulcrologic.fulcro.algorithms.tx-processing/ast",1718830373),ast,new cljs.core.Keyword("com.fulcrologic.fulcro.algorithms.tx-processing","options","com.fulcrologic.fulcro.algorithms.tx-processing/options",2016767420),options,new cljs.core.Keyword("com.fulcrologic.fulcro.algorithms.tx-processing","active?","com.fulcrologic.fulcro.algorithms.tx-processing/active?",966679517),false,new cljs.core.Keyword("com.fulcrologic.fulcro.algorithms.tx-processing","result-handler","com.fulcrologic.fulcro.algorithms.tx-processing/result-handler",-114902209),handler,new cljs.core.Keyword("com.fulcrologic.fulcro.algorithms.tx-processing","update-handler","com.fulcrologic.fulcro.algorithms.tx-processing/update-handler",-1256285755),update_handler], null);
 if(cljs.core.truth_(ast)){
@@ -519,12 +519,12 @@ return null;
 /**
  * Queue all (unqueued) remote actions for the given element.  Returns the (possibly updated) node.
  */
-com.fulcrologic.fulcro.algorithms.tx_processing.synchronous_tx_processing.queue_element_sends_BANG_ = (function com$fulcrologic$fulcro$algorithms$tx_processing$synchronous_tx_processing$queue_element_sends_BANG_(app__$1,tx_node,p__65872){
-var map__65873 = p__65872;
-var map__65873__$1 = cljs.core.__destructure_map(map__65873);
-var idx = cljs.core.get.cljs$core$IFn$_invoke$arity$2(map__65873__$1,new cljs.core.Keyword("com.fulcrologic.fulcro.algorithms.tx-processing","idx","com.fulcrologic.fulcro.algorithms.tx-processing/idx",-1121773698));
-var dispatch = cljs.core.get.cljs$core$IFn$_invoke$arity$2(map__65873__$1,new cljs.core.Keyword("com.fulcrologic.fulcro.algorithms.tx-processing","dispatch","com.fulcrologic.fulcro.algorithms.tx-processing/dispatch",-262239660));
-var started_QMARK_ = cljs.core.get.cljs$core$IFn$_invoke$arity$2(map__65873__$1,new cljs.core.Keyword("com.fulcrologic.fulcro.algorithms.tx-processing","started?","com.fulcrologic.fulcro.algorithms.tx-processing/started?",1421241366));
+com.fulcrologic.fulcro.algorithms.tx_processing.synchronous_tx_processing.queue_element_sends_BANG_ = (function com$fulcrologic$fulcro$algorithms$tx_processing$synchronous_tx_processing$queue_element_sends_BANG_(app__$1,tx_node,p__54899){
+var map__54900 = p__54899;
+var map__54900__$1 = cljs.core.__destructure_map(map__54900);
+var idx = cljs.core.get.cljs$core$IFn$_invoke$arity$2(map__54900__$1,new cljs.core.Keyword("com.fulcrologic.fulcro.algorithms.tx-processing","idx","com.fulcrologic.fulcro.algorithms.tx-processing/idx",-1121773698));
+var dispatch = cljs.core.get.cljs$core$IFn$_invoke$arity$2(map__54900__$1,new cljs.core.Keyword("com.fulcrologic.fulcro.algorithms.tx-processing","dispatch","com.fulcrologic.fulcro.algorithms.tx-processing/dispatch",-262239660));
+var started_QMARK_ = cljs.core.get.cljs$core$IFn$_invoke$arity$2(map__54900__$1,new cljs.core.Keyword("com.fulcrologic.fulcro.algorithms.tx-processing","started?","com.fulcrologic.fulcro.algorithms.tx-processing/started?",1421241366));
 var remotes = clojure.set.intersection.cljs$core$IFn$_invoke$arity$2(cljs.core.set(cljs.core.keys(dispatch)),com.fulcrologic.fulcro.algorithms.tx_processing.app__GT_remote_names(app__$1));
 var to_dispatch = clojure.set.difference.cljs$core$IFn$_invoke$arity$2(remotes,started_QMARK_);
 return cljs.core.reduce.cljs$core$IFn$_invoke$arity$3((function (node,remote){
@@ -544,21 +544,21 @@ return updated_node;
  * Finds any item(s) on the given node that are ready to be placed on the network queues and adds them. Non-optimistic
  *   multi-element nodes will only queue one remote operation at a time.
  */
-com.fulcrologic.fulcro.algorithms.tx_processing.synchronous_tx_processing.queue_sends_BANG_ = (function com$fulcrologic$fulcro$algorithms$tx_processing$synchronous_tx_processing$queue_sends_BANG_(app__$1,p__65874){
-var map__65875 = p__65874;
-var map__65875__$1 = cljs.core.__destructure_map(map__65875);
-var tx_node = map__65875__$1;
-var options = cljs.core.get.cljs$core$IFn$_invoke$arity$2(map__65875__$1,new cljs.core.Keyword("com.fulcrologic.fulcro.algorithms.tx-processing","options","com.fulcrologic.fulcro.algorithms.tx-processing/options",2016767420));
-var elements = cljs.core.get.cljs$core$IFn$_invoke$arity$2(map__65875__$1,new cljs.core.Keyword("com.fulcrologic.fulcro.algorithms.tx-processing","elements","com.fulcrologic.fulcro.algorithms.tx-processing/elements",-925101330));
+com.fulcrologic.fulcro.algorithms.tx_processing.synchronous_tx_processing.queue_sends_BANG_ = (function com$fulcrologic$fulcro$algorithms$tx_processing$synchronous_tx_processing$queue_sends_BANG_(app__$1,p__54901){
+var map__54902 = p__54901;
+var map__54902__$1 = cljs.core.__destructure_map(map__54902);
+var tx_node = map__54902__$1;
+var options = cljs.core.get.cljs$core$IFn$_invoke$arity$2(map__54902__$1,new cljs.core.Keyword("com.fulcrologic.fulcro.algorithms.tx-processing","options","com.fulcrologic.fulcro.algorithms.tx-processing/options",2016767420));
+var elements = cljs.core.get.cljs$core$IFn$_invoke$arity$2(map__54902__$1,new cljs.core.Keyword("com.fulcrologic.fulcro.algorithms.tx-processing","elements","com.fulcrologic.fulcro.algorithms.tx-processing/elements",-925101330));
 return cljs.core.reduce.cljs$core$IFn$_invoke$arity$3((function (node,element){
 return com.fulcrologic.fulcro.algorithms.tx_processing.synchronous_tx_processing.queue_element_sends_BANG_(app__$1,node,element);
 }),tx_node,elements);
 });
-com.fulcrologic.fulcro.algorithms.tx_processing.synchronous_tx_processing.process_tx_node_BANG_ = (function com$fulcrologic$fulcro$algorithms$tx_processing$synchronous_tx_processing$process_tx_node_BANG_(app__$1,p__65876){
-var map__65877 = p__65876;
-var map__65877__$1 = cljs.core.__destructure_map(map__65877);
-var tx_node = map__65877__$1;
-var options = cljs.core.get.cljs$core$IFn$_invoke$arity$2(map__65877__$1,new cljs.core.Keyword("com.fulcrologic.fulcro.algorithms.tx-processing","options","com.fulcrologic.fulcro.algorithms.tx-processing/options",2016767420));
+com.fulcrologic.fulcro.algorithms.tx_processing.synchronous_tx_processing.process_tx_node_BANG_ = (function com$fulcrologic$fulcro$algorithms$tx_processing$synchronous_tx_processing$process_tx_node_BANG_(app__$1,p__54903){
+var map__54904 = p__54903;
+var map__54904__$1 = cljs.core.__destructure_map(map__54904);
+var tx_node = map__54904__$1;
+var options = cljs.core.get.cljs$core$IFn$_invoke$arity$2(map__54904__$1,new cljs.core.Keyword("com.fulcrologic.fulcro.algorithms.tx-processing","options","com.fulcrologic.fulcro.algorithms.tx-processing/options",2016767420));
 if(com.fulcrologic.fulcro.algorithms.tx_processing.fully_complete_QMARK_(app__$1,tx_node)){
 return null;
 } else {
@@ -569,79 +569,79 @@ return com.fulcrologic.fulcro.algorithms.tx_processing.update_progress_BANG_(app
  * Process the send queues against the remotes, which will cause idle remotes with queued work to issue network requests.
  */
 com.fulcrologic.fulcro.algorithms.tx_processing.synchronous_tx_processing.process_send_queues_BANG_ = (function com$fulcrologic$fulcro$algorithms$tx_processing$synchronous_tx_processing$process_send_queues_BANG_(app__$1){
-var _STAR_remove_send_STAR__orig_val__65878 = com.fulcrologic.fulcro.algorithms.tx_processing.batched_processing._STAR_remove_send_STAR_;
-var _STAR_remove_send_STAR__temp_val__65879 = com.fulcrologic.fulcro.algorithms.tx_processing.synchronous_tx_processing.remove_send_BANG_;
-(com.fulcrologic.fulcro.algorithms.tx_processing.batched_processing._STAR_remove_send_STAR_ = _STAR_remove_send_STAR__temp_val__65879);
+var _STAR_remove_send_STAR__orig_val__54905 = com.fulcrologic.fulcro.algorithms.tx_processing.batched_processing._STAR_remove_send_STAR_;
+var _STAR_remove_send_STAR__temp_val__54906 = com.fulcrologic.fulcro.algorithms.tx_processing.synchronous_tx_processing.remove_send_BANG_;
+(com.fulcrologic.fulcro.algorithms.tx_processing.batched_processing._STAR_remove_send_STAR_ = _STAR_remove_send_STAR__temp_val__54906);
 
 try{var remote_names = com.fulcrologic.fulcro.algorithms.tx_processing.app__GT_remote_names(app__$1);
 var operations = cljs.core.atom.cljs$core$IFn$_invoke$arity$1(cljs.core.PersistentVector.EMPTY);
-var seq__65880_66003 = cljs.core.seq(remote_names);
-var chunk__65881_66004 = null;
-var count__65882_66005 = (0);
-var i__65883_66006 = (0);
+var seq__54907_55030 = cljs.core.seq(remote_names);
+var chunk__54908_55031 = null;
+var count__54909_55032 = (0);
+var i__54910_55033 = (0);
 while(true){
-if((i__65883_66006 < count__65882_66005)){
-var remote_66007 = chunk__65881_66004.cljs$core$IIndexed$_nth$arity$2(null,i__65883_66006);
-var send_queue_66008 = com.fulcrologic.fulcro.algorithms.tx_processing.synchronous_tx_processing.send_queue(app__$1,remote_66007);
-var vec__65900_66009 = com.fulcrologic.fulcro.algorithms.tx_processing.batched_processing.extract_parallel(send_queue_66008);
-var p_66010 = cljs.core.nth.cljs$core$IFn$_invoke$arity$3(vec__65900_66009,(0),null);
-var serial_66011 = cljs.core.nth.cljs$core$IFn$_invoke$arity$3(vec__65900_66009,(1),null);
-var front_66012 = cljs.core.first(serial_66011);
-var seq__65903_66013 = cljs.core.seq(p_66010);
-var chunk__65904_66014 = null;
-var count__65905_66015 = (0);
-var i__65906_66016 = (0);
+if((i__54910_55033 < count__54909_55032)){
+var remote_55034 = chunk__54908_55031.cljs$core$IIndexed$_nth$arity$2(null,i__54910_55033);
+var send_queue_55035 = com.fulcrologic.fulcro.algorithms.tx_processing.synchronous_tx_processing.send_queue(app__$1,remote_55034);
+var vec__54927_55036 = com.fulcrologic.fulcro.algorithms.tx_processing.batched_processing.extract_parallel(send_queue_55035);
+var p_55037 = cljs.core.nth.cljs$core$IFn$_invoke$arity$3(vec__54927_55036,(0),null);
+var serial_55038 = cljs.core.nth.cljs$core$IFn$_invoke$arity$3(vec__54927_55036,(1),null);
+var front_55039 = cljs.core.first(serial_55038);
+var seq__54930_55040 = cljs.core.seq(p_55037);
+var chunk__54931_55041 = null;
+var count__54932_55042 = (0);
+var i__54933_55043 = (0);
 while(true){
-if((i__65906_66016 < count__65905_66015)){
-var item_66017 = chunk__65904_66014.cljs$core$IIndexed$_nth$arity$2(null,i__65906_66016);
-cljs.core.swap_BANG_.cljs$core$IFn$_invoke$arity$3(operations,cljs.core.conj,((function (seq__65903_66013,chunk__65904_66014,count__65905_66015,i__65906_66016,seq__65880_66003,chunk__65881_66004,count__65882_66005,i__65883_66006,item_66017,send_queue_66008,vec__65900_66009,p_66010,serial_66011,front_66012,remote_66007,remote_names,operations,_STAR_remove_send_STAR__orig_val__65878,_STAR_remove_send_STAR__temp_val__65879){
+if((i__54933_55043 < count__54932_55042)){
+var item_55044 = chunk__54931_55041.cljs$core$IIndexed$_nth$arity$2(null,i__54933_55043);
+cljs.core.swap_BANG_.cljs$core$IFn$_invoke$arity$3(operations,cljs.core.conj,((function (seq__54930_55040,chunk__54931_55041,count__54932_55042,i__54933_55043,seq__54907_55030,chunk__54908_55031,count__54909_55032,i__54910_55033,item_55044,send_queue_55035,vec__54927_55036,p_55037,serial_55038,front_55039,remote_55034,remote_names,operations,_STAR_remove_send_STAR__orig_val__54905,_STAR_remove_send_STAR__temp_val__54906){
 return (function (){
-return com.fulcrologic.fulcro.algorithms.tx_processing.batched_processing.net_send_BANG_(app__$1,item_66017,remote_66007);
-});})(seq__65903_66013,chunk__65904_66014,count__65905_66015,i__65906_66016,seq__65880_66003,chunk__65881_66004,count__65882_66005,i__65883_66006,item_66017,send_queue_66008,vec__65900_66009,p_66010,serial_66011,front_66012,remote_66007,remote_names,operations,_STAR_remove_send_STAR__orig_val__65878,_STAR_remove_send_STAR__temp_val__65879))
+return com.fulcrologic.fulcro.algorithms.tx_processing.batched_processing.net_send_BANG_(app__$1,item_55044,remote_55034);
+});})(seq__54930_55040,chunk__54931_55041,count__54932_55042,i__54933_55043,seq__54907_55030,chunk__54908_55031,count__54909_55032,i__54910_55033,item_55044,send_queue_55035,vec__54927_55036,p_55037,serial_55038,front_55039,remote_55034,remote_names,operations,_STAR_remove_send_STAR__orig_val__54905,_STAR_remove_send_STAR__temp_val__54906))
 );
 
 
-var G__66018 = seq__65903_66013;
-var G__66019 = chunk__65904_66014;
-var G__66020 = count__65905_66015;
-var G__66021 = (i__65906_66016 + (1));
-seq__65903_66013 = G__66018;
-chunk__65904_66014 = G__66019;
-count__65905_66015 = G__66020;
-i__65906_66016 = G__66021;
+var G__55045 = seq__54930_55040;
+var G__55046 = chunk__54931_55041;
+var G__55047 = count__54932_55042;
+var G__55048 = (i__54933_55043 + (1));
+seq__54930_55040 = G__55045;
+chunk__54931_55041 = G__55046;
+count__54932_55042 = G__55047;
+i__54933_55043 = G__55048;
 continue;
 } else {
-var temp__5804__auto___66022 = cljs.core.seq(seq__65903_66013);
-if(temp__5804__auto___66022){
-var seq__65903_66023__$1 = temp__5804__auto___66022;
-if(cljs.core.chunked_seq_QMARK_(seq__65903_66023__$1)){
-var c__5568__auto___66024 = cljs.core.chunk_first(seq__65903_66023__$1);
-var G__66025 = cljs.core.chunk_rest(seq__65903_66023__$1);
-var G__66026 = c__5568__auto___66024;
-var G__66027 = cljs.core.count(c__5568__auto___66024);
-var G__66028 = (0);
-seq__65903_66013 = G__66025;
-chunk__65904_66014 = G__66026;
-count__65905_66015 = G__66027;
-i__65906_66016 = G__66028;
+var temp__5804__auto___55049 = cljs.core.seq(seq__54930_55040);
+if(temp__5804__auto___55049){
+var seq__54930_55050__$1 = temp__5804__auto___55049;
+if(cljs.core.chunked_seq_QMARK_(seq__54930_55050__$1)){
+var c__5568__auto___55051 = cljs.core.chunk_first(seq__54930_55050__$1);
+var G__55052 = cljs.core.chunk_rest(seq__54930_55050__$1);
+var G__55053 = c__5568__auto___55051;
+var G__55054 = cljs.core.count(c__5568__auto___55051);
+var G__55055 = (0);
+seq__54930_55040 = G__55052;
+chunk__54931_55041 = G__55053;
+count__54932_55042 = G__55054;
+i__54933_55043 = G__55055;
 continue;
 } else {
-var item_66029 = cljs.core.first(seq__65903_66023__$1);
-cljs.core.swap_BANG_.cljs$core$IFn$_invoke$arity$3(operations,cljs.core.conj,((function (seq__65903_66013,chunk__65904_66014,count__65905_66015,i__65906_66016,seq__65880_66003,chunk__65881_66004,count__65882_66005,i__65883_66006,item_66029,seq__65903_66023__$1,temp__5804__auto___66022,send_queue_66008,vec__65900_66009,p_66010,serial_66011,front_66012,remote_66007,remote_names,operations,_STAR_remove_send_STAR__orig_val__65878,_STAR_remove_send_STAR__temp_val__65879){
+var item_55056 = cljs.core.first(seq__54930_55050__$1);
+cljs.core.swap_BANG_.cljs$core$IFn$_invoke$arity$3(operations,cljs.core.conj,((function (seq__54930_55040,chunk__54931_55041,count__54932_55042,i__54933_55043,seq__54907_55030,chunk__54908_55031,count__54909_55032,i__54910_55033,item_55056,seq__54930_55050__$1,temp__5804__auto___55049,send_queue_55035,vec__54927_55036,p_55037,serial_55038,front_55039,remote_55034,remote_names,operations,_STAR_remove_send_STAR__orig_val__54905,_STAR_remove_send_STAR__temp_val__54906){
 return (function (){
-return com.fulcrologic.fulcro.algorithms.tx_processing.batched_processing.net_send_BANG_(app__$1,item_66029,remote_66007);
-});})(seq__65903_66013,chunk__65904_66014,count__65905_66015,i__65906_66016,seq__65880_66003,chunk__65881_66004,count__65882_66005,i__65883_66006,item_66029,seq__65903_66023__$1,temp__5804__auto___66022,send_queue_66008,vec__65900_66009,p_66010,serial_66011,front_66012,remote_66007,remote_names,operations,_STAR_remove_send_STAR__orig_val__65878,_STAR_remove_send_STAR__temp_val__65879))
+return com.fulcrologic.fulcro.algorithms.tx_processing.batched_processing.net_send_BANG_(app__$1,item_55056,remote_55034);
+});})(seq__54930_55040,chunk__54931_55041,count__54932_55042,i__54933_55043,seq__54907_55030,chunk__54908_55031,count__54909_55032,i__54910_55033,item_55056,seq__54930_55050__$1,temp__5804__auto___55049,send_queue_55035,vec__54927_55036,p_55037,serial_55038,front_55039,remote_55034,remote_names,operations,_STAR_remove_send_STAR__orig_val__54905,_STAR_remove_send_STAR__temp_val__54906))
 );
 
 
-var G__66030 = cljs.core.next(seq__65903_66023__$1);
-var G__66031 = null;
-var G__66032 = (0);
-var G__66033 = (0);
-seq__65903_66013 = G__66030;
-chunk__65904_66014 = G__66031;
-count__65905_66015 = G__66032;
-i__65906_66016 = G__66033;
+var G__55057 = cljs.core.next(seq__54930_55050__$1);
+var G__55058 = null;
+var G__55059 = (0);
+var G__55060 = (0);
+seq__54930_55040 = G__55057;
+chunk__54931_55041 = G__55058;
+count__54932_55042 = G__55059;
+i__54933_55043 = G__55060;
 continue;
 }
 } else {
@@ -650,112 +650,112 @@ continue;
 break;
 }
 
-if(cljs.core.truth_(new cljs.core.Keyword("com.fulcrologic.fulcro.algorithms.tx-processing","active?","com.fulcrologic.fulcro.algorithms.tx-processing/active?",966679517).cljs$core$IFn$_invoke$arity$1(front_66012))){
-com.fulcrologic.fulcro.algorithms.tx_processing.synchronous_tx_processing.reset_send_queue_BANG_(app__$1,remote_66007,serial_66011);
+if(cljs.core.truth_(new cljs.core.Keyword("com.fulcrologic.fulcro.algorithms.tx-processing","active?","com.fulcrologic.fulcro.algorithms.tx-processing/active?",966679517).cljs$core$IFn$_invoke$arity$1(front_55039))){
+com.fulcrologic.fulcro.algorithms.tx_processing.synchronous_tx_processing.reset_send_queue_BANG_(app__$1,remote_55034,serial_55038);
 } else {
-var map__65907_66034 = com.fulcrologic.fulcro.algorithms.tx_processing.batched_processing.combine_sends(app__$1,remote_66007,serial_66011);
-var map__65907_66035__$1 = cljs.core.__destructure_map(map__65907_66034);
-var send_queue_66036__$1 = cljs.core.get.cljs$core$IFn$_invoke$arity$2(map__65907_66035__$1,new cljs.core.Keyword("com.fulcrologic.fulcro.algorithms.tx-processing","send-queue","com.fulcrologic.fulcro.algorithms.tx-processing/send-queue",-1602123421));
-var send_node_66037 = cljs.core.get.cljs$core$IFn$_invoke$arity$2(map__65907_66035__$1,new cljs.core.Keyword("com.fulcrologic.fulcro.algorithms.tx-processing","send-node","com.fulcrologic.fulcro.algorithms.tx-processing/send-node",1624648157));
-if(cljs.core.truth_(send_node_66037)){
-cljs.core.swap_BANG_.cljs$core$IFn$_invoke$arity$3(operations,cljs.core.conj,((function (seq__65880_66003,chunk__65881_66004,count__65882_66005,i__65883_66006,map__65907_66034,map__65907_66035__$1,send_queue_66036__$1,send_node_66037,send_queue_66008,vec__65900_66009,p_66010,serial_66011,front_66012,remote_66007,remote_names,operations,_STAR_remove_send_STAR__orig_val__65878,_STAR_remove_send_STAR__temp_val__65879){
+var map__54934_55061 = com.fulcrologic.fulcro.algorithms.tx_processing.batched_processing.combine_sends(app__$1,remote_55034,serial_55038);
+var map__54934_55062__$1 = cljs.core.__destructure_map(map__54934_55061);
+var send_queue_55063__$1 = cljs.core.get.cljs$core$IFn$_invoke$arity$2(map__54934_55062__$1,new cljs.core.Keyword("com.fulcrologic.fulcro.algorithms.tx-processing","send-queue","com.fulcrologic.fulcro.algorithms.tx-processing/send-queue",-1602123421));
+var send_node_55064 = cljs.core.get.cljs$core$IFn$_invoke$arity$2(map__54934_55062__$1,new cljs.core.Keyword("com.fulcrologic.fulcro.algorithms.tx-processing","send-node","com.fulcrologic.fulcro.algorithms.tx-processing/send-node",1624648157));
+if(cljs.core.truth_(send_node_55064)){
+cljs.core.swap_BANG_.cljs$core$IFn$_invoke$arity$3(operations,cljs.core.conj,((function (seq__54907_55030,chunk__54908_55031,count__54909_55032,i__54910_55033,map__54934_55061,map__54934_55062__$1,send_queue_55063__$1,send_node_55064,send_queue_55035,vec__54927_55036,p_55037,serial_55038,front_55039,remote_55034,remote_names,operations,_STAR_remove_send_STAR__orig_val__54905,_STAR_remove_send_STAR__temp_val__54906){
 return (function (){
-return com.fulcrologic.fulcro.algorithms.tx_processing.batched_processing.net_send_BANG_(app__$1,send_node_66037,remote_66007);
-});})(seq__65880_66003,chunk__65881_66004,count__65882_66005,i__65883_66006,map__65907_66034,map__65907_66035__$1,send_queue_66036__$1,send_node_66037,send_queue_66008,vec__65900_66009,p_66010,serial_66011,front_66012,remote_66007,remote_names,operations,_STAR_remove_send_STAR__orig_val__65878,_STAR_remove_send_STAR__temp_val__65879))
+return com.fulcrologic.fulcro.algorithms.tx_processing.batched_processing.net_send_BANG_(app__$1,send_node_55064,remote_55034);
+});})(seq__54907_55030,chunk__54908_55031,count__54909_55032,i__54910_55033,map__54934_55061,map__54934_55062__$1,send_queue_55063__$1,send_node_55064,send_queue_55035,vec__54927_55036,p_55037,serial_55038,front_55039,remote_55034,remote_names,operations,_STAR_remove_send_STAR__orig_val__54905,_STAR_remove_send_STAR__temp_val__54906))
 );
 } else {
 }
 
-com.fulcrologic.fulcro.algorithms.tx_processing.synchronous_tx_processing.reset_send_queue_BANG_(app__$1,remote_66007,send_queue_66036__$1);
+com.fulcrologic.fulcro.algorithms.tx_processing.synchronous_tx_processing.reset_send_queue_BANG_(app__$1,remote_55034,send_queue_55063__$1);
 }
 
 
-var G__66038 = seq__65880_66003;
-var G__66039 = chunk__65881_66004;
-var G__66040 = count__65882_66005;
-var G__66041 = (i__65883_66006 + (1));
-seq__65880_66003 = G__66038;
-chunk__65881_66004 = G__66039;
-count__65882_66005 = G__66040;
-i__65883_66006 = G__66041;
+var G__55065 = seq__54907_55030;
+var G__55066 = chunk__54908_55031;
+var G__55067 = count__54909_55032;
+var G__55068 = (i__54910_55033 + (1));
+seq__54907_55030 = G__55065;
+chunk__54908_55031 = G__55066;
+count__54909_55032 = G__55067;
+i__54910_55033 = G__55068;
 continue;
 } else {
-var temp__5804__auto___66042 = cljs.core.seq(seq__65880_66003);
-if(temp__5804__auto___66042){
-var seq__65880_66043__$1 = temp__5804__auto___66042;
-if(cljs.core.chunked_seq_QMARK_(seq__65880_66043__$1)){
-var c__5568__auto___66044 = cljs.core.chunk_first(seq__65880_66043__$1);
-var G__66045 = cljs.core.chunk_rest(seq__65880_66043__$1);
-var G__66046 = c__5568__auto___66044;
-var G__66047 = cljs.core.count(c__5568__auto___66044);
-var G__66048 = (0);
-seq__65880_66003 = G__66045;
-chunk__65881_66004 = G__66046;
-count__65882_66005 = G__66047;
-i__65883_66006 = G__66048;
+var temp__5804__auto___55069 = cljs.core.seq(seq__54907_55030);
+if(temp__5804__auto___55069){
+var seq__54907_55070__$1 = temp__5804__auto___55069;
+if(cljs.core.chunked_seq_QMARK_(seq__54907_55070__$1)){
+var c__5568__auto___55071 = cljs.core.chunk_first(seq__54907_55070__$1);
+var G__55072 = cljs.core.chunk_rest(seq__54907_55070__$1);
+var G__55073 = c__5568__auto___55071;
+var G__55074 = cljs.core.count(c__5568__auto___55071);
+var G__55075 = (0);
+seq__54907_55030 = G__55072;
+chunk__54908_55031 = G__55073;
+count__54909_55032 = G__55074;
+i__54910_55033 = G__55075;
 continue;
 } else {
-var remote_66049 = cljs.core.first(seq__65880_66043__$1);
-var send_queue_66050 = com.fulcrologic.fulcro.algorithms.tx_processing.synchronous_tx_processing.send_queue(app__$1,remote_66049);
-var vec__65908_66051 = com.fulcrologic.fulcro.algorithms.tx_processing.batched_processing.extract_parallel(send_queue_66050);
-var p_66052 = cljs.core.nth.cljs$core$IFn$_invoke$arity$3(vec__65908_66051,(0),null);
-var serial_66053 = cljs.core.nth.cljs$core$IFn$_invoke$arity$3(vec__65908_66051,(1),null);
-var front_66054 = cljs.core.first(serial_66053);
-var seq__65911_66055 = cljs.core.seq(p_66052);
-var chunk__65912_66056 = null;
-var count__65913_66057 = (0);
-var i__65914_66058 = (0);
+var remote_55076 = cljs.core.first(seq__54907_55070__$1);
+var send_queue_55077 = com.fulcrologic.fulcro.algorithms.tx_processing.synchronous_tx_processing.send_queue(app__$1,remote_55076);
+var vec__54935_55078 = com.fulcrologic.fulcro.algorithms.tx_processing.batched_processing.extract_parallel(send_queue_55077);
+var p_55079 = cljs.core.nth.cljs$core$IFn$_invoke$arity$3(vec__54935_55078,(0),null);
+var serial_55080 = cljs.core.nth.cljs$core$IFn$_invoke$arity$3(vec__54935_55078,(1),null);
+var front_55081 = cljs.core.first(serial_55080);
+var seq__54938_55082 = cljs.core.seq(p_55079);
+var chunk__54939_55083 = null;
+var count__54940_55084 = (0);
+var i__54941_55085 = (0);
 while(true){
-if((i__65914_66058 < count__65913_66057)){
-var item_66059 = chunk__65912_66056.cljs$core$IIndexed$_nth$arity$2(null,i__65914_66058);
-cljs.core.swap_BANG_.cljs$core$IFn$_invoke$arity$3(operations,cljs.core.conj,((function (seq__65911_66055,chunk__65912_66056,count__65913_66057,i__65914_66058,seq__65880_66003,chunk__65881_66004,count__65882_66005,i__65883_66006,item_66059,send_queue_66050,vec__65908_66051,p_66052,serial_66053,front_66054,remote_66049,seq__65880_66043__$1,temp__5804__auto___66042,remote_names,operations,_STAR_remove_send_STAR__orig_val__65878,_STAR_remove_send_STAR__temp_val__65879){
+if((i__54941_55085 < count__54940_55084)){
+var item_55086 = chunk__54939_55083.cljs$core$IIndexed$_nth$arity$2(null,i__54941_55085);
+cljs.core.swap_BANG_.cljs$core$IFn$_invoke$arity$3(operations,cljs.core.conj,((function (seq__54938_55082,chunk__54939_55083,count__54940_55084,i__54941_55085,seq__54907_55030,chunk__54908_55031,count__54909_55032,i__54910_55033,item_55086,send_queue_55077,vec__54935_55078,p_55079,serial_55080,front_55081,remote_55076,seq__54907_55070__$1,temp__5804__auto___55069,remote_names,operations,_STAR_remove_send_STAR__orig_val__54905,_STAR_remove_send_STAR__temp_val__54906){
 return (function (){
-return com.fulcrologic.fulcro.algorithms.tx_processing.batched_processing.net_send_BANG_(app__$1,item_66059,remote_66049);
-});})(seq__65911_66055,chunk__65912_66056,count__65913_66057,i__65914_66058,seq__65880_66003,chunk__65881_66004,count__65882_66005,i__65883_66006,item_66059,send_queue_66050,vec__65908_66051,p_66052,serial_66053,front_66054,remote_66049,seq__65880_66043__$1,temp__5804__auto___66042,remote_names,operations,_STAR_remove_send_STAR__orig_val__65878,_STAR_remove_send_STAR__temp_val__65879))
+return com.fulcrologic.fulcro.algorithms.tx_processing.batched_processing.net_send_BANG_(app__$1,item_55086,remote_55076);
+});})(seq__54938_55082,chunk__54939_55083,count__54940_55084,i__54941_55085,seq__54907_55030,chunk__54908_55031,count__54909_55032,i__54910_55033,item_55086,send_queue_55077,vec__54935_55078,p_55079,serial_55080,front_55081,remote_55076,seq__54907_55070__$1,temp__5804__auto___55069,remote_names,operations,_STAR_remove_send_STAR__orig_val__54905,_STAR_remove_send_STAR__temp_val__54906))
 );
 
 
-var G__66060 = seq__65911_66055;
-var G__66061 = chunk__65912_66056;
-var G__66062 = count__65913_66057;
-var G__66063 = (i__65914_66058 + (1));
-seq__65911_66055 = G__66060;
-chunk__65912_66056 = G__66061;
-count__65913_66057 = G__66062;
-i__65914_66058 = G__66063;
+var G__55087 = seq__54938_55082;
+var G__55088 = chunk__54939_55083;
+var G__55089 = count__54940_55084;
+var G__55090 = (i__54941_55085 + (1));
+seq__54938_55082 = G__55087;
+chunk__54939_55083 = G__55088;
+count__54940_55084 = G__55089;
+i__54941_55085 = G__55090;
 continue;
 } else {
-var temp__5804__auto___66064__$1 = cljs.core.seq(seq__65911_66055);
-if(temp__5804__auto___66064__$1){
-var seq__65911_66065__$1 = temp__5804__auto___66064__$1;
-if(cljs.core.chunked_seq_QMARK_(seq__65911_66065__$1)){
-var c__5568__auto___66066 = cljs.core.chunk_first(seq__65911_66065__$1);
-var G__66067 = cljs.core.chunk_rest(seq__65911_66065__$1);
-var G__66068 = c__5568__auto___66066;
-var G__66069 = cljs.core.count(c__5568__auto___66066);
-var G__66070 = (0);
-seq__65911_66055 = G__66067;
-chunk__65912_66056 = G__66068;
-count__65913_66057 = G__66069;
-i__65914_66058 = G__66070;
+var temp__5804__auto___55091__$1 = cljs.core.seq(seq__54938_55082);
+if(temp__5804__auto___55091__$1){
+var seq__54938_55092__$1 = temp__5804__auto___55091__$1;
+if(cljs.core.chunked_seq_QMARK_(seq__54938_55092__$1)){
+var c__5568__auto___55093 = cljs.core.chunk_first(seq__54938_55092__$1);
+var G__55094 = cljs.core.chunk_rest(seq__54938_55092__$1);
+var G__55095 = c__5568__auto___55093;
+var G__55096 = cljs.core.count(c__5568__auto___55093);
+var G__55097 = (0);
+seq__54938_55082 = G__55094;
+chunk__54939_55083 = G__55095;
+count__54940_55084 = G__55096;
+i__54941_55085 = G__55097;
 continue;
 } else {
-var item_66071 = cljs.core.first(seq__65911_66065__$1);
-cljs.core.swap_BANG_.cljs$core$IFn$_invoke$arity$3(operations,cljs.core.conj,((function (seq__65911_66055,chunk__65912_66056,count__65913_66057,i__65914_66058,seq__65880_66003,chunk__65881_66004,count__65882_66005,i__65883_66006,item_66071,seq__65911_66065__$1,temp__5804__auto___66064__$1,send_queue_66050,vec__65908_66051,p_66052,serial_66053,front_66054,remote_66049,seq__65880_66043__$1,temp__5804__auto___66042,remote_names,operations,_STAR_remove_send_STAR__orig_val__65878,_STAR_remove_send_STAR__temp_val__65879){
+var item_55098 = cljs.core.first(seq__54938_55092__$1);
+cljs.core.swap_BANG_.cljs$core$IFn$_invoke$arity$3(operations,cljs.core.conj,((function (seq__54938_55082,chunk__54939_55083,count__54940_55084,i__54941_55085,seq__54907_55030,chunk__54908_55031,count__54909_55032,i__54910_55033,item_55098,seq__54938_55092__$1,temp__5804__auto___55091__$1,send_queue_55077,vec__54935_55078,p_55079,serial_55080,front_55081,remote_55076,seq__54907_55070__$1,temp__5804__auto___55069,remote_names,operations,_STAR_remove_send_STAR__orig_val__54905,_STAR_remove_send_STAR__temp_val__54906){
 return (function (){
-return com.fulcrologic.fulcro.algorithms.tx_processing.batched_processing.net_send_BANG_(app__$1,item_66071,remote_66049);
-});})(seq__65911_66055,chunk__65912_66056,count__65913_66057,i__65914_66058,seq__65880_66003,chunk__65881_66004,count__65882_66005,i__65883_66006,item_66071,seq__65911_66065__$1,temp__5804__auto___66064__$1,send_queue_66050,vec__65908_66051,p_66052,serial_66053,front_66054,remote_66049,seq__65880_66043__$1,temp__5804__auto___66042,remote_names,operations,_STAR_remove_send_STAR__orig_val__65878,_STAR_remove_send_STAR__temp_val__65879))
+return com.fulcrologic.fulcro.algorithms.tx_processing.batched_processing.net_send_BANG_(app__$1,item_55098,remote_55076);
+});})(seq__54938_55082,chunk__54939_55083,count__54940_55084,i__54941_55085,seq__54907_55030,chunk__54908_55031,count__54909_55032,i__54910_55033,item_55098,seq__54938_55092__$1,temp__5804__auto___55091__$1,send_queue_55077,vec__54935_55078,p_55079,serial_55080,front_55081,remote_55076,seq__54907_55070__$1,temp__5804__auto___55069,remote_names,operations,_STAR_remove_send_STAR__orig_val__54905,_STAR_remove_send_STAR__temp_val__54906))
 );
 
 
-var G__66072 = cljs.core.next(seq__65911_66065__$1);
-var G__66073 = null;
-var G__66074 = (0);
-var G__66075 = (0);
-seq__65911_66055 = G__66072;
-chunk__65912_66056 = G__66073;
-count__65913_66057 = G__66074;
-i__65914_66058 = G__66075;
+var G__55099 = cljs.core.next(seq__54938_55092__$1);
+var G__55100 = null;
+var G__55101 = (0);
+var G__55102 = (0);
+seq__54938_55082 = G__55099;
+chunk__54939_55083 = G__55100;
+count__54940_55084 = G__55101;
+i__54941_55085 = G__55102;
 continue;
 }
 } else {
@@ -764,34 +764,34 @@ continue;
 break;
 }
 
-if(cljs.core.truth_(new cljs.core.Keyword("com.fulcrologic.fulcro.algorithms.tx-processing","active?","com.fulcrologic.fulcro.algorithms.tx-processing/active?",966679517).cljs$core$IFn$_invoke$arity$1(front_66054))){
-com.fulcrologic.fulcro.algorithms.tx_processing.synchronous_tx_processing.reset_send_queue_BANG_(app__$1,remote_66049,serial_66053);
+if(cljs.core.truth_(new cljs.core.Keyword("com.fulcrologic.fulcro.algorithms.tx-processing","active?","com.fulcrologic.fulcro.algorithms.tx-processing/active?",966679517).cljs$core$IFn$_invoke$arity$1(front_55081))){
+com.fulcrologic.fulcro.algorithms.tx_processing.synchronous_tx_processing.reset_send_queue_BANG_(app__$1,remote_55076,serial_55080);
 } else {
-var map__65915_66076 = com.fulcrologic.fulcro.algorithms.tx_processing.batched_processing.combine_sends(app__$1,remote_66049,serial_66053);
-var map__65915_66077__$1 = cljs.core.__destructure_map(map__65915_66076);
-var send_queue_66078__$1 = cljs.core.get.cljs$core$IFn$_invoke$arity$2(map__65915_66077__$1,new cljs.core.Keyword("com.fulcrologic.fulcro.algorithms.tx-processing","send-queue","com.fulcrologic.fulcro.algorithms.tx-processing/send-queue",-1602123421));
-var send_node_66079 = cljs.core.get.cljs$core$IFn$_invoke$arity$2(map__65915_66077__$1,new cljs.core.Keyword("com.fulcrologic.fulcro.algorithms.tx-processing","send-node","com.fulcrologic.fulcro.algorithms.tx-processing/send-node",1624648157));
-if(cljs.core.truth_(send_node_66079)){
-cljs.core.swap_BANG_.cljs$core$IFn$_invoke$arity$3(operations,cljs.core.conj,((function (seq__65880_66003,chunk__65881_66004,count__65882_66005,i__65883_66006,map__65915_66076,map__65915_66077__$1,send_queue_66078__$1,send_node_66079,send_queue_66050,vec__65908_66051,p_66052,serial_66053,front_66054,remote_66049,seq__65880_66043__$1,temp__5804__auto___66042,remote_names,operations,_STAR_remove_send_STAR__orig_val__65878,_STAR_remove_send_STAR__temp_val__65879){
+var map__54942_55103 = com.fulcrologic.fulcro.algorithms.tx_processing.batched_processing.combine_sends(app__$1,remote_55076,serial_55080);
+var map__54942_55104__$1 = cljs.core.__destructure_map(map__54942_55103);
+var send_queue_55105__$1 = cljs.core.get.cljs$core$IFn$_invoke$arity$2(map__54942_55104__$1,new cljs.core.Keyword("com.fulcrologic.fulcro.algorithms.tx-processing","send-queue","com.fulcrologic.fulcro.algorithms.tx-processing/send-queue",-1602123421));
+var send_node_55106 = cljs.core.get.cljs$core$IFn$_invoke$arity$2(map__54942_55104__$1,new cljs.core.Keyword("com.fulcrologic.fulcro.algorithms.tx-processing","send-node","com.fulcrologic.fulcro.algorithms.tx-processing/send-node",1624648157));
+if(cljs.core.truth_(send_node_55106)){
+cljs.core.swap_BANG_.cljs$core$IFn$_invoke$arity$3(operations,cljs.core.conj,((function (seq__54907_55030,chunk__54908_55031,count__54909_55032,i__54910_55033,map__54942_55103,map__54942_55104__$1,send_queue_55105__$1,send_node_55106,send_queue_55077,vec__54935_55078,p_55079,serial_55080,front_55081,remote_55076,seq__54907_55070__$1,temp__5804__auto___55069,remote_names,operations,_STAR_remove_send_STAR__orig_val__54905,_STAR_remove_send_STAR__temp_val__54906){
 return (function (){
-return com.fulcrologic.fulcro.algorithms.tx_processing.batched_processing.net_send_BANG_(app__$1,send_node_66079,remote_66049);
-});})(seq__65880_66003,chunk__65881_66004,count__65882_66005,i__65883_66006,map__65915_66076,map__65915_66077__$1,send_queue_66078__$1,send_node_66079,send_queue_66050,vec__65908_66051,p_66052,serial_66053,front_66054,remote_66049,seq__65880_66043__$1,temp__5804__auto___66042,remote_names,operations,_STAR_remove_send_STAR__orig_val__65878,_STAR_remove_send_STAR__temp_val__65879))
+return com.fulcrologic.fulcro.algorithms.tx_processing.batched_processing.net_send_BANG_(app__$1,send_node_55106,remote_55076);
+});})(seq__54907_55030,chunk__54908_55031,count__54909_55032,i__54910_55033,map__54942_55103,map__54942_55104__$1,send_queue_55105__$1,send_node_55106,send_queue_55077,vec__54935_55078,p_55079,serial_55080,front_55081,remote_55076,seq__54907_55070__$1,temp__5804__auto___55069,remote_names,operations,_STAR_remove_send_STAR__orig_val__54905,_STAR_remove_send_STAR__temp_val__54906))
 );
 } else {
 }
 
-com.fulcrologic.fulcro.algorithms.tx_processing.synchronous_tx_processing.reset_send_queue_BANG_(app__$1,remote_66049,send_queue_66078__$1);
+com.fulcrologic.fulcro.algorithms.tx_processing.synchronous_tx_processing.reset_send_queue_BANG_(app__$1,remote_55076,send_queue_55105__$1);
 }
 
 
-var G__66080 = cljs.core.next(seq__65880_66043__$1);
-var G__66081 = null;
-var G__66082 = (0);
-var G__66083 = (0);
-seq__65880_66003 = G__66080;
-chunk__65881_66004 = G__66081;
-count__65882_66005 = G__66082;
-i__65883_66006 = G__66083;
+var G__55107 = cljs.core.next(seq__54907_55070__$1);
+var G__55108 = null;
+var G__55109 = (0);
+var G__55110 = (0);
+seq__54907_55030 = G__55107;
+chunk__54908_55031 = G__55108;
+count__54909_55032 = G__55109;
+i__54910_55033 = G__55110;
 continue;
 }
 } else {
@@ -800,53 +800,53 @@ continue;
 break;
 }
 
-var seq__65916 = cljs.core.seq(cljs.core.deref(operations));
-var chunk__65917 = null;
-var count__65918 = (0);
-var i__65919 = (0);
+var seq__54943 = cljs.core.seq(cljs.core.deref(operations));
+var chunk__54944 = null;
+var count__54945 = (0);
+var i__54946 = (0);
 while(true){
-if((i__65919 < count__65918)){
-var op = chunk__65917.cljs$core$IIndexed$_nth$arity$2(null,i__65919);
+if((i__54946 < count__54945)){
+var op = chunk__54944.cljs$core$IIndexed$_nth$arity$2(null,i__54946);
 (op.cljs$core$IFn$_invoke$arity$0 ? op.cljs$core$IFn$_invoke$arity$0() : op.call(null));
 
 
-var G__66084 = seq__65916;
-var G__66085 = chunk__65917;
-var G__66086 = count__65918;
-var G__66087 = (i__65919 + (1));
-seq__65916 = G__66084;
-chunk__65917 = G__66085;
-count__65918 = G__66086;
-i__65919 = G__66087;
+var G__55111 = seq__54943;
+var G__55112 = chunk__54944;
+var G__55113 = count__54945;
+var G__55114 = (i__54946 + (1));
+seq__54943 = G__55111;
+chunk__54944 = G__55112;
+count__54945 = G__55113;
+i__54946 = G__55114;
 continue;
 } else {
-var temp__5804__auto__ = cljs.core.seq(seq__65916);
+var temp__5804__auto__ = cljs.core.seq(seq__54943);
 if(temp__5804__auto__){
-var seq__65916__$1 = temp__5804__auto__;
-if(cljs.core.chunked_seq_QMARK_(seq__65916__$1)){
-var c__5568__auto__ = cljs.core.chunk_first(seq__65916__$1);
-var G__66088 = cljs.core.chunk_rest(seq__65916__$1);
-var G__66089 = c__5568__auto__;
-var G__66090 = cljs.core.count(c__5568__auto__);
-var G__66091 = (0);
-seq__65916 = G__66088;
-chunk__65917 = G__66089;
-count__65918 = G__66090;
-i__65919 = G__66091;
+var seq__54943__$1 = temp__5804__auto__;
+if(cljs.core.chunked_seq_QMARK_(seq__54943__$1)){
+var c__5568__auto__ = cljs.core.chunk_first(seq__54943__$1);
+var G__55115 = cljs.core.chunk_rest(seq__54943__$1);
+var G__55116 = c__5568__auto__;
+var G__55117 = cljs.core.count(c__5568__auto__);
+var G__55118 = (0);
+seq__54943 = G__55115;
+chunk__54944 = G__55116;
+count__54945 = G__55117;
+i__54946 = G__55118;
 continue;
 } else {
-var op = cljs.core.first(seq__65916__$1);
+var op = cljs.core.first(seq__54943__$1);
 (op.cljs$core$IFn$_invoke$arity$0 ? op.cljs$core$IFn$_invoke$arity$0() : op.call(null));
 
 
-var G__66092 = cljs.core.next(seq__65916__$1);
-var G__66093 = null;
-var G__66094 = (0);
-var G__66095 = (0);
-seq__65916 = G__66092;
-chunk__65917 = G__66093;
-count__65918 = G__66094;
-i__65919 = G__66095;
+var G__55119 = cljs.core.next(seq__54943__$1);
+var G__55120 = null;
+var G__55121 = (0);
+var G__55122 = (0);
+seq__54943 = G__55119;
+chunk__54944 = G__55120;
+count__54945 = G__55121;
+i__54946 = G__55122;
 continue;
 }
 } else {
@@ -855,17 +855,17 @@ return null;
 }
 break;
 }
-}finally {(com.fulcrologic.fulcro.algorithms.tx_processing.batched_processing._STAR_remove_send_STAR_ = _STAR_remove_send_STAR__orig_val__65878);
+}finally {(com.fulcrologic.fulcro.algorithms.tx_processing.batched_processing._STAR_remove_send_STAR_ = _STAR_remove_send_STAR__orig_val__54905);
 }});
 /**
  * Run through the active queue and do a processing step.
  */
-com.fulcrologic.fulcro.algorithms.tx_processing.synchronous_tx_processing.process_queue_BANG_ = (function com$fulcrologic$fulcro$algorithms$tx_processing$synchronous_tx_processing$process_queue_BANG_(p__65920){
-var map__65921 = p__65920;
-var map__65921__$1 = cljs.core.__destructure_map(map__65921);
-var app__$1 = map__65921__$1;
-var state_atom = cljs.core.get.cljs$core$IFn$_invoke$arity$2(map__65921__$1,new cljs.core.Keyword("com.fulcrologic.fulcro.application","state-atom","com.fulcrologic.fulcro.application/state-atom",648128366));
-var runtime_atom = cljs.core.get.cljs$core$IFn$_invoke$arity$2(map__65921__$1,new cljs.core.Keyword("com.fulcrologic.fulcro.application","runtime-atom","com.fulcrologic.fulcro.application/runtime-atom",-1167397772));
+com.fulcrologic.fulcro.algorithms.tx_processing.synchronous_tx_processing.process_queue_BANG_ = (function com$fulcrologic$fulcro$algorithms$tx_processing$synchronous_tx_processing$process_queue_BANG_(p__54947){
+var map__54948 = p__54947;
+var map__54948__$1 = cljs.core.__destructure_map(map__54948);
+var app__$1 = map__54948__$1;
+var state_atom = cljs.core.get.cljs$core$IFn$_invoke$arity$2(map__54948__$1,new cljs.core.Keyword("com.fulcrologic.fulcro.application","state-atom","com.fulcrologic.fulcro.application/state-atom",648128366));
+var runtime_atom = cljs.core.get.cljs$core$IFn$_invoke$arity$2(map__54948__$1,new cljs.core.Keyword("com.fulcrologic.fulcro.application","runtime-atom","com.fulcrologic.fulcro.application/runtime-atom",-1167397772));
 var old_queue = com.fulcrologic.fulcro.algorithms.tx_processing.synchronous_tx_processing.active_queue(app__$1);
 var new_queue = cljs.core.reduce.cljs$core$IFn$_invoke$arity$3((function com$fulcrologic$fulcro$algorithms$tx_processing$synchronous_tx_processing$process_queue_BANG__$__STAR_pstep(new_queue,n){
 var temp__5802__auto__ = com.fulcrologic.fulcro.algorithms.tx_processing.synchronous_tx_processing.process_tx_node_BANG_(app__$1,n);
@@ -885,7 +885,7 @@ var remotes_active_QMARK_ = com.fulcrologic.fulcro.algorithms.tx_processing.acti
 if(cljs.core.not_EQ_.cljs$core$IFn$_invoke$arity$2(old_queue,com.fulcrologic.fulcro.algorithms.tx_processing.synchronous_tx_processing.active_queue(app__$1))){
 taoensso.timbre._log_BANG_.cljs$core$IFn$_invoke$arity$11(taoensso.timbre._STAR_config_STAR_,new cljs.core.Keyword(null,"error","error",-978969032),"com.fulcrologic.fulcro.algorithms.tx-processing.synchronous-tx-processing",null,346,new cljs.core.Keyword(null,"p","p",151049309),new cljs.core.Keyword(null,"auto","auto",-566279492),(new cljs.core.Delay((function (){
 return new cljs.core.PersistentVector(null, 1, 5, cljs.core.PersistentVector.EMPTY_NODE, ["Old queue changed! See https://book.fulcrologic.com/#err-stp-old-queue-chng"], null);
-}),null)),null,-314224544,null);
+}),null)),null,-818796664,null);
 } else {
 }
 
@@ -906,9 +906,9 @@ return null;
  * Returns true if the submission queue has work on it that can proceed without any restrictions.
  */
 com.fulcrologic.fulcro.algorithms.tx_processing.synchronous_tx_processing.available_work_QMARK_ = (function com$fulcrologic$fulcro$algorithms$tx_processing$synchronous_tx_processing$available_work_QMARK_(app__$1){
-var map__65922 = cljs.core.group_by(cljs.core.comp.cljs$core$IFn$_invoke$arity$3(cljs.core.boolean$,new cljs.core.Keyword(null,"after-render?","after-render?",595994030),new cljs.core.Keyword("com.fulcrologic.fulcro.algorithms.tx-processing","options","com.fulcrologic.fulcro.algorithms.tx-processing/options",2016767420)),com.fulcrologic.fulcro.algorithms.tx_processing.synchronous_tx_processing.submission_queue(app__$1));
-var map__65922__$1 = cljs.core.__destructure_map(map__65922);
-var ready = cljs.core.get.cljs$core$IFn$_invoke$arity$2(map__65922__$1,false);
+var map__54949 = cljs.core.group_by(cljs.core.comp.cljs$core$IFn$_invoke$arity$3(cljs.core.boolean$,new cljs.core.Keyword(null,"after-render?","after-render?",595994030),new cljs.core.Keyword("com.fulcrologic.fulcro.algorithms.tx-processing","options","com.fulcrologic.fulcro.algorithms.tx-processing/options",2016767420)),com.fulcrologic.fulcro.algorithms.tx_processing.synchronous_tx_processing.submission_queue(app__$1));
+var map__54949__$1 = cljs.core.__destructure_map(map__54949);
+var ready = cljs.core.get.cljs$core$IFn$_invoke$arity$2(map__54949__$1,false);
 return cljs.core.boolean$(cljs.core.seq(ready));
 });
 /**
@@ -918,13 +918,13 @@ return cljs.core.boolean$(cljs.core.seq(ready));
  *   Activation can be blocked by the tx-node options for things like waiting for the next render frame.
  */
 com.fulcrologic.fulcro.algorithms.tx_processing.synchronous_tx_processing.activate_submissions_BANG_ = (function com$fulcrologic$fulcro$algorithms$tx_processing$synchronous_tx_processing$activate_submissions_BANG_(app__$1){
-var map__65924 = cljs.core.group_by(cljs.core.comp.cljs$core$IFn$_invoke$arity$3(cljs.core.boolean$,new cljs.core.Keyword(null,"after-render?","after-render?",595994030),new cljs.core.Keyword("com.fulcrologic.fulcro.algorithms.tx-processing","options","com.fulcrologic.fulcro.algorithms.tx-processing/options",2016767420)),com.fulcrologic.fulcro.algorithms.tx_processing.synchronous_tx_processing.submission_queue(app__$1));
-var map__65924__$1 = cljs.core.__destructure_map(map__65924);
-var blocked = cljs.core.get.cljs$core$IFn$_invoke$arity$2(map__65924__$1,true);
-var ready = cljs.core.get.cljs$core$IFn$_invoke$arity$2(map__65924__$1,false);
+var map__54951 = cljs.core.group_by(cljs.core.comp.cljs$core$IFn$_invoke$arity$3(cljs.core.boolean$,new cljs.core.Keyword(null,"after-render?","after-render?",595994030),new cljs.core.Keyword("com.fulcrologic.fulcro.algorithms.tx-processing","options","com.fulcrologic.fulcro.algorithms.tx-processing/options",2016767420)),com.fulcrologic.fulcro.algorithms.tx_processing.synchronous_tx_processing.submission_queue(app__$1));
+var map__54951__$1 = cljs.core.__destructure_map(map__54951);
+var blocked = cljs.core.get.cljs$core$IFn$_invoke$arity$2(map__54951__$1,true);
+var ready = cljs.core.get.cljs$core$IFn$_invoke$arity$2(map__54951__$1,false);
 var _ = com.fulcrologic.fulcro.algorithms.tx_processing.synchronous_tx_processing.reset_submission_queue_BANG_(app__$1,cljs.core.vec(blocked));
-var dispatched_nodes = cljs.core.mapv.cljs$core$IFn$_invoke$arity$2((function (p1__65923_SHARP_){
-return com.fulcrologic.fulcro.algorithms.tx_processing.dispatch_elements(p1__65923_SHARP_,com.fulcrologic.fulcro.algorithms.tx_processing.build_env.cljs$core$IFn$_invoke$arity$2(app__$1,p1__65923_SHARP_),com.fulcrologic.fulcro.mutations.mutate);
+var dispatched_nodes = cljs.core.mapv.cljs$core$IFn$_invoke$arity$2((function (p1__54950_SHARP_){
+return com.fulcrologic.fulcro.algorithms.tx_processing.dispatch_elements(p1__54950_SHARP_,com.fulcrologic.fulcro.algorithms.tx_processing.build_env.cljs$core$IFn$_invoke$arity$2(app__$1,p1__54950_SHARP_),com.fulcrologic.fulcro.mutations.mutate);
 }),ready);
 com.fulcrologic.fulcro.algorithms.tx_processing.synchronous_tx_processing.swap_active_queue_BANG_.cljs$core$IFn$_invoke$arity$variadic(app__$1,cljs.core.prim_seq.cljs$core$IFn$_invoke$arity$2([cljs.core.fnil.cljs$core$IFn$_invoke$arity$2(cljs.core.into,cljs.core.PersistentVector.EMPTY),dispatched_nodes], 0));
 
@@ -936,18 +936,18 @@ return com.fulcrologic.fulcro.algorithms.tx_processing.synchronous_tx_processing
  */
 com.fulcrologic.fulcro.algorithms.tx_processing.synchronous_tx_processing.run_all_immediate_work_BANG_ = (function com$fulcrologic$fulcro$algorithms$tx_processing$synchronous_tx_processing$run_all_immediate_work_BANG_(app__$1){
 try{return com.fulcrologic.fulcro.algorithms.tx_processing.synchronous_tx_processing.activate_submissions_BANG_(app__$1);
-}catch (e65925){var e = e65925;
+}catch (e54952){var e = e54952;
 return taoensso.timbre._log_BANG_.cljs$core$IFn$_invoke$arity$11(taoensso.timbre._STAR_config_STAR_,new cljs.core.Keyword(null,"error","error",-978969032),"com.fulcrologic.fulcro.algorithms.tx-processing.synchronous-tx-processing",null,379,new cljs.core.Keyword(null,"p","p",151049309),new cljs.core.Keyword(null,"auto","auto",-566279492),(new cljs.core.Delay((function (){
 return new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [e,"Error processing tx queue! See https://book.fulcrologic.com/#err-stp-err-processing-tx-q"], null);
-}),null)),null,557289934,null);
+}),null)),null,-267361100,null);
 }});
-com.fulcrologic.fulcro.algorithms.tx_processing.synchronous_tx_processing.run_queue_BANG_ = (function com$fulcrologic$fulcro$algorithms$tx_processing$synchronous_tx_processing$run_queue_BANG_(app__$1,p__65926){
+com.fulcrologic.fulcro.algorithms.tx_processing.synchronous_tx_processing.run_queue_BANG_ = (function com$fulcrologic$fulcro$algorithms$tx_processing$synchronous_tx_processing$run_queue_BANG_(app__$1,p__54953){
 while(true){
-var map__65927 = p__65926;
-var map__65927__$1 = cljs.core.__destructure_map(map__65927);
-var options = map__65927__$1;
-var component = cljs.core.get.cljs$core$IFn$_invoke$arity$2(map__65927__$1,new cljs.core.Keyword(null,"component","component",1555936782));
-var synchronous_QMARK_ = cljs.core.get.cljs$core$IFn$_invoke$arity$2(map__65927__$1,new cljs.core.Keyword(null,"synchronous?","synchronous?",1705588391));
+var map__54954 = p__54953;
+var map__54954__$1 = cljs.core.__destructure_map(map__54954);
+var options = map__54954__$1;
+var component = cljs.core.get.cljs$core$IFn$_invoke$arity$2(map__54954__$1,new cljs.core.Keyword(null,"component","component",1555936782));
+var synchronous_QMARK_ = cljs.core.get.cljs$core$IFn$_invoke$arity$2(map__54954__$1,new cljs.core.Keyword(null,"synchronous?","synchronous?",1705588391));
 while(true){
 com.fulcrologic.fulcro.algorithms.tx_processing.synchronous_tx_processing.run_all_immediate_work_BANG_(app__$1);
 
@@ -965,17 +965,17 @@ return component;
 return and__5043__auto__;
 }
 })())){
-var temp__5804__auto___66096 = com.fulcrologic.fulcro.algorithms.lookup.app_algorithm(app__$1,new cljs.core.Keyword(null,"refresh-component!","refresh-component!",-872161039));
-if(cljs.core.truth_(temp__5804__auto___66096)){
-var refresh_component_BANG__66097 = temp__5804__auto___66096;
-(refresh_component_BANG__66097.cljs$core$IFn$_invoke$arity$1 ? refresh_component_BANG__66097.cljs$core$IFn$_invoke$arity$1(component) : refresh_component_BANG__66097.call(null,component));
+var temp__5804__auto___55123 = com.fulcrologic.fulcro.algorithms.lookup.app_algorithm(app__$1,new cljs.core.Keyword(null,"refresh-component!","refresh-component!",-872161039));
+if(cljs.core.truth_(temp__5804__auto___55123)){
+var refresh_component_BANG__55124 = temp__5804__auto___55123;
+(refresh_component_BANG__55124.cljs$core$IFn$_invoke$arity$1 ? refresh_component_BANG__55124.cljs$core$IFn$_invoke$arity$1(component) : refresh_component_BANG__55124.call(null,component));
 } else {
 }
 } else {
-var temp__5804__auto___66098 = com.fulcrologic.fulcro.algorithms.lookup.app_algorithm(app__$1,new cljs.core.Keyword(null,"render!","render!",-1848688504));
-if(cljs.core.truth_(temp__5804__auto___66098)){
-var render_BANG__66099 = temp__5804__auto___66098;
-(render_BANG__66099.cljs$core$IFn$_invoke$arity$2 ? render_BANG__66099.cljs$core$IFn$_invoke$arity$2(app__$1,options) : render_BANG__66099.call(null,app__$1,options));
+var temp__5804__auto___55125 = com.fulcrologic.fulcro.algorithms.lookup.app_algorithm(app__$1,new cljs.core.Keyword(null,"render!","render!",-1848688504));
+if(cljs.core.truth_(temp__5804__auto___55125)){
+var render_BANG__55126 = temp__5804__auto___55125;
+(render_BANG__55126.cljs$core$IFn$_invoke$arity$2 ? render_BANG__55126.cljs$core$IFn$_invoke$arity$2(app__$1,options) : render_BANG__55126.call(null,app__$1,options));
 } else {
 }
 }
@@ -983,10 +983,10 @@ var render_BANG__66099 = temp__5804__auto___66098;
 com.fulcrologic.fulcro.algorithms.tx_processing.synchronous_tx_processing.release_post_render_tasks_BANG_(app__$1);
 
 if(com.fulcrologic.fulcro.algorithms.tx_processing.synchronous_tx_processing.available_work_QMARK_(app__$1)){
-var G__66100 = app__$1;
-var G__66101 = cljs.core.PersistentArrayMap.EMPTY;
-app__$1 = G__66100;
-p__65926 = G__66101;
+var G__55127 = app__$1;
+var G__55128 = cljs.core.PersistentArrayMap.EMPTY;
+app__$1 = G__55127;
+p__54953 = G__55128;
 continue;
 } else {
 return null;
@@ -996,14 +996,14 @@ break;
 });
 com.fulcrologic.fulcro.algorithms.tx_processing.synchronous_tx_processing.sync_tx_BANG_ = (function com$fulcrologic$fulcro$algorithms$tx_processing$synchronous_tx_processing$sync_tx_BANG_(var_args){
 var args__5775__auto__ = [];
-var len__5769__auto___66102 = arguments.length;
-var i__5770__auto___66103 = (0);
+var len__5769__auto___55129 = arguments.length;
+var i__5770__auto___55130 = (0);
 while(true){
-if((i__5770__auto___66103 < len__5769__auto___66102)){
-args__5775__auto__.push((arguments[i__5770__auto___66103]));
+if((i__5770__auto___55130 < len__5769__auto___55129)){
+args__5775__auto__.push((arguments[i__5770__auto___55130]));
 
-var G__66104 = (i__5770__auto___66103 + (1));
-i__5770__auto___66103 = G__66104;
+var G__55131 = (i__5770__auto___55130 + (1));
+i__5770__auto___55130 = G__55131;
 continue;
 } else {
 }
@@ -1021,14 +1021,14 @@ throw cljs.core.ex_info.cljs$core$IFn$_invoke$arity$2("BREAKING CHANGE. Please u
 (com.fulcrologic.fulcro.algorithms.tx_processing.synchronous_tx_processing.sync_tx_BANG_.cljs$lang$maxFixedArity = (0));
 
 /** @this {Function} */
-(com.fulcrologic.fulcro.algorithms.tx_processing.synchronous_tx_processing.sync_tx_BANG_.cljs$lang$applyTo = (function (seq65928){
+(com.fulcrologic.fulcro.algorithms.tx_processing.synchronous_tx_processing.sync_tx_BANG_.cljs$lang$applyTo = (function (seq54955){
 var self__5755__auto__ = this;
-return self__5755__auto__.cljs$core$IFn$_invoke$arity$variadic(cljs.core.seq(seq65928));
+return self__5755__auto__.cljs$core$IFn$_invoke$arity$variadic(cljs.core.seq(seq54955));
 }));
 
 com.fulcrologic.fulcro.algorithms.tx_processing.synchronous_tx_processing.submit_sync_tx_BANG_ = (function com$fulcrologic$fulcro$algorithms$tx_processing$synchronous_tx_processing$submit_sync_tx_BANG_(var_args){
-var G__65931 = arguments.length;
-switch (G__65931) {
+var G__54958 = arguments.length;
+switch (G__54958) {
 case 2:
 return com.fulcrologic.fulcro.algorithms.tx_processing.synchronous_tx_processing.submit_sync_tx_BANG_.cljs$core$IFn$_invoke$arity$2((arguments[(0)]),(arguments[(1)]));
 
@@ -1047,51 +1047,51 @@ throw (new Error(["Invalid arity: ",cljs.core.str.cljs$core$IFn$_invoke$arity$1(
 return com.fulcrologic.fulcro.algorithms.tx_processing.synchronous_tx_processing.submit_sync_tx_BANG_.cljs$core$IFn$_invoke$arity$3(app__$1,tx,cljs.core.PersistentArrayMap.EMPTY);
 }));
 
-(com.fulcrologic.fulcro.algorithms.tx_processing.synchronous_tx_processing.submit_sync_tx_BANG_.cljs$core$IFn$_invoke$arity$3 = (function (p__65932,tx,options){
-var map__65933 = p__65932;
-var map__65933__$1 = cljs.core.__destructure_map(map__65933);
-var app__$1 = map__65933__$1;
-var runtime_atom = cljs.core.get.cljs$core$IFn$_invoke$arity$2(map__65933__$1,new cljs.core.Keyword("com.fulcrologic.fulcro.application","runtime-atom","com.fulcrologic.fulcro.application/runtime-atom",-1167397772));
-var map__65934 = options;
-var map__65934__$1 = cljs.core.__destructure_map(map__65934);
-var options__$1 = map__65934__$1;
-var refresh = cljs.core.get.cljs$core$IFn$_invoke$arity$2(map__65934__$1,new cljs.core.Keyword(null,"refresh","refresh",1947415525));
-var only_refresh = cljs.core.get.cljs$core$IFn$_invoke$arity$2(map__65934__$1,new cljs.core.Keyword(null,"only-refresh","only-refresh",548241249));
-var ref = cljs.core.get.cljs$core$IFn$_invoke$arity$2(map__65934__$1,new cljs.core.Keyword(null,"ref","ref",1289896967));
-var follow_on_reads = cljs.core.into.cljs$core$IFn$_invoke$arity$2(cljs.core.PersistentHashSet.EMPTY,cljs.core.filter.cljs$core$IFn$_invoke$arity$2((function (p1__65929_SHARP_){
-return (((p1__65929_SHARP_ instanceof cljs.core.Keyword)) || (edn_query_language.core.ident_QMARK_(p1__65929_SHARP_)));
+(com.fulcrologic.fulcro.algorithms.tx_processing.synchronous_tx_processing.submit_sync_tx_BANG_.cljs$core$IFn$_invoke$arity$3 = (function (p__54959,tx,options){
+var map__54960 = p__54959;
+var map__54960__$1 = cljs.core.__destructure_map(map__54960);
+var app__$1 = map__54960__$1;
+var runtime_atom = cljs.core.get.cljs$core$IFn$_invoke$arity$2(map__54960__$1,new cljs.core.Keyword("com.fulcrologic.fulcro.application","runtime-atom","com.fulcrologic.fulcro.application/runtime-atom",-1167397772));
+var map__54961 = options;
+var map__54961__$1 = cljs.core.__destructure_map(map__54961);
+var options__$1 = map__54961__$1;
+var refresh = cljs.core.get.cljs$core$IFn$_invoke$arity$2(map__54961__$1,new cljs.core.Keyword(null,"refresh","refresh",1947415525));
+var only_refresh = cljs.core.get.cljs$core$IFn$_invoke$arity$2(map__54961__$1,new cljs.core.Keyword(null,"only-refresh","only-refresh",548241249));
+var ref = cljs.core.get.cljs$core$IFn$_invoke$arity$2(map__54961__$1,new cljs.core.Keyword(null,"ref","ref",1289896967));
+var follow_on_reads = cljs.core.into.cljs$core$IFn$_invoke$arity$2(cljs.core.PersistentHashSet.EMPTY,cljs.core.filter.cljs$core$IFn$_invoke$arity$2((function (p1__54956_SHARP_){
+return (((p1__54956_SHARP_ instanceof cljs.core.Keyword)) || (edn_query_language.core.ident_QMARK_(p1__54956_SHARP_)));
 }),tx));
 var node = com.fulcrologic.fulcro.algorithms.tx_processing.tx_node.cljs$core$IFn$_invoke$arity$2(tx,options__$1);
 var accumulate = (function (r,items){
 return cljs.core.into.cljs$core$IFn$_invoke$arity$2(cljs.core.set(r),items);
 });
-var refresh__$1 = (function (){var G__65935 = cljs.core.set(refresh);
-var G__65935__$1 = ((cljs.core.seq(follow_on_reads))?cljs.core.into.cljs$core$IFn$_invoke$arity$2(G__65935,follow_on_reads):G__65935);
+var refresh__$1 = (function (){var G__54962 = cljs.core.set(refresh);
+var G__54962__$1 = ((cljs.core.seq(follow_on_reads))?cljs.core.into.cljs$core$IFn$_invoke$arity$2(G__54962,follow_on_reads):G__54962);
 if(cljs.core.truth_(ref)){
-return cljs.core.conj.cljs$core$IFn$_invoke$arity$2(G__65935__$1,ref);
+return cljs.core.conj.cljs$core$IFn$_invoke$arity$2(G__54962__$1,ref);
 } else {
-return G__65935__$1;
+return G__54962__$1;
 }
 })();
 com.fulcrologic.fulcro.algorithms.tx_processing.synchronous_tx_processing.swap_submission_queue_BANG_.cljs$core$IFn$_invoke$arity$variadic(app__$1,cljs.core.prim_seq.cljs$core$IFn$_invoke$arity$2([cljs.core.fnil.cljs$core$IFn$_invoke$arity$2(cljs.core.conj,cljs.core.PersistentVector.EMPTY),node], 0));
 
 cljs.core.swap_BANG_.cljs$core$IFn$_invoke$arity$2(runtime_atom,(function (s){
-var G__65936 = s;
-var G__65936__$1 = ((cljs.core.seq(refresh__$1))?cljs.core.update.cljs$core$IFn$_invoke$arity$4(G__65936,new cljs.core.Keyword("com.fulcrologic.fulcro.application","to-refresh","com.fulcrologic.fulcro.application/to-refresh",-967758829),accumulate,refresh__$1):G__65936);
+var G__54963 = s;
+var G__54963__$1 = ((cljs.core.seq(refresh__$1))?cljs.core.update.cljs$core$IFn$_invoke$arity$4(G__54963,new cljs.core.Keyword("com.fulcrologic.fulcro.application","to-refresh","com.fulcrologic.fulcro.application/to-refresh",-967758829),accumulate,refresh__$1):G__54963);
 if(cljs.core.seq(only_refresh)){
-return cljs.core.update.cljs$core$IFn$_invoke$arity$4(G__65936__$1,new cljs.core.Keyword("com.fulcrologic.fulcro.application","only-refresh","com.fulcrologic.fulcro.application/only-refresh",1300408206),accumulate,only_refresh);
+return cljs.core.update.cljs$core$IFn$_invoke$arity$4(G__54963__$1,new cljs.core.Keyword("com.fulcrologic.fulcro.application","only-refresh","com.fulcrologic.fulcro.application/only-refresh",1300408206),accumulate,only_refresh);
 } else {
-return G__65936__$1;
+return G__54963__$1;
 }
 }));
 
 if(com.fulcrologic.fulcro.algorithms.tx_processing.synchronous_tx_processing.in_transaction_QMARK_(app__$1)){
 } else {
-var id__65607__auto___66106 = new cljs.core.Keyword("com.fulcrologic.fulcro.application","id","com.fulcrologic.fulcro.application/id",-2008968625).cljs$core$IFn$_invoke$arity$1(app__$1);
-cljs.core.swap_BANG_.cljs$core$IFn$_invoke$arity$variadic(com.fulcrologic.fulcro.algorithms.tx_processing.synchronous_tx_processing.apps_in_tx,cljs.core.update,id__65607__auto___66106,cljs.core.conj,cljs.core.prim_seq.cljs$core$IFn$_invoke$arity$2([com.fulcrologic.fulcro.algorithms.tx_processing.synchronous_tx_processing.current_thread_id()], 0));
+var id__54614__auto___55133 = new cljs.core.Keyword("com.fulcrologic.fulcro.application","id","com.fulcrologic.fulcro.application/id",-2008968625).cljs$core$IFn$_invoke$arity$1(app__$1);
+cljs.core.swap_BANG_.cljs$core$IFn$_invoke$arity$variadic(com.fulcrologic.fulcro.algorithms.tx_processing.synchronous_tx_processing.apps_in_tx,cljs.core.update,id__54614__auto___55133,cljs.core.conj,cljs.core.prim_seq.cljs$core$IFn$_invoke$arity$2([com.fulcrologic.fulcro.algorithms.tx_processing.synchronous_tx_processing.current_thread_id()], 0));
 
 try{com.fulcrologic.fulcro.algorithms.tx_processing.synchronous_tx_processing.run_queue_BANG_(app__$1,options__$1);
-}finally {cljs.core.swap_BANG_.cljs$core$IFn$_invoke$arity$4(com.fulcrologic.fulcro.algorithms.tx_processing.synchronous_tx_processing.apps_in_tx,cljs.core.update,id__65607__auto___66106,cljs.core.pop);
+}finally {cljs.core.swap_BANG_.cljs$core$IFn$_invoke$arity$4(com.fulcrologic.fulcro.algorithms.tx_processing.synchronous_tx_processing.apps_in_tx,cljs.core.update,id__54614__auto___55133,cljs.core.pop);
 }}
 
 return new cljs.core.Keyword("com.fulcrologic.fulcro.algorithms.tx-processing","id","com.fulcrologic.fulcro.algorithms.tx-processing/id",1199810423).cljs$core$IFn$_invoke$arity$1(node);
@@ -1103,69 +1103,69 @@ return new cljs.core.Keyword("com.fulcrologic.fulcro.algorithms.tx-processing","
  * Implementation of abort when using this tx processing
  */
 com.fulcrologic.fulcro.algorithms.tx_processing.synchronous_tx_processing.abort_BANG_ = (function com$fulcrologic$fulcro$algorithms$tx_processing$synchronous_tx_processing$abort_BANG_(app_ish,abort_id){
-var map__65937 = com.fulcrologic.fulcro.raw.components.any__GT_app(app_ish);
-var map__65937__$1 = cljs.core.__destructure_map(map__65937);
-var app__$1 = map__65937__$1;
-var runtime_atom = cljs.core.get.cljs$core$IFn$_invoke$arity$2(map__65937__$1,new cljs.core.Keyword("com.fulcrologic.fulcro.application","runtime-atom","com.fulcrologic.fulcro.application/runtime-atom",-1167397772));
+var map__54964 = com.fulcrologic.fulcro.raw.components.any__GT_app(app_ish);
+var map__54964__$1 = cljs.core.__destructure_map(map__54964);
+var app__$1 = map__54964__$1;
+var runtime_atom = cljs.core.get.cljs$core$IFn$_invoke$arity$2(map__54964__$1,new cljs.core.Keyword("com.fulcrologic.fulcro.application","runtime-atom","com.fulcrologic.fulcro.application/runtime-atom",-1167397772));
 var runtime_state = cljs.core.deref(runtime_atom);
-var map__65938 = runtime_state;
-var map__65938__$1 = cljs.core.__destructure_map(map__65938);
-var remotes = cljs.core.get.cljs$core$IFn$_invoke$arity$2(map__65938__$1,new cljs.core.Keyword("com.fulcrologic.fulcro.application","remotes","com.fulcrologic.fulcro.application/remotes",1823703517));
-var seq__65939 = cljs.core.seq(remotes);
-var chunk__65940 = null;
-var count__65941 = (0);
-var i__65942 = (0);
+var map__54965 = runtime_state;
+var map__54965__$1 = cljs.core.__destructure_map(map__54965);
+var remotes = cljs.core.get.cljs$core$IFn$_invoke$arity$2(map__54965__$1,new cljs.core.Keyword("com.fulcrologic.fulcro.application","remotes","com.fulcrologic.fulcro.application/remotes",1823703517));
+var seq__54966 = cljs.core.seq(remotes);
+var chunk__54967 = null;
+var count__54968 = (0);
+var i__54969 = (0);
 while(true){
-if((i__65942 < count__65941)){
-var vec__65949 = chunk__65940.cljs$core$IIndexed$_nth$arity$2(null,i__65942);
-var remote_name = cljs.core.nth.cljs$core$IFn$_invoke$arity$3(vec__65949,(0),null);
-var remote = cljs.core.nth.cljs$core$IFn$_invoke$arity$3(vec__65949,(1),null);
-var send_queue_66107 = com.fulcrologic.fulcro.algorithms.tx_processing.synchronous_tx_processing.send_queue(app__$1,remote_name);
-var new_queue_66108 = com.fulcrologic.fulcro.algorithms.tx_processing.abort_elements_BANG_(remote,send_queue_66107,abort_id);
-com.fulcrologic.fulcro.algorithms.tx_processing.synchronous_tx_processing.reset_send_queue_BANG_(app__$1,remote_name,new_queue_66108);
+if((i__54969 < count__54968)){
+var vec__54976 = chunk__54967.cljs$core$IIndexed$_nth$arity$2(null,i__54969);
+var remote_name = cljs.core.nth.cljs$core$IFn$_invoke$arity$3(vec__54976,(0),null);
+var remote = cljs.core.nth.cljs$core$IFn$_invoke$arity$3(vec__54976,(1),null);
+var send_queue_55134 = com.fulcrologic.fulcro.algorithms.tx_processing.synchronous_tx_processing.send_queue(app__$1,remote_name);
+var new_queue_55135 = com.fulcrologic.fulcro.algorithms.tx_processing.abort_elements_BANG_(remote,send_queue_55134,abort_id);
+com.fulcrologic.fulcro.algorithms.tx_processing.synchronous_tx_processing.reset_send_queue_BANG_(app__$1,remote_name,new_queue_55135);
 
 
-var G__66109 = seq__65939;
-var G__66110 = chunk__65940;
-var G__66111 = count__65941;
-var G__66112 = (i__65942 + (1));
-seq__65939 = G__66109;
-chunk__65940 = G__66110;
-count__65941 = G__66111;
-i__65942 = G__66112;
+var G__55137 = seq__54966;
+var G__55138 = chunk__54967;
+var G__55139 = count__54968;
+var G__55140 = (i__54969 + (1));
+seq__54966 = G__55137;
+chunk__54967 = G__55138;
+count__54968 = G__55139;
+i__54969 = G__55140;
 continue;
 } else {
-var temp__5804__auto__ = cljs.core.seq(seq__65939);
+var temp__5804__auto__ = cljs.core.seq(seq__54966);
 if(temp__5804__auto__){
-var seq__65939__$1 = temp__5804__auto__;
-if(cljs.core.chunked_seq_QMARK_(seq__65939__$1)){
-var c__5568__auto__ = cljs.core.chunk_first(seq__65939__$1);
-var G__66113 = cljs.core.chunk_rest(seq__65939__$1);
-var G__66114 = c__5568__auto__;
-var G__66115 = cljs.core.count(c__5568__auto__);
-var G__66116 = (0);
-seq__65939 = G__66113;
-chunk__65940 = G__66114;
-count__65941 = G__66115;
-i__65942 = G__66116;
+var seq__54966__$1 = temp__5804__auto__;
+if(cljs.core.chunked_seq_QMARK_(seq__54966__$1)){
+var c__5568__auto__ = cljs.core.chunk_first(seq__54966__$1);
+var G__55141 = cljs.core.chunk_rest(seq__54966__$1);
+var G__55142 = c__5568__auto__;
+var G__55143 = cljs.core.count(c__5568__auto__);
+var G__55144 = (0);
+seq__54966 = G__55141;
+chunk__54967 = G__55142;
+count__54968 = G__55143;
+i__54969 = G__55144;
 continue;
 } else {
-var vec__65952 = cljs.core.first(seq__65939__$1);
-var remote_name = cljs.core.nth.cljs$core$IFn$_invoke$arity$3(vec__65952,(0),null);
-var remote = cljs.core.nth.cljs$core$IFn$_invoke$arity$3(vec__65952,(1),null);
-var send_queue_66117 = com.fulcrologic.fulcro.algorithms.tx_processing.synchronous_tx_processing.send_queue(app__$1,remote_name);
-var new_queue_66118 = com.fulcrologic.fulcro.algorithms.tx_processing.abort_elements_BANG_(remote,send_queue_66117,abort_id);
-com.fulcrologic.fulcro.algorithms.tx_processing.synchronous_tx_processing.reset_send_queue_BANG_(app__$1,remote_name,new_queue_66118);
+var vec__54979 = cljs.core.first(seq__54966__$1);
+var remote_name = cljs.core.nth.cljs$core$IFn$_invoke$arity$3(vec__54979,(0),null);
+var remote = cljs.core.nth.cljs$core$IFn$_invoke$arity$3(vec__54979,(1),null);
+var send_queue_55145 = com.fulcrologic.fulcro.algorithms.tx_processing.synchronous_tx_processing.send_queue(app__$1,remote_name);
+var new_queue_55146 = com.fulcrologic.fulcro.algorithms.tx_processing.abort_elements_BANG_(remote,send_queue_55145,abort_id);
+com.fulcrologic.fulcro.algorithms.tx_processing.synchronous_tx_processing.reset_send_queue_BANG_(app__$1,remote_name,new_queue_55146);
 
 
-var G__66119 = cljs.core.next(seq__65939__$1);
-var G__66120 = null;
-var G__66121 = (0);
-var G__66122 = (0);
-seq__65939 = G__66119;
-chunk__65940 = G__66120;
-count__65941 = G__66121;
-i__65942 = G__66122;
+var G__55147 = cljs.core.next(seq__54966__$1);
+var G__55148 = null;
+var G__55149 = (0);
+var G__55150 = (0);
+seq__54966 = G__55147;
+chunk__54967 = G__55148;
+count__54968 = G__55149;
+i__54969 = G__55150;
 continue;
 }
 } else {
@@ -1215,8 +1215,8 @@ break;
  *   
  */
 com.fulcrologic.fulcro.algorithms.tx_processing.synchronous_tx_processing.with_synchronous_transactions = (function com$fulcrologic$fulcro$algorithms$tx_processing$synchronous_tx_processing$with_synchronous_transactions(var_args){
-var G__65956 = arguments.length;
-switch (G__65956) {
+var G__54983 = arguments.length;
+switch (G__54983) {
 case 1:
 return com.fulcrologic.fulcro.algorithms.tx_processing.synchronous_tx_processing.with_synchronous_transactions.cljs$core$IFn$_invoke$arity$1((arguments[(0)]));
 
