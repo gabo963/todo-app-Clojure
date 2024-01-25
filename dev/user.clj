@@ -4,7 +4,6 @@
             [clojure.tools.namespace.repl :as tools-ns]
             [taoensso.timbre :as log]))
 
-;; make sure not to find things in places like resources
 (tools-ns/set-refresh-dirs "src" "dev")
 
 (defonce server (atom nil))

@@ -23,28 +23,3 @@
 
 (d/transact conn {:tx-data app.seed/seed-todos})
 (d/transact conn {:tx-data app.seed/seed-list})
-
-(comment
-  ;TODO: DELETE ONCE DONE TESTING
-
-  (d/q '[:find (pull ?e [*])
-         :in $
-         :where
-         [?e :todo/id]] (d/db conn))
-
-  (d/q '[:find (pull ?e [*])
-         :in $
-         :where
-         [?e :list/id]] (d/db conn))
-
-
-  (d/q '[:find ?name ?text ?todo-id
-         :in $
-         :where
-         [?e :list/name ?name]
-         [?e :list/todos ?t]
-         [?t :todo/text ?text]
-         [?t :todo/id ?todo-id]
-         [?t :todo/done true]] (d/db conn))
-
-  )

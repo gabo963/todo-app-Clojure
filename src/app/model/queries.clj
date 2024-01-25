@@ -30,5 +30,5 @@
 ;; Retractions
 
 (defn entity-retraction [entity-id conn]
-  (d/transact conn {:tx-data [[:db/retractEntity [entity-id]]]})
+  (d/transact conn {:tx-data [[:db/retractEntity entity-id]]})
   )
