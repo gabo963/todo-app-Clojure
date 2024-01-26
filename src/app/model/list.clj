@@ -14,6 +14,10 @@
   {::pc/output [{:all-lists [:list/id]}]}
   {:all-lists (q/all-items-query :list/id app.db/conn)})
 
+(pc/defmutation select-list [env {:list/keys [id]}]
+  {::pc/params [:list/id]}
+  {:list/id id})
+
 (pc/defmutation todo-delete [env {todo-id :todo/id}]
   {::pc/params [:todo/id]
    ::pc/output []}
@@ -28,4 +32,4 @@
     (q/assertion [:list/id id] :list/todos [:todo/id new-todo-id] app.db/conn)
     {:todo/id new-todo-id}))
 
-(def resolvers [list-resolver all-lists-resolver todo-delete todo-add])
+(def resolvers [list-resolver all-lists-resolver select-list todo-delete todo-add])

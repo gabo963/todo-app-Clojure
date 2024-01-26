@@ -25,4 +25,4 @@
   (q/assertion [:todo/id id] :todo/done done app.db/conn)
   {})
 
-(def resolvers [todo-resolver all-todos-resolver todo-change-text todo-change-done])
+(def resolvers [all-todos-resolver todo-resolver todo-change-text todo-change-done])
