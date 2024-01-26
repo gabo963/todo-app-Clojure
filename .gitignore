@@ -27,6 +27,7 @@ profiles.clj
 .clj-kondo/*
 .calva/*
 /resources/public/js/*
+/resources/public/js/main/main.js
 
 /.shadow-cljs/
 node_modules/
