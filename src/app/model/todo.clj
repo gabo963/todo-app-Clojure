@@ -2,7 +2,7 @@
   (:require
     [com.wsscode.pathom.connect :as pc]
     [app.db]
-    [app.model.queries :as q]))
+    [app.queries :as q]))
 
 (pc/defresolver todo-resolver [env {:todo/keys [id]}]
   {::pc/input  #{:todo/id}

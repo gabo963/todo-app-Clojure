@@ -3,7 +3,7 @@
     [com.wsscode.pathom.connect :as pc]
     [app.model.todo]
     [app.db]
-    [app.model.queries :as q]))
+    [app.queries :as q]))
 
 (pc/defresolver list-resolver [env {:list/keys [id]}]
   {::pc/input  #{:list/id}

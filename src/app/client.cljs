@@ -5,22 +5,22 @@
     [com.fulcrologic.fulcro.data-fetch :as df]
     [com.fulcrologic.fulcro.dom :refer [div ul li h1 h2 h3 h4 button input label i s]]
     [com.fulcrologic.fulcro.networking.http-remote :as http]
-    [app.components.ui-lists-selection :as ui-selection-component]))
+    [app.components.ui-lists-picker :as ui-picker-component]
+    [app.components.ui-list-item :as ui-list-item-component]))
 
 (defsc Root [this {:root/keys [list-picker]}]
-  {:query         [{:root/list-picker (comp/get-query ui-selection-component/ListPicker)}]
+  {:query         [{:root/list-picker (comp/get-query ui-picker-component/ListPicker)}]
    :initial-state {:root/list-picker {}}}
   (div :.ui.segment {}
     (h1 "To-Do")
     (if list-picker
-      (ui-selection-component/ui-list-picker list-picker)
+      (ui-picker-component/ui-list-picker list-picker)
       (h1 "Loading..."))))
 
 (defonce APP (app/fulcro-app {:remotes          {:remote (http/fulcro-http-remote {})}
                               :client-did-mount (fn [app]
 
-                                                  (df/load! app :all-lists ui-selection-component/ListItem
-                                                    {:target [:component/id ::ui-selection-component/list-list :list-list/list]}))}))
-
+                                                  (df/load! app :all-lists ui-list-item-component/ListItem
+                                                    {:target [:component/id :app.components.ui-list-list/list-list :list-list/list]}))}))
 (defn ^:export init []
   (app/mount! APP Root "app"))

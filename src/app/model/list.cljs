@@ -6,7 +6,7 @@
 
 (defmutation select-list [{:list/keys [id]}]
   (action [{:keys [state]}]
-    (swap! state assoc-in [:component/id :app.components.ui-lists-selection/list-picker :list-picker/selected-list] [:list/id id]))
+    (swap! state assoc-in [:component/id :app.components.ui-lists-picker/list-picker :list-picker/selected-list] [:list/id id]))
   (remote [env] true))
 
 (defmutation todo-add [{list-id :list/id}]

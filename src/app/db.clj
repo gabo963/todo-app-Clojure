@@ -9,7 +9,6 @@
                        :storage-dir :mem
                        :system      "ci"}))
 
-
 (d/create-database client {:db-name "todo-app"})
 
 (def conn (d/connect client {:db-name "todo-app"}))
@@ -23,8 +22,3 @@
 
 (d/transact conn {:tx-data app.seed/seed-todos})
 (d/transact conn {:tx-data app.seed/seed-list})
-
-(comment
-
-  (app.model.queries/all-items-query :list/id conn)
-)

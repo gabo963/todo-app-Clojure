@@ -31,6 +31,3 @@
                    :db/valueType   :db.type/ref
                    :db/cardinality :db.cardinality/many
                    :db/doc         "Mark if a todo has been completed or is pending"}])
-
-
-
