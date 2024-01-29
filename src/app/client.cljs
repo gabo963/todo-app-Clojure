@@ -17,10 +17,15 @@
       (ui-picker-component/ui-list-picker list-picker)
       (h1 "Loading..."))))
 
-(defonce APP (app/fulcro-app {:remotes          {:remote (http/fulcro-http-remote {})}
-                              :client-did-mount (fn [app]
+(defn- initialLoading [app]
+  (df/load! app :all-lists ui-list-item-component/ListItem
+    {:target [:component/id :app.components.ui-list-list/list-list :list-list/list]})
+  )
 
-                                                  (df/load! app :all-lists ui-list-item-component/ListItem
-                                                    {:target [:component/id :app.components.ui-list-list/list-list :list-list/list]}))}))
+(def remoteMAp
+  {:remote (http/fulcro-http-remote {})})
+
+(defonce APP (app/fulcro-app {:remotes          remoteMAp
+                              :client-did-mount initialLoading}))
 (defn ^:export init []
   (app/mount! APP Root "app"))

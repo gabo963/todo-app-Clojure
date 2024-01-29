@@ -15,8 +15,8 @@
     (div :.column
       (ui-list-list-component/ui-list-list list))
     (div :.column
-      (ui-list-component/ui-list selected-list))
-    ))
+      (ui-list-component/ui-list selected-list)))
+  )
 
 (def ui-list-picker (comp/factory ListPicker))
 
